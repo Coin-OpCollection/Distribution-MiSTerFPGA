@@ -9,7 +9,7 @@
 
     <switches default="ff,ff">
         <!-- DSW1 -->
-        <dip name="Monitor Screen" bits="7" ids="Normal,Invert"/>
+        <dip name="Monitor Screen" bits="7" ids="Invert,Normal"/>
         <dip name="Unknown" bits="6" ids="On,Off"/>
         <dip name="Bonus Occurence" bits="5" ids="Every,Second"/>
         <dip name="Hero Count" bits="4" ids="Three,Two"/>
@@ -69,7 +69,7 @@
         </interleave>
         <interleave output="32">
             <part name="snk88014a.1d" crc="47cd498b" map="0001"/>
-            <part name="snk88018a.2d" crc="eed72232" map="1000"/>
+            <part name="snk88018a.2d" crc="eed72232" map="0010"/>
             <part name="snk88022a.3d" crc="aa9c00d8" map="0100"/>
             <part name="snk88026a.4d" crc="9bc261c5" map="1000"/>
         </interleave>
