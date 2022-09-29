@@ -6,6 +6,7 @@ A collection of open-source FPGA implementations of classic arcade hardware for 
 Distributed by [**Jose Barroso**](https://github.com/theypsilon/), creator and maintainer of [**Update_All_MiSTer**](https://github.com/theypsilon/Update_All_MiSTer), [**Downloader_MiSTer**](https://github.com/MiSTer-devel/Downloader_MiSTer), and [**Distribution MiSTer**](https://github.com/MiSTer-devel/Distribution_MiSTer). 
 
 This repository is maintained by the core authors and will distribute beta FPGA implementations and completed projects.
+
 <br>
 <p align="center">
 <img width="" height="" src="https://user-images.githubusercontent.com/32810066/193119551-3e843180-0c63-46eb-a512-15bca039b4c6.png">
@@ -13,8 +14,8 @@ This repository is maintained by the core authors and will distribute beta FPGA 
 
 ## Current Cores
 
-| FPGA Implementation| Supported Titles | Status  | Core Author |
-|-------|---------------|---------|----------|----------|
+| FPGA Implementation | Supported Titles | Status  | Core Author |
+|---------------------|------------------|---------|-------------|
 | [**Toaplan V1**](https://github.com/va7deo/zerowing) | [**Tatsujin**](https://en.wikipedia.org/wiki/Truxton_%28video_game%29)<br><br>[**Hellfire**](https://en.wikipedia.org/wiki/Hellfire_%28video_game%29)<br><br>[**Zero Wing**](https://en.wikipedia.org/wiki/Zero_Wing)<br><br>[**Out Zone**](https://en.wikipedia.org/wiki/Out_Zone)| **In-Development** | [**Darren Olafson**](https://twitter.com/Darren__O) |
 | [**Nichibutsu M68000<br>(Terra Cresta Based)**](https://github.com/va7deo/TerraCresta) | [**Terra Cresta**](https://en.wikipedia.org/wiki/Terra_Cresta)<br><br>[**Sei Senshi Amatelass**](https://en.wikipedia.org/wiki/Nihon_Bussan)<br><br>[**Kid no Hore Hore Daisakusen**](https://en.wikipedia.org/wiki/Nihon_Bussan) | **Complete** | [**Darren Olafson**](https://twitter.com/Darren__O) |
 | [**Nichibutsu M68000<br>(ArmedF Based)**](https://github.com/va7deo/ArmedF) | [**Terra Force**](https://en.wikipedia.org/wiki/Nihon_Bussan)<br><br>[**Kozure Ōkami**](https://en.wikipedia.org/wiki/Nihon_Bussan)<br><br>[**Chouji Meikyuu Legion**](https://en.wikipedia.org/wiki/Nihon_Bussan)<br><br>[**Crazy Climber 2**](https://en.wikipedia.org/wiki/Nihon_Bussan)<br><br>[**Armed F**](https://en.wikipedia.org/wiki/Formation_Armed_F)<br><br>[**Tatakae! Big Fighter**](https://en.wikipedia.org/wiki/Nihon_Bussan) | **In-Development** | [**Darren Olafson**](https://twitter.com/Darren__O) |
