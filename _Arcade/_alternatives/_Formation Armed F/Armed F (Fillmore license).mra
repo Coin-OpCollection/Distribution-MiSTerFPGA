@@ -5,6 +5,7 @@
   <year>1988</year>
   <manufacturer>Nichibutsu</manufacturer>
   <category>Shoot 'em up</category>
+  <rotation>vertical (ccw)</rotation>
   <rbf>armedf</rbf>
 
   <switches default="bf,cf">
