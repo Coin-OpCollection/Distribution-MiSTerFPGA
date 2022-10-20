@@ -6,6 +6,7 @@
     <year>1989</year>
     <manufacturer>SNK</manufacturer>
     <region>US</region>
+    <rotation>vertical (cw)</rotation>
 
     <switches default="ff,ff">
         <!-- DSW1 -->
