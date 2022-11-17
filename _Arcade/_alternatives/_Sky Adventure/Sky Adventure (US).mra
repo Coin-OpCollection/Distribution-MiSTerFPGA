@@ -1,0 +1,67 @@
+<misterromdescription>
+    <name>Sky Adventure (US)</name>
+    <setname>skyadvntu</setname>
+    <rbf>alpha68k</rbf>
+    <mameversion>0249</mameversion>
+    <year>1989</year>
+    <manufacturer>Alpha Denshi Co.</manufacturer>
+    <region>US</region>
+    <joystick>8-Way</joystick>
+    <rotation>vertical (cw)</rotation>
+
+    <switches default="ff,ff">
+        <!-- IN3 -->
+        <dip name="Lives" bits="2,3" ids="5,4,2,3"/>
+        <dip name="Difficulty" bits="5,6" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Demo Sounds" bits="7" ids="Off,On"/>
+        <!-- IN4 -->
+        <dip name="Continue Price" bits="8" ids="Coinage,1/1"/>
+        <dip name="Allow Continue" bits="9" ids="No,Yes"/>
+        <dip name="Coinage" bits="10,11" ids="Free Play,2/1,1/2,1/1"/>
+        <dip name="Flip Screen" bits="12" ids="On,Off"/>
+        <dip name="Freeze" bits="13" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Shot,Bomb,Ship Select,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,L,Start"/>
+
+    <rom index="1">
+        <part>04</part>
+    </rom>
+
+    <rom index="0" zip="skyadvntu.zip|skyadvnt.zip" md5="None">
+
+        <!-- maincpu - starts at 0x0 -->
+        <interleave output="16">
+            <part name="sa_v3.1" crc="862393b5" map="01"/>
+            <part name="sa_v3.2" crc="fa7a14d1" map="10"/>
+        </interleave>
+        <part repeat="0x40000"> FF</part>
+
+        <!-- audiocpu - starts at 0x80000 -->
+        <part name="sa.3" crc="3d0b32e0"/>
+        <part repeat="0x10000"> FF</part>
+        <part name="sa.4" crc="c2e3c30c"/>
+        <part repeat="0x10000"> FF</part>
+        <part name="sa.5" crc="11cdb868"/>
+        <part repeat="0x10000"> FF</part>
+        <part name="sa.6" crc="237d93fd"/>
+        <part repeat="0x18000"> FF</part>
+
+        <!-- gfx1 - starts at 0x100000 -->
+        <part name="sa.7" crc="ea26e9c5"/>
+        <part repeat="0xF8000"> FF</part>
+
+        <!-- gfx2 - starts at 0x200000 -->
+        <interleave output="32">
+            <part name="sachr3" crc="a986b8d5" map="0001"/>
+            <part name="sachr2" crc="504b07ae" map="0010"/>
+            <part name="sachr1" crc="e734dccd" map="0100"/>
+            <part name="sachr0" crc="e281b204" map="1000"/>
+        </interleave>
+
+        <!-- mcu - starts at 0x400000 -->
+        <!-- <part name="alpha.mcu" crc=""/> -->
+
+        <!-- Total 0x401000 bytes - 4100 kBytes -->
+    </rom>
+</misterromdescription>

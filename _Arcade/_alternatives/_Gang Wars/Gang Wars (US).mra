@@ -1,0 +1,76 @@
+<misterromdescription>
+    <name>Gang Wars (US)</name>
+    <setname>gangwarsu</setname>
+    <rbf>alpha68k</rbf>
+    <mameversion>0249</mameversion>
+    <year>1989</year>
+    <manufacturer>Alpha Denshi Co.</manufacturer>
+    <region>US</region>
+    <joystick>8-Way</joystick>
+
+    <switches default="ff,ff">
+        <!-- IN3 -->
+        <dip name="Lives" bits="2,3" ids="5,4,2,3"/>
+        <dip name="Timer Speed" bits="4" ids="Slow,Normal"/>
+        <dip name="Difficulty" bits="5,6" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Demo Sounds" bits="7" ids="Off,On"/>
+        <!-- IN4 -->
+        <dip name="Continue Price" bits="8" ids="Coinage,1/1"/>
+        <dip name="Allow Continue" bits="9" ids="No,Yes"/>
+        <dip name="Coinage" bits="10,11" ids="Free Play,2/1,1/2,1/1"/>
+        <dip name="Flip Screen" bits="12" ids="On,Off"/>
+        <dip name="Freeze" bits="13" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Kick,Punch,Jump,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,L,Start"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="gangwarsu.zip|gangwars.zip" md5="None">
+
+        <!-- maincpu - starts at 0x0 -->
+        <interleave output="16">
+            <part name="u1" crc="11433507" map="01"/>
+            <part name="u2" crc="44cc375f" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="u3" crc="de6fd3c0" map="01"/>
+            <part name="u4" crc="43f7f5d3" map="10"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x80000 -->
+        <part name="u12" crc="2620caa1"/>
+        <part repeat="0x10000"> FF</part>
+        <part name="u11" crc="2218ceb9"/>
+        <part repeat="0x10000"> FF</part>
+        <part name="u10" crc="636978ae"/>
+        <part repeat="0x10000"> FF</part>
+        <part name="u9" crc="9136745e"/>
+        <part repeat="0x10000"> FF</part>
+
+        <!-- gfx1 - starts at 0x100000 -->
+        <part name="gw-13.4l" crc="b75bf1d0"/>
+        <part repeat="0xF0000"> FF</part>
+
+        <!-- gfx2 - starts at 0x200000 -->
+        <interleave output="32">
+            <part name="guernica-c3.17h" crc="281a4138" map="0001"/>
+            <part name="guernica-c2.18h" crc="2fcbea97" map="0010"/>
+            <part name="guernica-c1.20h" crc="b0fd1c23" map="0100"/>
+            <part name="guernica-c0.21h" crc="e60c9882" map="1000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="u5" crc="94612190" map="0001"/>
+            <part name="u6" crc="5a4ea0f0" map="0010"/>
+            <part name="u7" crc="33f324cb" map="0100"/>
+            <part name="u8" crc="c1995c2c" map="1000"/>
+        </interleave>
+
+        <!-- mcu - starts at 0x480000 -->
+        <!-- <part name="alpha.mcu" crc=""/> -->
+
+        <!-- Total 0x481000 bytes - 4612 kBytes -->
+    </rom>
+</misterromdescription>
