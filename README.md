@@ -1,18 +1,14 @@
 
-# Coin-Op Collection Downloader
-
-A collection of open-source FPGA implementations of classic arcade hardware for [**MiSTerFPGA**](https://github.com/MiSTer-devel/Main_MiSTer/wiki) written by [**Darren Olafson**](https://twitter.com/Darren__O) or [**atrac17**](https://github.com/atrac17). 
-
-Distributed by [**Jose Barroso**](https://github.com/theypsilon/), creator and maintainer of [**Update_All_MiSTer**](https://github.com/theypsilon/Update_All_MiSTer), [**Downloader_MiSTer**](https://github.com/MiSTer-devel/Downloader_MiSTer), and [**Distribution MiSTer**](https://github.com/MiSTer-devel/Distribution_MiSTer). 
-
-This repository is maintained by the core authors and will distribute beta FPGA implementations and completed projects.
-
 <br>
 <p align="center">
-<img width="" height="" src="https://user-images.githubusercontent.com/32810066/193119551-3e843180-0c63-46eb-a512-15bca039b4c6.png">
+<img width="1200" height="600" src="https://user-images.githubusercontent.com/32810066/193119551-3e843180-0c63-46eb-a512-15bca039b4c6.png">
 </p>
 
-## Current Cores
+# Coin-Op Collection Downloader
+
+<br>A collection of open-source FPGA implementations of classic arcade hardware for [**MiSTerFPGA**](https://github.com/MiSTer-devel/Main_MiSTer/wiki) distributed by [**Jose Barroso**](https://github.com/theypsilon/), creator and maintainer of [**Update_All_MiSTer**](https://github.com/theypsilon/Update_All_MiSTer), [**Downloader_MiSTer**](https://github.com/MiSTer-devel/Downloader_MiSTer), and [**Distribution MiSTer**](https://github.com/MiSTer-devel/Distribution_MiSTer). To see the status of cores available from Coin-Op Collection view the source repositories linked below.<br><br><br>
+
+## Current FPGA Implementations
 
 | FPGA Implementation | Supported Titles | Status  | Core Author |
 |---------------------|------------------|---------|-------------|
