@@ -6,6 +6,7 @@
   <manufacturer>Toaplan</manufacturer>
   <category>Run 'n Gun</category>
   <rbf>toaplan1</rbf>
+  <rotation>vertical (cw)</rotation>
 
   <buttons names="Shot,Bomb,-,Start,Coin,Pause" default="A,B,R,L,Start"/>
 

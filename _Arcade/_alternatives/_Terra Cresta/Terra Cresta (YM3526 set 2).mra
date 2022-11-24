@@ -6,6 +6,7 @@
     <manufacturer>Nichibutsu</manufacturer>
     <category>Shoot 'em up</category>
     <rbf>terracresta</rbf>
+    <rotation>vertical (ccw)</rotation>
 
     <switches default="3F,FF">
         <!-- DSW -->
