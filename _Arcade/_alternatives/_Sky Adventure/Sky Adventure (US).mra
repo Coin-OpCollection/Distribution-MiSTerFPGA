@@ -10,22 +10,22 @@
     <rotation>vertical (cw)</rotation>
 
     <switches default="ff,ff">
-        <!-- IN3 -->
-        <dip name="Lives" bits="2,3" ids="5,4,2,3"/>
-        <dip name="Difficulty" bits="5,6" ids="Hardest,Hard,Easy,Normal"/>
-        <dip name="Demo Sounds" bits="7" ids="Off,On"/>
-        <!-- IN4 -->
-        <dip name="Continue Price" bits="8" ids="Coinage,1/1"/>
-        <dip name="Allow Continue" bits="9" ids="No,Yes"/>
-        <dip name="Coinage" bits="10,11" ids="Free Play,2/1,1/2,1/1"/>
-        <dip name="Flip Screen" bits="12" ids="On,Off"/>
-        <dip name="Freeze" bits="13" ids="On,Off"/>
+        <!-- DIP SW1 -->
+        <dip name="Lives" bits="10,11" ids="5,4,2,3"/>
+        <dip name="Difficulty" bits="13,14" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Demo Sounds" bits="15" ids="Off,On"/>
+        <!-- DIP SW2 -->
+        <dip name="Price to Continue" bits="0" ids="Coinage,1/1"/>
+        <dip name="Allow Continue" bits="1" ids="No,Yes"/>
+        <dip name="Coinage" bits="2,3" ids="Free Play,2C/1P,1C/2P,1C/1P"/>
+        <dip name="Flip Screen" bits="4" ids="On,Off"/>
+        <dip name="Freeze" bits="5" ids="On,Off"/>
     </switches>
 
     <buttons names="Shot,Bomb,Ship Select,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,L,Start"/>
 
     <rom index="1">
-        <part>04</part>
+        <part>00 36</part>
     </rom>
 
     <rom index="0" zip="skyadvntu.zip|skyadvnt.zip" md5="None">

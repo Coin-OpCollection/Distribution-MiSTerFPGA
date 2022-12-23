@@ -7,23 +7,20 @@
     <region>Japan</region>
     <joystick>8-Way</joystick>
 
-
     <switches default="ff,ff">
-        <!-- IN3 -->
-        <dip name="Freeze" bits="2" ids="On,Off"/>
-        <dip name="Flip Screen" bits="3" ids="On,Off"/>
-        <dip name="Game Time" bits="6,7" ids="3:30,2:30,3:00,2:00"/>
-        <!-- IN4 -->
-        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Easy,Normal"/>
-        <dip name="Coinage" bits="10,11" ids="Free Play,1/2,2/1,1/1"/>
-        <dip name="Continue Price" bits="12" ids="Coinage,1/1"/>
-        <dip name="Demo Sounds" bits="13" ids="Off,On"/>
+		<!-- DIP SW1 -->
+		<dip name="Freeze" bits="10" ids="On,Off"/>
+		<dip name="Flip Screen" bits="11" ids="On,Off"/>
+		<dip name="Game Time" bits="12,13" ids="4:30,3:30,4:00,3:00"/>
+		<!-- DIP SW2 -->
+		<dip name="Difficulty" bits="0,1" ids="Hardest,Hard,Easy,Normal"/>
+		<dip name="Coinage" bits="2,4" ids="3C/2P,2C/3P,1C/6P,1C/5P,1C/4P,1C/3P,1C/2P,1C/1P"/>
     </switches>
 
     <buttons names="Swing/Pitch/Field,Steal/Pick Off/Run,Time-Out,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,L,Start"/>
 
     <rom index="1">
-        <part>02</part>
+        <part>02 3A</part>
     </rom>
 
     <rom index="0" zip="sbasebalj.zip|sbasebal.zip" md5="None">

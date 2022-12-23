@@ -9,22 +9,22 @@
     <joystick>8-Way</joystick>
 
     <switches default="ff,ff">
-        <!-- IN3 -->
-        <dip name="Lives" bits="3" ids="4,3"/>
-        <dip name="Timer Speed" bits="4" ids="Slow,Normal"/>
-        <dip name="Difficulty" bits="5,6" ids="Hardest,Hard,Easy,Normal"/>
-        <dip name="Demo Sounds" bits="7" ids="Off,On"/>
-        <!-- IN4 -->
-        <dip name="Coin Slots" bits="8" ids="1,2"/>
-        <dip name="Coinage" bits="9,11" ids="5/1,3/1,2/1,1/5,1/4,1/3,1/2,1/1"/>
-        <dip name="Flip Screen" bits="12" ids="On,Off"/>
-        <dip name="Freeze" bits="13" ids="On,Off"/>
+        <!-- DIP SW1 -->
+        <dip name="Coin Slots" bits="0" ids="1,2"/>
+        <dip name="Coinage" bits="1,3" ids="5/1,3/1,2/1,1/5,1/4,1/3,1/2,1/1"/>
+        <dip name="Flip Screen" bits="4" ids="On,Off"/>
+        <dip name="Freeze" bits="5" ids="On,Off"/>
+        <!-- DIP SW2 -->
+        <dip name="Number of Lives" bits="11" ids="4,3"/>
+        <dip name="Time Counter" bits="12" ids="Slow,Normal"/>
+        <dip name="Difficulty Levels" bits="13,14" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Attract Mode Sound" bits="15" ids="Off,On"/>
     </switches>
 
     <buttons names="Kick,Punch,Jump,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,L,Start"/>
 
     <rom index="1">
-        <part>01</part>
+        <part>01 3A</part>
     </rom>
 
     <rom index="0" zip="gangwarsj.zip|gangwars.zip" md5="None">
