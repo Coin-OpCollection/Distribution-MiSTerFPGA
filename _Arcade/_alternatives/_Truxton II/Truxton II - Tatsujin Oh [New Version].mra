@@ -26,11 +26,11 @@
     <category>Shoot'em up</category>
     <catver>Shooter / Flying Vertical</catver>
     <mraauthor>atrac17</mraauthor>
-    <rom index="0" zip="truxton2n.zip" md5="None" address="0x30000000">
+    <rom index="0" zip="truxton2.zip" md5="None" address="0x30000000">
         <!-- mapper for game 00 - default / truxton2 -->
         <part>00</part>
         <!-- maincpu - starts at 0x0 -->
-        <part name="tp024_1.bin" crc="599ed4e3"/>
+        <part name="tp024_1.bin" crc="f5cfe6ee"/>
         <!-- gp9001_0 - starts at 0x80000 -->
         <interleave output="16">
             <part name="tp024_4.bin" crc="805c449e" map="01"/>
@@ -39,6 +39,151 @@
         <!-- oki1 - starts at 0x280000 -->
         <part name="tp024_2.bin" crc="f2f6cae4"/>
         <!-- Total 0x300000 bytes - 3072 kBytes -->
+        <patch offset="0x20006">00</patch>
+        <patch offset="0x20008">00</patch>
+        <patch offset="0x2000a">01</patch>
+        <patch offset="0x2000c">01</patch>
+        <patch offset="0x20010">00</patch>
+        <patch offset="0x20012">00</patch>
+        <patch offset="0x20014">01</patch>
+        <patch offset="0x20016">01</patch>
+        <patch offset="0x2001c">00</patch>
+        <patch offset="0x2001e">01</patch>
+        <patch offset="0x20020">01</patch>
+        <patch offset="0x2002a">01</patch>
+        <patch offset="0x2002e">00</patch>
+        <patch offset="0x20030">00</patch>
+        <patch offset="0x20032">01</patch>
+        <patch offset="0x20034">01</patch>
+        <patch offset="0x20038">00</patch>
+        <patch offset="0x2003a">00</patch>
+        <patch offset="0x2003c">01</patch>
+        <patch offset="0x2003e">01</patch>
+        <patch offset="0x20044">00</patch>
+        <patch offset="0x20046">01</patch>
+        <patch offset="0x20048">01</patch>
+        <patch offset="0x20052">01</patch>
+        <patch offset="0x20056">00</patch>
+        <patch offset="0x20058">00</patch>
+        <patch offset="0x2005a">00</patch>
+        <patch offset="0x2005c">00</patch>
+        <patch offset="0x20062">00</patch>
+        <patch offset="0x20064">00</patch>
+        <patch offset="0x20066">00</patch>
+        <patch offset="0x2006e">00</patch>
+        <patch offset="0x20070">00</patch>
+        <patch offset="0x2007a">00</patch>
+        <patch offset="0x2007e">00</patch>
+        <patch offset="0x20080">00</patch>
+        <patch offset="0x20082">00</patch>
+        <patch offset="0x20084">00</patch>
+        <patch offset="0x2008a">00</patch>
+        <patch offset="0x2008c">00</patch>
+        <patch offset="0x2008e">00</patch>
+        <patch offset="0x20096">00</patch>
+        <patch offset="0x20098">00</patch>
+        <patch offset="0x200a0">00</patch>
+        <patch offset="0x200a2">00</patch>
+        <patch offset="0x200a6">00</patch>
+        <patch offset="0x200a8">00</patch>
+        <patch offset="0x200aa">00</patch>
+        <patch offset="0x200ac">00</patch>
+        <patch offset="0x200b0">00</patch>
+        <patch offset="0x200b2">00</patch>
+        <patch offset="0x200b4">00</patch>
+        <patch offset="0x200b6">00</patch>
+        <patch offset="0x200bc">00</patch>
+        <patch offset="0x200be">00</patch>
+        <patch offset="0x200c0">00</patch>
+        <patch offset="0x200ca">00</patch>
+        <patch offset="0x200ce">00</patch>
+        <patch offset="0x200d0">00</patch>
+        <patch offset="0x200d2">00</patch>
+        <patch offset="0x200d4">00</patch>
+        <patch offset="0x200d8">00</patch>
+        <patch offset="0x200da">00</patch>
+        <patch offset="0x200dc">00</patch>
+        <patch offset="0x200de">00</patch>
+        <patch offset="0x200e4">00</patch>
+        <patch offset="0x200e6">00</patch>
+        <patch offset="0x200e8">00</patch>
+        <patch offset="0x200f0">00</patch>
+        <patch offset="0x200f2">00</patch>
+        <patch offset="0x200f8">00</patch>
+        <patch offset="0x20102">00</patch>
+        <patch offset="0x20118">01</patch>
+        <patch offset="0x2011e">00</patch>
+        <patch offset="0x20120">00</patch>
+        <patch offset="0x20128">00</patch>
+        <patch offset="0x2012a">00</patch>
+        <patch offset="0x20134">00</patch>
+        <patch offset="0x20186">19</patch>
+        <patch offset="0x20188">0d</patch>
+        <patch offset="0x2018a">02</patch>
+        <patch offset="0x2018c">02</patch>
+        <patch offset="0x20190">19</patch>
+        <patch offset="0x20192">0d</patch>
+        <patch offset="0x20194">02</patch>
+        <patch offset="0x20196">02</patch>
+        <patch offset="0x2019a">19</patch>
+        <patch offset="0x2019c">0d</patch>
+        <patch offset="0x2019e">02</patch>
+        <patch offset="0x201a0">02</patch>
+        <patch offset="0x201a4">19</patch>
+        <patch offset="0x201a6">0d</patch>
+        <patch offset="0x201a8">02</patch>
+        <patch offset="0x201aa">02</patch>
+        <patch offset="0x201ae">19</patch>
+        <patch offset="0x201b0">0d</patch>
+        <patch offset="0x201b8">19</patch>
+        <patch offset="0x201ba">0d</patch>
+        <patch offset="0x201bc">02</patch>
+        <patch offset="0x201be">02</patch>
+        <patch offset="0x201c2">19</patch>
+        <patch offset="0x201c4">0d</patch>
+        <patch offset="0x201c6">02</patch>
+        <patch offset="0x201c8">02</patch>
+        <patch offset="0x201cc">19</patch>
+        <patch offset="0x201ce">0d</patch>
+        <patch offset="0x201d0">02</patch>
+        <patch offset="0x201d2">02</patch>
+        <patch offset="0x20380">07</patch>
+        <patch offset="0x20394">07</patch>
+        <patch offset="0x203a6">ff</patch>
+        <patch offset="0x203b4">ff</patch>
+        <patch offset="0x203ba">ff</patch>
+        <patch offset="0x203fc">10</patch>
+        <patch offset="0x20404">10</patch>
+        <patch offset="0x2040c">10</patch>
+        <patch offset="0x2041c">10</patch>
+        <patch offset="0x20424">10</patch>
+        <patch offset="0x2042c">10</patch>
+        <patch offset="0x206ce">07</patch>
+        <patch offset="0x20764">ff</patch>
+        <patch offset="0x231fb">4e f9</patch>
+        <patch offset="0x231fe">07 f7 32</patch>
+        <patch offset="0x23289">4e f9</patch>
+        <patch offset="0x2328c">07 f7 56</patch>
+        <patch offset="0x234a5">4e f9</patch>
+        <patch offset="0x234a8">07 f7 44</patch>
+        <patch offset="0x234fd">4e f9</patch>
+        <patch offset="0x23500">07 f7 68</patch>
+        <patch offset="0x26d5f">2d 20 4e 45 57 20 56 45 52 53 49 4f 4e</patch>
+        <patch offset="0x2ed53">be 07</patch>
+        <patch offset="0x7f733">42 79</patch>
+        <patch offset="0x7f736">10 02 fc 42 79</patch>
+        <patch offset="0x7f73c">10 04 2a 4e f9</patch>
+        <patch offset="0x7f742">02 32</patch>
+        <patch offset="0x7f745">42 79</patch>
+        <patch offset="0x7f748">10 02 fc 33 c0</patch>
+        <patch offset="0x7f74e">10 04 2c 4e f9</patch>
+        <patch offset="0x7f754">02 34 aa 42 79</patch>
+        <patch offset="0x7f75a">10 02 fc 33 c0</patch>
+        <patch offset="0x7f760">10 04 4a 4e f9</patch>
+        <patch offset="0x7f766">02 32 8e 42 79</patch>
+        <patch offset="0x7f76c">10 02 fc 33 c0</patch>
+        <patch offset="0x7f772">10 04 4a 4e f9</patch>
+        <patch offset="0x7f778">02 35 02</patch>
     </rom>
     <!-- Vertical game -->
     <rom index="1">
@@ -61,5 +206,5 @@
         <!-- JMPR -->
         <dip name="Region" bits="16,19" ids="JPN,USA,EU,HK,KOR,TWN,SEA,USA (ROMSTAR),HK (Honest Trading),KOR (JC Trading),USA (Fabtek),No Use,No Use,No Use,No Use,JPN (Taito Corp.)"/>
     </switches>
-    <buttons names="Shot,Bomb,Kill Player,Start,Coin,Pause" default="Y,X,B,R,L,Start" count="3"/>
+    <buttons names="Shot,Bomb,Kill Player,Fast Scroll,Start,Coin,Pause" default="Y,X,B,A,R,L,Start" count="4"/>
 </misterromdescription>
