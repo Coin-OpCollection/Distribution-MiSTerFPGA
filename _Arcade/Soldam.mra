@@ -22,10 +22,10 @@
         <dip name="Allow Continue" bits="12" ids="Off,On"/>
         <dip name="Credits To Start (Vs)" bits="13" ids="2,1"/>
         <dip name="Credits To Continue (Vs)" bits="14" ids="2,1"/>
-        <dip name="Flip Screen" bits="15" ids="On,Off"/>
+        <dip name="Flip Screen" bits="7" ids="On,Off"/>
     </switches>
 
-    <buttons names="Rotate Left,Rotate Right,-,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,Start"/>
+    <buttons names="Rotate Left,Rotate Right,-,-,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,Start"/>
 
     <rom index="1">
         <part>07</part>
@@ -38,6 +38,10 @@
             00 02 01 43   00 00 24 31   00 00 43 21   00 00 21 43
             00 01 02 43   00 01 20 43   00 04 32 01   00 02 43 01
         </part>
+    </rom>
+
+    <rom index="3">
+        <part>10</part>
     </rom>
 
     <rom index="0" zip="soldam.zip" md5="None">

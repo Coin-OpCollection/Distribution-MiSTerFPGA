@@ -23,7 +23,7 @@
         <dip name="Screen Display" bits="15" ids="Reverse,Normal"/>
     </switches>
 
-    <buttons names="Rod,Ladder,-,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,Start"/>
+    <buttons names="Rod,Ladder,-,-,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,Start"/>
 
     <rom index="1">
         <part>04</part>
@@ -36,6 +36,10 @@
             00 02 01 43   00 00 24 31   00 00 43 21   00 00 21 43
             00 01 02 43   00 01 20 43   00 04 32 01   00 02 43 01
         </part>
+    </rom>
+
+    <rom index="3">
+        <part>10</part>
     </rom>
 
     <rom index="0" zip="rodlandj.zip|rodland.zip" md5="None">
