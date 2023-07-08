@@ -1,23 +1,26 @@
 <misterromdescription>
     <name>Prehistoric Isle in 1930 (US)</name>
     <setname>prehisleu</setname>
-    <mameversion>0245</mameversion>
+    <rbf>prehisle</rbf>
+    <mameversion>0254</mameversion>
     <year>1989</year>
     <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
     <region>US</region>
-    <rbf>prehisle</rbf>0
 
-    <switches default="fb,ff">
-        <!-- DSW0 -->
+    <switches default="FB,FF">
+        <!-- DSW1 -->
         <dip name="Flip Picture" bits="0" ids="On,Off"/>
         <dip name="Level Select" bits="1" ids="On,Off"/>
         <dip name="Bonus Life" bits="2" ids="Every Extend,2nd Extend Only"/>
-        <dip name="Coinage" bits="4,5" ids="A 4C/1C B 1C/4C,A 3C/1C B 1C/3C,A 2C/1C B 1C/2C,1/1"/>
-        <dip name="Lives" bits="6,7" ids="5,4,2,3"/>
-        <!-- DSW1 -->
+        <dip name="Play Pricing" bits="4,5" ids="4C/1C(A)-1C/4C(B),3C/1C(A)-1C/3C(B),2C/1C(A)-1C/2C(B),1/1"/>
+        <dip name="No. of Lives" bits="6,7" ids="5,4,2,3"/>
+        <!-- DSW2 -->
         <dip name="Difficulty Level" bits="8,9" ids="Hardest,Hard,Easy,Normal"/>
         <dip name="Demo Sound/Cheat" bits="10,11" ids="Freeze,Inf. Lives,Sound Off,Sound On"/>
-        <dip name="Bonus Life" bits="12,13" ids="None,300/500K,150/300K,100/150K"/>
+        <dip name="Bonus Life" bits="12,13" ids="None,300/500k,150/300k,100/150k"/>
         <dip name="Continue Mode" bits="14" ids="No,Yes"/>
     </switches>
 
