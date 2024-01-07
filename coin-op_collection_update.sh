@@ -110,8 +110,8 @@ chmod +x "${SCRIPT_PATH}"
 export DOWNLOADER_LAUNCHER_PATH="${BASH_SOURCE[0]}"
 
 # Coin-Op Collection parameters:
-export DEFAULT_DB_ID="atrac17/Coin-Op_Collection"
-export DEFAULT_DB_URL="https://raw.githubusercontent.com/atrac17/Coin-Op_Collection/db/db.json.zip"
+export DEFAULT_DB_ID="Coin-OpCollection/Distribution-MiSTerFPGA"
+export DEFAULT_DB_URL="https://raw.githubusercontent.com/Coin-OpCollection/Distribution-MiSTerFPGA/db/db.json.zip"
 
 if ! "${SCRIPT_PATH}" ; then
     echo -e "Downloader failed!\n"
