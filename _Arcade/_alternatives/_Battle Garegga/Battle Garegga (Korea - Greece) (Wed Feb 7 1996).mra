@@ -1,6 +1,6 @@
 <misterromdescription>
-    <name>Battle Garegga - Type 2 (Denmark / China) (Tue Apr 2 1996)</name>
-    <setname>bgareggacn</setname>
+    <name>Battle Garegga (Korea / Greece) (Wed Feb 7 1996)</name>
+    <setname>bgareggak</setname>
     <rbf>bgaregga_mister</rbf>
     <mameversion>0270</mameversion>
     <year>1996</year>
@@ -8,14 +8,14 @@
     <players>2</players>
     <joystick>8-way</joystick>
     <rotation>Vertical (CCW)</rotation>
-    <region>World</region>
+    <region>Korea</region>
     <platform>Toaplan 2</platform>
     <category>Shoot'em up</category>
     <catver>Shooter / Flying Vertical</catver>
 
     <buttons names="Shot,Bomb,Formation,Start,Coin,Pause" default="Y,X,B,R,L,Start"/>
 
-    <switches default="00,00,08">
+    <switches default="00,00,0B">
         <!-- DSW A -->
         <dip name="Test Mode" bits="0" ids="Off,On"/>
         <dip name="Starting Coin" bits="1" ids="1,2"/>
@@ -28,17 +28,17 @@
         <dip name="Player Counts" bits="12,14" ids="3,4,2,1,5,6,Infinite,Invulnerability"/>
         <dip name="Extra Player" bits="15" ids="None/1M(E),1M-2M/2M(E)"/>
         <!-- DSW C -->
-        <dip name="Region" bits="16,17" ids="Japan,Austria,USA,Hong Kong"/>
+        <dip name="Region" bits="16,17" ids="Japan,Greece,USA,Korea"/>
         <dip name="Allow Continue" bits="18" ids="Yes,No"/>
         <dip name="Stage Edit" bits="19" ids="Off,On"/>
     </switches>
 
-    <rom index="0" zip="bgareggacn.zip|bgaregga.zip" md5="None" address="0x30000000">
-        <part>01</part>
+    <rom index="0" zip="bgareggak.zip|bgaregga.zip" md5="None" address="0x30000000">
+        <part>03</part>
         <!-- maincpu - starts at 0x0 -->
         <interleave output="16">
-            <part name="u123" crc="88a4e66a" map="01"/>
-            <part name="u65" crc="5dea32a3" map="10"/>
+            <part name="prg0.bin" crc="40a108a7" map="01"/>
+            <part name="prg1.bin" crc="45a6e48a" map="10"/>
         </interleave>
         <!-- audiocpu - starts at 0x100000 -->
         <part name="snd.bin" crc="68632952"/>

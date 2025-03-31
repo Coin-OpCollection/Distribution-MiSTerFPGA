@@ -1,18 +1,40 @@
 <misterromdescription>
-    <about author="pram0d" webpage="https://pram0d.com" source="https://github.com/psomashekar" twitter="@pr4m0d"/>
-    <name>Battle Garegga (location test) (Wed Jan 17 1996)</name>
+    <name>Battle Garegga (Location Test) (Wed Jan 17 1996)</name>
     <setname>bgareggat</setname>
-    <rbf>garegga</rbf>
-    <mameversion>0245</mameversion>
+    <rbf>bgaregga_mister</rbf>
+    <mameversion>0270</mameversion>
     <year>1996</year>
     <manufacturer>Raizing / Eighting</manufacturer>
     <players>2</players>
     <joystick>8-way</joystick>
-    <rotation>vertical (ccw)</rotation>
-    <region>World</region>
+    <rotation>Vertical (CCW)</rotation>
+    <region>Japan</region>
+    <platform>Toaplan 2</platform>
+    <category>Shoot'em up</category>
+    <catver>Shooter / Flying Vertical</catver>
+
+    <buttons names="Shot,Bomb,Formation,Start,Coin,Pause" default="Y,X,B,R,L,Start"/>
+
+    <switches default="00,00,08">
+        <!-- DSW A -->
+        <dip name="Test Mode" bits="0" ids="Off,On"/>
+        <dip name="Starting Coin" bits="1" ids="1,2"/>
+        <dip name="Coin 1" bits="2,4" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1,Free Play"/>
+        <dip name="Coin 2" bits="5,7" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1"/>
+        <!-- DSW B -->
+        <dip name="Start Rank" bits="8,9" ids="Normal,Easy,Hard,Very Hard"/>
+        <dip name="Screen Flip" bits="10" ids="Off,On"/>
+        <dip name="Demo Sound" bits="11" ids="On,Off"/>
+        <dip name="Player Counts" bits="12,14" ids="3,4,2,1,5,6,Infinite,Invulnerability"/>
+        <dip name="Extra Player" bits="15" ids="None/1M(E),1M-2M/2M(E)"/>
+        <!-- DSW C -->
+        <dip name="Region" bits="16,17" ids="Japan,Europe,USA,Asia"/>
+        <dip name="Allow Continue" bits="18" ids="Yes,No"/>
+        <dip name="Stage Edit" bits="19" ids="Off,On"/>
+    </switches>
+
     <rom index="0" zip="bgareggat.zip|bgaregga.zip" md5="None" address="0x30000000">
-        <!-- mapper for game 00 - bgaregga, 01 - sstriker, 02 - kingdmgp -->
-        <part>00</part>
+        <part>04</part>
         <!-- maincpu - starts at 0x0 -->
         <interleave output="16">
             <part name="battlegaregga-prg0-8-1-17.bin" crc="c032176f" map="01"/>
@@ -33,31 +55,27 @@
         <part name="text.u81" crc="e67fd534"/>
         <!-- oki1 - starts at 0x928000 -->
         <part name="rom5.bin" crc="f6d49863"/>
-        <!-- Total 0xA28000 bytes - 10400 kBytes -->
     </rom>
-    <!-- Vertical game -->
-    <rom index="1">
-        <part>01</part>
+
+    <rom index="2">
+        <part>
+              000F  4240  3130  3030  3030  3000  3F3F  3F00
+              0000  3F00  0000  0002  000D  BBA0  2039  3030
+              3030  3000  3F3F  3F00  0000  3F00  0000  0002
+              000C  3500  2038  3030  3030  3000  3F3F  3F00
+              0000  3F00  0000  0002  000A  AE60  2037  3030
+              3030  3000  3F3F  3F00  0000  3F00  0000  0002
+              0009  27C0  2036  3030  3030  3000  3F3F  3F00
+              0000  3F00  0000  0002  0007  A120  2035  3030
+              3030  3000  3F3F  3F00  0000  3F00  0000  0002
+              0006  1A80  2034  3030  3030  3000  3F3F  3F00
+              0000  3F00  0000  0002  0004  93E0  2033  3030
+              3030  3000  3F3F  3F00  0000  3F00  0000  0002
+              0003  0D40  2032  3030  3030  3000  3F3F  3F00
+              0000  3F00  0000  0002  0001  86A0  2031  3030
+              3030  3000  3F3F  3F00  0000  3F00  0000  0002
+        </part>
     </rom>
-    <switches page_id="1" page_name="Switches" base="8" default="00,00,00">
-        <!-- DSWA -->
-        <dip name="Test Mode" bits="0" ids="Off,On"/>
-        <dip name="Starting Coin" bits="1" ids="1,2"/>
-        <dip name="Coins" bits="2,4" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1,Free Play"/>
-        <dip name="Joystick Mode" bits="5" ids="90 degrees ACW,Normal"/>
-        <dip name="Effect" bits="6" ids="Off,On"/>
-        <dip name="Music" bits="7" ids="Off,On"/>
-        <!-- dip name="Coin 2" bits="5,7" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1"/ -->
-        <!-- DSWB -->
-        <dip name="Start Rank" bits="8,9" ids="Normal,Easy,Hard,Very Hard"/>
-        <dip name="Screen Flip" bits="10" ids="Off,On"/>
-        <dip name="Demo Sound" bits="11" ids="On,Off"/>
-        <dip name="Player Counts" bits="12,14" ids="3,4,2,1,5,6,Infinite,Invulnerability"/>
-        <dip name="Extra Player" bits="15" ids="None,Every 1000k,Every 2000k,1000k and 2000k"/>
-        <!-- JMPR -->
-        <dip name="Region" bits="16,17" ids="Japan,Europe (Tuning),USA (Fabtek),Asia"/>
-        <dip name="Allow Continue" bits="18" ids="Yes,No"/>
-        <dip name="Stage Edit" bits="19" ids="Off,On"/>
-    </switches>
-    <buttons names="Shot,Bomb,Formation,Start,Coin,Pause" default="Y,X,B,R,L,Start" count="3"/>
+
+    <nvram index="2" size="236"/>
 </misterromdescription>

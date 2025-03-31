@@ -1,19 +1,40 @@
 <misterromdescription>
-    <about author="pram0d" webpage="https://pram0d.com" source="https://github.com/psomashekar" twitter="@pr4m0d"/>
     <name>Battle Bakraid - Unlimited Version (China) (Tue Jun 8 1999)</name>
     <setname>bbakraidc</setname>
-    <rbf>bakraid</rbf>
-    <mameversion>0245</mameversion>
+    <rbf>bbakraid_mister</rbf>
+    <mameversion>0270</mameversion>
     <year>1999</year>
     <manufacturer>Eighting</manufacturer>
     <players>2</players>
     <joystick>8-way</joystick>
-    <rotation>vertical (ccw)</rotation>
-    <region>World</region>
+    <rotation>Vertical (CCW)</rotation>
+    <region>China</region>
     <platform>Toaplan 2</platform>
     <category>Shoot'em up</category>
     <catver>Shooter / Flying Vertical</catver>
-    <mraauthor>pram0d, atrac17</mraauthor>
+
+    <buttons names="Shot,Bomb,Formation,Start,Coin,Pause" default="Y,X,B,R,L,Start"/>
+
+    <switches default="00,00,04">
+        <!-- DSW A -->
+        <dip name="Test Mode" bits="0" ids="Off,On"/>
+        <dip name="Starting Coin" bits="1" ids="1,2"/>
+        <dip name="Coin 1" bits="2,4" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1,Free Play"/>
+        <dip name="Coin 2" bits="5,7" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1"/>
+        <!-- DSW B -->
+        <dip name="Start Rank" bits="8,9" ids="Normal,Easy,Hard,Very Hard"/>
+        <dip name="Timer Rank" bits="10,11" ids="Normal,Low,High,Highest"/>
+        <dip name="Player Counts" bits="12,13" ids="3,4,2,1"/>
+        <dip name="Extra Player" bits="14,15" ids="200k(E),300k(E),400k(E),None"/>
+        <!-- DSW C -->
+        <dip name="Screen Flip" bits="16" ids="Off,On"/>
+        <dip name="Demo Sound" bits="17" ids="On,Off"/>
+        <dip name="Stage Edit" bits="18" ids="Off,On"/>
+        <dip name="Continue Play" bits="19" ids="Yes,No"/>
+        <dip name="Invincible" bits="20" ids="Off,On"/>
+        <dip name="Score Ranking" bits="21" ids="On,Off"/>
+    </switches>
+
     <rom index="0" zip="bbakraidc.zip|bbakraid.zip" md5="None" address="0x30000000">
         <!-- maincpu - starts at 0x0 -->
         <interleave output="16">
@@ -39,37 +60,47 @@
         <part name="rom6.829" crc="8848b4a0"/>
         <part name="rom7.830" crc="d6224267"/>
         <part name="rom8.831" crc="a101dfb0"/>
-        <!-- Total 0x1E2000 bytes - 30848 kBytes -->
     </rom>
-    <!-- Vertical game -->
-    <rom index="1">
-        <part>01</part>
-    </rom>
-    <nvram index="2" size="512"/>
+
     <rom index="2">
-        <part>C2 49 00 07 A1 20 2A 2A 2A 90 90 90 00 00 00 00 00 00 00 00 00 00 00 02 00 06 1A 80 2A 2A 2A 94 94 94 00 00 00 00 00 00 00 00 00 00 00 02 00 04 93 E0 2A 2A 2A 98 98 98 00 00 00 00 00 00 00 00 00 00 00 02 00 03 0D 40 2A 2A 2A 9C 9C 9C 00 00 00 00 00 00 00 00 00 00 00 02 00 01 86 A0 2A 2A 2A A0 A0 A0 00 00 00 00 00 00 00 00 00 00 00 02 00 07 A1 20 2B 2B 2B 90 90 90 00 00 00 00 00 00 00 00 00 00 00 02 00 06 1A 80 2B 2B 2B 94 94 94 00 00 00 00 00 00 00 00 00 00 00 02 00 04 93 E0 2B 2B 2B 98 98 98 00 00 00 00 00 00 00 00 00 00 00 02 00 03 0D 40 2B 2B 2B 9C 9C 9C 00 00 00 00 00 00 00 00 00 00 00 02 00 01 86 A0 2B 2B 2B A0 A0 A0 00 00 00 00 00 00 00 00 00 00 00 02 00 07 A1 20 23 23 23 90 90 90 00 00 00 00 00 00 00 00 00 00 00 02 00 06 1A 80 23 23 23 94 94 94 00 00 00 00 00 00 00 00 00 00 00 02 00 04 93 E0 23 23 23 98 98 98 00 00 00 00 00 00 00 00 00 00 00 02 00 03 0D 40 23 23 23 9C 9C 9C 00 00 00 00 00 00 00 00 00 00 00 02 00 01 86 A0 23 23 23 A0 A0 A0 00 00 00 00 00 00 00 00 00 00 00 02 00 07 A1 20 3F 3F 3F 90 90 90 00 00 00 00 00 00 00 00 00 00 00 02 00 06 1A 80 3F 3F 3F 94 94 94 00 00 00 00 00 00 00 00 00 00 00 02 00 04 93 E0 3F 3F 3F 98 98 98 00 00 00 00 00 00 00 00 00 00 00 02 00 03 0D 40 3F 3F 3F 9C 9C 9C 00 00 00 00 00 00 00 00 00 00 00 02 00 01 86 A0 3F 3F 3F A0 A0 A0 00 00 00 00 00 00 00 00 00 00 00 02 00 04 C2 49 C2 49 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 33 CF 00 00 00 00 00 00 00 05 06 FF 00 00 00 00 00 00 00 00 00 FF C2 49 </part>
+        <part>
+            C249  0007  A120  2A2A  2A90  9090  0000  0000
+            0000  0000  0000  0002  0006  1A80  2A2A  2A94
+            9494  0000  0000  0000  0000  0000  0000  0000
+            0000  0002  0004  93E0  2A2A  2A98  9898  0000
+            0000  0000  0000  0000  0000  0000  0002  0003
+            0D40  2A2A  2A9C  9C9C  0000  0000  0000  0000
+            0000  0000  0002  0001  86A0  2A2A  2AA0  A0A0
+            0000  0000  0000  0000  0000  0000  0002  0007
+            A120  2B2B  2B90  9090  0000  0000  0000  0000
+            0000  0000  0002  0006  1A80  2B2B  2B94  9494
+            0000  0000  0000  0000  0000  0000  0002  0004
+            93E0  2B2B  2B98  9898  0000  0000  0000  0000
+            0000  0000  0002  0003  0D40  2B2B  2B9C  9C9C
+            0000  0000  0000  0000  0000  0000  0002  0001
+            86A0  2B2B  2BA0  A0A0  0000  0000  0000  0000
+            0000  0000  0002  0007  A120  2323  2390  9090
+            0000  0000  0000  0000  0000  0000  0002  0006
+            1A80  2323  2394  9494  0000  0000  0000  0000
+            0000  0000  0002  0004  93E0  2323  2398  9898
+            0000  0000  0000  0000  0000  0000  0002  0003
+            0D40  2323  239C  9C9C  0000  0000  0000  0000
+            0000  0000  0002  0001  86A0  2323  23A0  A0A0
+            0000  0000  0000  0000  0000  0000  0002  0007
+            A120  3F3F  3F90  9090  0000  0000  0000  0000
+            0000  0000  0002  0006  1A80  3F3F  3F94  9494
+            0000  0000  0000  0000  0000  0000  0002  0004
+            93E0  3F3F  3F98  9898  0000  0000  0000  0000
+            0000  0000  0002  0003  0D40  3F3F  3F9C  9C9C
+            0000  0000  0000  0000  0000  0000  0002  0001
+            86A0  3F3F  3FA0  A0A0  0000  0000  0000  0000
+            0000  0000  0002  0004  C249  C249  0000  0000
+            0000  0000  0000  0000  0000  0000  0000  0000
+            0000  0000  0000  0000  0000  0000  0000  0000
+            33CF  0000  0000  0000  0000  0000  0005  06FF
+            0000  0000  0000  0000  0000  0000  00FF  C249
+        </part>
     </rom>
-    <switches page_id="1" page_name="Switches" base="8" default="00,00,00">
-        <!-- DSW -->
-        <dip name="Test Mode" bits="0" ids="Off,On"/>
-        <!-- dip name="Starting Coin" bits="1" ids="1,2"/ -->
-        <dip name="Joystick Mode" bits="1" ids="Normal,Special"/>
-        <dip name="Coins" bits="2,4" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1,Free Play"/>
-        <dip name="Hit Score" bits="5" ids="Off,On"/>
-        <dip name="Sound Effect" bits="6" ids="Off,On"/>
-        <dip name="Music" bits="7" ids="Off,On"/>
-        <!-- dip name="Coin 2" bits="5,7" ids="1/1,1/2,1/3,1/4,2/1,3/1,4/1"/ -->
-        <dip name="Start Rank" bits="8,9" ids="Normal,Easy,Hard,Very Hard"/>
-        <dip name="Timer Rank" bits="10,11" ids="Normal,Low,High,Highest"/>
-        <dip name="Player Counts" bits="12,13" ids="3,4,2,1"/>
-        <dip name="Extra Player" bits="14,15" ids="Every 2000k,Every 3000k,Every 4000k,None"/>
-        <!-- SYS-DSW -->
-        <dip name="Screen Flip" bits="16" ids="Off,On"/>
-        <dip name="Demo Sound" bits="17" ids="On,Off"/>
-        <dip name="Stage Edit" bits="18" ids="Off,On"/>
-        <dip name="Continue Play" bits="19" ids="Yes,No"/>
-        <dip name="Invincible" bits="20" ids="Off,On"/>
-        <dip name="Score Ranking" bits="21" ids="On,Off"/>
-    </switches>
-    <buttons names="Shot,Bomb,Formation,Start,Coin,Pause" default="Y,X,B,R,L,Start" count="3"/>
+
+    <nvram index="2" size="512"/>
 </misterromdescription>

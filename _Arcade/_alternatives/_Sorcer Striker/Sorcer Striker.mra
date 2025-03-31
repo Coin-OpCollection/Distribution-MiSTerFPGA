@@ -1,21 +1,21 @@
 <misterromdescription>
-    <name>Sorcer Striker (Korea)</name>
-    <setname>sstrikerk</setname>
+    <name>Sorcer Striker</name>
+    <setname>sstriker</setname>
     <rbf>sstriker_mister</rbf>
     <mameversion>0270</mameversion>
     <year>1993</year>
-    <manufacturer>Raizing (Unite Trading License)</manufacturer>
+    <manufacturer>Raizing</manufacturer>
     <players>2</players>
     <joystick>8-way</joystick>
     <rotation>Vertical (CCW)</rotation>
-    <region>Korea</region>
+    <region>World</region>
     <platform>Toaplan 2</platform>
     <category>Shoot'em up</category>
     <catver>Shooter / Flying Vertical</catver>
 
     <buttons names="Shot,Bomb,-,Start,Coin,Pause" default="Y,X,B,R,L,Start"/>
 
-    <switches default="00,00,FA">
+    <switches default="00,00,F2">
         <!-- DSW A -->
         <dip name="Free Play" bits="0" ids="Off,On"/>
         <dip name="Screen Flip" bits="1" ids="Normal,Reverse"/>
@@ -33,11 +33,11 @@
         <dip name="Region" bits="16,19" ids="JPN,USA,EU,SEA,CHN,KOR,HK,TWN" values="0,2,4,6,8,10,12,14"/>
     </switches>
 
-    <rom index="0" zip="sstrikerk.zip|sstriker.zip" md5="None" address="0x30000000">
-        <part>02</part>
+    <rom index="0" zip="sstriker.zip" md5="None" address="0x30000000">
+        <part>01</part>
         <!-- maincpu - starts at 0x0 -->
         <interleave output="16">
-            <part name="ra-ma-01_01.u65" crc="92259f84" map="12"/>
+            <part name="ra-ma_01_01.u65" crc="708fd51d" map="12"/>
         </interleave>
         <!-- audiocpu - starts at 0x80000 -->
         <part name="ra-ma-01_02.u66" crc="eabfa46d"/>

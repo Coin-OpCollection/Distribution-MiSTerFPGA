@@ -1,6 +1,6 @@
 <misterromdescription>
-    <name>Armed Police Batrider (Taiwan) (Mon Dec 22 1997)</name>
-    <setname>batridert</setname>
+    <name>Armed Police Batrider (Japan, B Version) (Fri Feb 13 1998)</name>
+    <setname>batriderj</setname>
     <rbf>batrider_mister</rbf>
     <mameversion>0270</mameversion>
     <year>1998</year>
@@ -8,14 +8,14 @@
     <players>2</players>
     <joystick>8-Way</joystick>
     <rotation>Vertical (CCW)</rotation>
-    <region>Taiwan</region>
+    <region>Japan</region>
     <platform>Toaplan 2</platform>
     <category>Shoot'em up</category>
     <catver>Shooter / Flying Vertical</catver>
 
     <buttons names="Shot,Bomb,Formation,Start,Coin,Pause" default="Y,X,B,R,L,Start"/>
 
-    <switches default="00,00,04">
+    <switches default="00,00,E4">
         <!-- DSW A -->
         <dip name="Test Mode" bits="0" ids="Off,On"/>
         <dip name="Starting Coin" bits="1" ids="1,2"/>
@@ -37,11 +37,11 @@
         <dip name="Special Course" bits="23" ids="Off,On"/>
     </switches>
 
-    <rom index="0" zip="batridert.zip|batrider.zip" md5="None" address="0x30000000">
+    <rom index="0" zip="batriderj.zip|batrider.zip" md5="None" address="0x30000000">
         <!-- maincpu - starts at 0x0 -->
         <interleave output="16">
-            <part name="u22.bin" crc="b135820e" map="01"/>
-            <part name="prg1.u23" crc="8ae7f592" map="10"/>
+            <part name="prg0b.u22" crc="4f3fc729" map="01"/>
+            <part name="prg1b.u23" crc="8e70b492" map="10"/>
         </interleave>
         <interleave output="16">
             <part name="prg2.u21" crc="bdaa5fbf" map="01"/>
