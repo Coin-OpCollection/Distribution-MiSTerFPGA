@@ -1,14 +1,17 @@
 <misterromdescription>
     <name>Demon&apos;s World / Horror Story (Set 4)</name>
     <setname>demonwld3</setname>
-    <rbf>demonwld</rbf>
-    <mameversion>0254</mameversion>
+    <rbf>demonwld_mister</rbf>
+    <mameversion>0281</mameversion>
     <year>1989</year>
     <manufacturer>Toaplan</manufacturer>
     <players>2</players>
     <joystick>8-way</joystick>
     <rotation>Horizontal</rotation>
     <region>Japan</region>
+    <platform>Toaplan V1</platform>
+    <category>Platform</category>
+    <catver>Platform / Shooter Scrolling</catver>
 
     <switches default="00,00,00,00,00,00,00,00">
         <!-- DSWA -->
@@ -26,7 +29,11 @@
         <dip name="Region" bits="16,19" ids="Japan/Taito Corp,US/Taito America,World/Taito Japan,US/Toaplan"/>
     </switches>
 
-    <buttons names="Shot,Jump,Rapid Shot,Slow Scroll,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,L,Start,Select"/>
+    <buttons names="Shot,Jump,Rapid Shot,-,Start,Coin,Pause" default="Y,X,B,A,R,L,Start"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
 
     <rom index="0" zip="demonwld3.zip|demonwld.zip" md5="None">
         <!-- maincpu - starts at 0x0 -->
@@ -34,7 +41,7 @@
             <part name="o16-10-2.bin" crc="84ee5218" map="01"/>
             <part name="o16-09-2.bin" crc="cf474cb2" map="10"/>
         </interleave>
-        <part repeat="0x40000"> FF</part>
+        <part repeat="0x40000">FF</part>
 
         <!-- gfx1 - starts at 0x80000 -->
         <interleave output="32">
@@ -43,7 +50,7 @@
             <part name="rom06" crc="4fc5e5f3" map="0100"/>
             <part name="rom08" crc="eb53ab09" map="1000"/>
         </interleave>
-        <part repeat="0x80000"> FF</part>
+        <part repeat="0x80000">FF</part>
 
         <!-- gfx2 - starts at 0x180000 -->
         <interleave output="32">
@@ -61,7 +68,6 @@
             <part name="dsp_21.bin" crc="2d135376" map="01"/>
             <part name="dsp_22.bin" crc="79389a71" map="10"/>
         </interleave>
-
         <!-- Total 0x209000 bytes - 2084 kBytes -->
     </rom>
 </misterromdescription>
