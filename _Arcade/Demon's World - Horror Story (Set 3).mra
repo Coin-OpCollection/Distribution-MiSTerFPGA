@@ -68,7 +68,6 @@
             <part name="dsp_21.bin" crc="2d135376" map="01"/>
             <part name="dsp_22.bin" crc="79389a71" map="10"/>
         </interleave>
-
         <!-- Total 0x209000 bytes - 2084 kBytes -->
     </rom>
 </misterromdescription>

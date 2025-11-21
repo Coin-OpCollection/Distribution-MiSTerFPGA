@@ -1,14 +1,17 @@
 <misterromdescription>
     <name>Zero Wing (2P Set)</name>
     <setname>zerowing</setname>
-    <rbf>zerowing</rbf>
-    <mameversion>0254</mameversion>
+    <rbf>zerowing_mister</rbf>
+    <mameversion>0281</mameversion>
     <year>1989</year>
     <manufacturer>Toaplan</manufacturer>
     <players>2</players>
     <joystick>8-way</joystick>
     <rotation>Horizontal</rotation>
     <region>USA</region>
+    <platform>Toaplan V1</platform>
+    <category>Shoot'em up</category>
+    <catver>Shooter / Flying Horizontal</catver>
 
     <switches default="00,00,00,00,00,00,00,00">
         <!-- DSWA -->
@@ -26,7 +29,7 @@
         <dip name="Region" bits="17" ids="USA,Europe"/>
     </switches>
 
-    <buttons names="Shot,Shield,-,Slow Scroll,P1 Start,P2 Start,Coin A,Coin B,Pause" default="A,B,X,Y,R,L,Start,Select"/>
+    <buttons names="Shot,Shield,-,-,Start,Coin,Pause" default="Y,X,B,A,R,L,Start"/>
 
     <rom index="1">
         <part>00</part>
@@ -38,7 +41,7 @@
             <part name="o15-11ii.bin" crc="e697ecb9" map="01"/>
             <part name="o15-12ii.bin" crc="b29ee3ad" map="10"/>
         </interleave>
-        <part repeat="0x30000"> FF</part>
+        <part repeat="0x30000">FF</part>
         <interleave output="16">
             <part name="o15-09.rom" crc="13764e95" map="01"/>
             <part name="o15-10.rom" crc="351ba71a" map="10"/>
@@ -51,7 +54,7 @@
             <part name="o15-07.rom" crc="efc40e99" map="0100"/>
             <part name="o15-08.rom" crc="1b019eab" map="1000"/>
         </interleave>
-        <part repeat="0x80000"> FF</part>
+        <part repeat="0x80000">FF</part>
 
         <!-- gfx2 - starts at 0x180000 -->
         <interleave output="32">
@@ -63,7 +66,6 @@
 
         <!-- audiocpu - starts at 0x200000 -->
         <part name="o15-13.rom" crc="e7b72383"/>
-
         <!-- Total 0x208000 bytes - 2080 kBytes -->
     </rom>
 </misterromdescription>
