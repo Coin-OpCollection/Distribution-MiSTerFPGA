@@ -1,0 +1,86 @@
+<misterromdescription>
+    <name>Mania Challenge (Set 2)</name>
+    <setname>maniach2</setname>
+    <rbf>maniach</rbf>
+    <mameversion>0283</mameversion>
+    <year>1986</year>
+    <manufacturer>Technos Japan (Taito America License)</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>US</region>
+    <platform>Mat Mania Hardware</platform>
+    <category>Sports</category>
+    <catver>Sports / Wrestling</catver>
+
+    <switches default="20,f0">
+        <dip name="Coin A" bits="0,1" ids="1 Coin/1 Credit,1 Coin/2 Credits,1 Coin/3 Credits,2 Coins/1 Credit"/>
+        <dip name="Coin B" bits="2,3" ids="1 Coin/1 Credit,1 Coin/2 Credits,1 Coin/3 Credits,2 Coins/1 Credit"/>
+        <dip name="Demo Sounds" bits="4" ids="On,Off"/>
+        <dip name="Cabinet" bits="5" ids="Cocktail,Upright"/>
+        <dip name="Service Mode" bits="6" ids="Off,On"/>
+        <dip name="Difficulty" bits="8,9" ids="Easy,Medium,Hard,Hardest"/>
+        <dip name="Tournament Time" bits="10,11" ids="2:36,2:30,2:24,2:12"/>
+    </switches>
+
+    <buttons names="Punch,Kick,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="maniach2.zip|maniach.zip" md5="none">
+        <!-- maincpu - starts at 0x00000 -->
+        <part name="ic40-mb1" crc="b337a867"/>
+        <part name="ic41-ma1" crc="85ec8279"/>
+        <part name="ic42-m91" crc="a14b86dd"/>
+
+        <!-- audiocpu - starts at 0x0C000 -->
+        <part name="mc-m50.bin" crc="ba415d68"/>
+        <part name="mc-m40.bin" crc="2a217ed0"/>
+        <part name="mc-m30.bin" crc="95af1723"/>
+
+        <!-- mcu - starts at 0x18000 -->
+        <part name="01" crc="00c7f80c"/>
+
+        <!-- chars - starts at 0x18800 -->
+        <part name="mc-m60.bin" crc="1cdbb117"/>
+        <part name="mc-m70.bin" crc="553f0780"/>
+        <part name="mc-m80.bin" crc="9392ecb7"/>
+
+        <!-- tiles - starts at 0x1E800 -->
+        <part name="mc-m01.bin" crc="da558e4d"/>
+        <part name="mc-m10.bin" crc="619a02f8"/>
+        <part name="mc-m20.bin" crc="a617c6c1"/>
+
+        <!-- sprites - starts at 0x36800 -->
+        <part name="mc-mc0.bin" crc="133d644f"/>
+        <part name="mc-md0.bin" crc="e387b036"/>
+        <part name="mc-me0.bin" crc="b36b1283"/>
+        <part name="mc-mf0.bin" crc="2584d8a9"/>
+        <part name="mc-mg0.bin" crc="cf31a714"/>
+        <part name="mc-mh0.bin" crc="6292d589"/>
+        <part name="mc-mi0.bin" crc="ee2e06e3"/>
+        <part name="mc-mj0.bin" crc="7e73895b"/>
+        <part name="mc-mk0.bin" crc="66c8bf75"/>
+        <part name="mc-ml0.bin" crc="88138a1d"/>
+        <part name="mc-mm0.bin" crc="a1a4260d"/>
+        <part name="mc-mn0.bin" crc="6bc61b58"/>
+        <part name="mc-mo0.bin" crc="f96ef600"/>
+        <part name="mc-mp0.bin" crc="1259618e"/>
+        <part name="mc-mq0.bin" crc="102a1666"/>
+        <part name="mc-mr0.bin" crc="1e854453"/>
+        <part name="mc-ms0.bin" crc="7bc9d878"/>
+        <part name="mc-mt0.bin" crc="09cea985"/>
+        <part name="mc-mu0.bin" crc="5421769e"/>
+        <part name="mc-mv0.bin" crc="36fc3e2d"/>
+        <part name="mc-mw0.bin" crc="135dce4c"/>
+
+        <!-- proms - starts at 0x8A800 -->
+        <part name="prom.2" crc="32db2cf4"/>
+        <part name="prom.16" crc="18836d26"/>
+        <part name="prom.3" crc="c7925311"/>
+        <part name="prom.17" crc="41f51d49"/>
+        <!-- Total 0x8A880 bytes - 554 kBytes -->
+    </rom>
+</misterromdescription>

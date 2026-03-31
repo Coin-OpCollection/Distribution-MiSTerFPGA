@@ -1,0 +1,82 @@
+<misterromdescription>
+    <name>Exciting Hour</name>
+    <setname>excthour</setname>
+    <rbf>matmania</rbf>
+    <mameversion>0283</mameversion>
+    <year>1985</year>
+    <manufacturer>Technos Japan (Taito License)</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>Japan</region>
+    <platform>Mat Mania Hardware</platform>
+    <category>Sports</category>
+    <catver>Sports / Wrestling</catver>
+
+    <switches default="20,f0">
+        <dip name="Coin A" bits="0,1" ids="1 Coin/1 Credit,1 Coin/2 Credits,1 Coin/3 Credits,2 Coins/1 Credit"/>
+        <dip name="Coin B" bits="2,3" ids="1 Coin/1 Credit,1 Coin/2 Credits,1 Coin/3 Credits,2 Coins/1 Credit"/>
+        <dip name="Demo Sounds" bits="4" ids="On,Off"/>
+        <dip name="Cabinet" bits="5" ids="Cocktail,Upright"/>
+        <dip name="Service Mode" bits="6" ids="Off,On"/>
+        <dip name="Difficulty" bits="8,9" ids="Easy,Medium,Hard,Hardest"/>
+        <dip name="Tournament Time" bits="10,11" ids="2:36,2:30,2:24,2:12"/>
+    </switches>
+
+    <buttons names="Punch,Kick,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="excthour.zip|matmania.zip" md5="none">
+        <!-- maincpu - starts at 0x0 -->
+        <part name="e29" crc="c453e855"/>
+        <part name="e28" crc="17b63708"/>
+        <part name="e27" crc="269ab3bc"/>
+
+        <!-- audiocpu - starts at 0xC000 -->
+        <part name="k4-0" crc="86dab489"/>
+        <part name="k5-0" crc="4c41cdba"/>
+
+        <!-- chars - starts at 0x14000 -->
+        <part name="e30" crc="b2875329"/>
+        <part name="e31" crc="c9506de8"/>
+        <part name="e32" crc="00d1635f"/>
+
+        <!-- tiles - starts at 0x1A000 -->
+        <part name="e5" crc="0604dc55"/>
+        <part name="ks-02" crc="2e9f3ba0"/>
+        <part name="e3" crc="ebd273c6"/>
+
+        <!-- sprites - starts at 0x26000 -->
+        <part name="k6-00" crc="294d0878"/>
+        <part name="k7-00" crc="0908c2f5"/>
+        <part name="k8-00" crc="ae8341e1"/>
+        <part name="k9-00" crc="752ac2c6"/>
+        <part name="ka-00" crc="46a9cb16"/>
+        <part name="kb-00" crc="bf016772"/>
+        <part name="kc-00" crc="8d08bce7"/>
+        <part name="kd-00" crc="af1d6a60"/>
+        <part name="ke-00" crc="614f19b0"/>
+        <part name="kf-00" crc="bdf58c18"/>
+        <part name="kg-00" crc="2189f5cf"/>
+        <part name="kh-00" crc="6b11ed1f"/>
+        <part name="ki-00" crc="d7ac4ec5"/>
+        <part name="kj-00" crc="2caee05d"/>
+        <part name="kk-00" crc="eb54f010"/>
+        <part name="kl-00" crc="fa4c7e0c"/>
+        <part name="km-00" crc="6d2369b6"/>
+        <part name="kn-00" crc="c55733e2"/>
+        <part name="ko-00" crc="ed3c3476"/>
+        <part name="kp-00" crc="9c84a969"/>
+        <part name="kq-00" crc="fa2f0003"/>
+
+        <!-- proms - starts at 0x7A000 -->
+        <part name="matmania.1" crc="1b58f01f"/>
+        <part name="matmania.5" crc="2029f85f"/>
+        <part name="matmania.2" crc="b6ac1fd5"/>
+        <part name="matmania.16" crc="09325dc2"/>
+        <!-- Total 0x7A080 bytes - 488 kBytes -->
+    </rom>
+</misterromdescription>
