@@ -1,0 +1,72 @@
+<misterromdescription>
+    <name>Psycho-Nics Oscar (US)</name>
+    <setname>oscaru</setname>
+    <rbf>oscar_mister</rbf>
+    <mameversion>0283</mameversion>
+    <year>1988</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>US</region>
+    <platform>DECO DE-0301 Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Run Jump</catver>
+
+    <switches default="00,00">
+        <!-- DSW0 -->
+        <dip name="Coin 1" bits="2,3" ids="1 Coin/1 Credit,2 Coin/1 Credit,3 Coin/1 Credit,4 Coin/1 Credit"/>
+        <dip name="Coin 2" bits="0,1" ids="1 Coin/2 Credits,1 Coin/3 Credits,1 Coin/4 Credits,1 Coin/6 Credits"/>
+        <dip name="Demo Freeze Mode" bits="4" ids="Off,On"/>
+        <dip name="Attract Mode Sound" bits="5" ids="On,Off"/>
+        <dip name="Flip Screen" bits="6" ids="Normal,Reverse"/>
+        <dip name="Cabinet Type" bits="7" ids="Upright,Table"/>
+        <!-- DSW1 -->
+        <dip name="No. of Lives" bits="8,9" ids="3,5,1,Infinite"/>
+        <dip name="Difficulty" bits="10,11" ids="Normal,Easy,Hard,Hardest"/>
+        <dip name="Extend" bits="12,13" ids="40/100/60k(E),60/160/100k(E),90/240/150k(E),50k"/>
+        <dip name="No Death" bits="14" ids="Off,On"/>
+        <dip name="Allow Continue" bits="15" ids="Yes,No"/>
+    </switches>
+
+    <buttons names="Attack,Jump,Power-Up,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="oscaru.zip|oscar.zip" md5="None">
+        <!-- maincpu fixed - starts at 0x00000 -->
+        <part name="ed10" crc="f9b0d4d4"/>
+
+        <!-- mainbank - starts at 0x08000 -->
+        <part name="ed09" crc="e2d4bba9"/>
+
+        <!-- sub - starts at 0x18000 -->
+        <part name="ed11" crc="10e5d919"/>
+
+        <!-- audiocpu - starts at 0x28000 -->
+        <part name="ed12" crc="432031c5"/>
+
+        <!-- char - starts at 0x30000 -->
+        <part name="ed08" crc="308ac264"/>
+        <part repeat="0x4000">00</part>
+
+        <!-- sprites - starts at 0x38000 -->
+        <interleave output="32">
+            <part name="ed04" crc="416a791b" map="0001"/>
+            <part name="ed05" crc="fcdba431" map="0010"/>
+            <part name="ed06" crc="7d50bebc" map="0100"/>
+            <part name="ed07" crc="8fdf0fa5" map="1000"/>
+        </interleave>
+
+        <!-- tiles - starts at 0x78000 -->
+        <interleave output="32">
+            <part name="ed01" crc="d3a58e9e" map="0001"/>
+            <part name="ed03" crc="4fc4fb0f" map="0010"/>
+            <part name="ed00" crc="ac201f2d" map="0100"/>
+            <part name="ed02" crc="7ddc5651" map="1000"/>
+        </interleave>
+        <!-- Total 0xB8000 bytes (736 KB) -->
+    </rom>
+</misterromdescription>
