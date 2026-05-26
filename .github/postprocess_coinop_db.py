@@ -3,6 +3,7 @@
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -14,6 +15,7 @@ from typing import Any, Optional
 
 DB_JSON_NAME = os.getenv('DB_JSON_NAME', 'db.json')
 DB_ZIP_NAME = os.getenv('DB_ZIP_NAME', 'db.json.zip')
+UNPROCESSED_DB_JSON_NAME = os.getenv('UNPROCESSED_DB_JSON_NAME', 'unprocessed-db.json')
 DB_BRANCH = os.getenv('DB_BRANCH', 'db')
 DB_ID = os.getenv('DB_ID') or os.getenv('GITHUB_REPOSITORY', 'theypsilon/test')
 GITHUB_REPOSITORY = os.getenv('GITHUB_REPOSITORY', 'theypsilon/test')
@@ -31,11 +33,13 @@ STATUS_STABLE = 'stable'
 def main() -> int:
     validate_file_name(DB_JSON_NAME, 'DB_JSON_NAME')
     validate_file_name(DB_ZIP_NAME, 'DB_ZIP_NAME')
+    validate_file_name(UNPROCESSED_DB_JSON_NAME, 'UNPROCESSED_DB_JSON_NAME')
 
     if not Path(DB_JSON_NAME).exists():
         log(f'{DB_JSON_NAME} was not generated. Nothing to publish.')
         return 0
 
+    shutil.copyfile(DB_JSON_NAME, UNPROCESSED_DB_JSON_NAME)
     process_database(DB_JSON_NAME)
 
     passes_db_tests(DB_ID, DB_JSON_NAME)
@@ -102,6 +106,7 @@ def process_database(db_json_name: str) -> None:
         if status == STATUS_BETA and append_unique_tag(description, beta_tag):
             rbf_beta_count += 1
 
+    db['db_url'] = DB_URL
     db.setdefault('default_options', {})['filter'] = COINOP_DEFAULT_FILTER
 
     with open(db_json_name, 'w', encoding='utf-8') as f:
@@ -214,7 +219,7 @@ def publish_db() -> None:
     log('Publishing processed database...')
     run(['git', 'checkout', '--orphan', DB_BRANCH])
     run(['git', 'reset'])
-    run(['git', 'add', DB_ZIP_NAME, *create_drop_in_database_files(DB_ID, DB_URL)])
+    run(['git', 'add', DB_ZIP_NAME, UNPROCESSED_DB_JSON_NAME, *create_drop_in_database_files(DB_ID, DB_URL)])
     run(['git', 'commit', '-m', 'Creating database'])
     run(['git', 'push', '--force', 'origin', DB_BRANCH])
 
