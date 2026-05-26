@@ -17,8 +17,8 @@ DB_JSON_NAME = os.getenv('DB_JSON_NAME', 'db.json')
 DB_ZIP_NAME = os.getenv('DB_ZIP_NAME', 'db.json.zip')
 UNPROCESSED_DB_JSON_NAME = os.getenv('UNPROCESSED_DB_JSON_NAME', 'unprocessed-db.json')
 DB_BRANCH = os.getenv('DB_BRANCH', 'db')
-DB_ID = os.getenv('DB_ID') or os.getenv('GITHUB_REPOSITORY', 'theypsilon/test')
-GITHUB_REPOSITORY = os.getenv('GITHUB_REPOSITORY', 'theypsilon/test')
+DB_ID = os.getenv('DB_ID') or os.getenv('GITHUB_REPOSITORY', 'Coin-OpCollection/Distribution-MiSTerFPGA')
+GITHUB_REPOSITORY = os.getenv('GITHUB_REPOSITORY', 'Coin-OpCollection/Distribution-MiSTerFPGA')
 DB_URL = os.getenv('DB_URL', f'https://raw.githubusercontent.com/{GITHUB_REPOSITORY}/{DB_BRANCH}/{DB_ZIP_NAME}')
 TRACK_RELEASE = os.getenv('TRACK_RELEASE', 'true').lower() != 'false'
 
