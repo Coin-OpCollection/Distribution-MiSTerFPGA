@@ -20,9 +20,9 @@ GITHUB_REPOSITORY = os.getenv('GITHUB_REPOSITORY', 'theypsilon/test')
 DB_URL = os.getenv('DB_URL', f'https://raw.githubusercontent.com/{GITHUB_REPOSITORY}/{DB_BRANCH}/{DB_ZIP_NAME}')
 TRACK_RELEASE = os.getenv('TRACK_RELEASE', 'true').lower() != 'false'
 
-COINOP_ALPHA_TAG = 'coinopalpha'
-COINOP_BETA_TAG = 'coinopbeta'
-COINOP_DEFAULT_FILTER = '[MiSTer] !coinop-beta !coinop-alpha'
+COINOP_ALPHA_TAG = 'coinopcollectionalpha'
+COINOP_BETA_TAG = 'coinopcollectionbeta'
+COINOP_DEFAULT_FILTER = '[MiSTer] !coinop-collection-beta !coinop-collection-alpha'
 
 
 def main() -> int:
@@ -191,7 +191,7 @@ def create_drop_in_database_files(db_id: str, db_url: str) -> list[str]:
             file
             for suffix, filter_value in [
                 ('', None),
-                ('_beta', '[MiSTer] !coinop-alpha'),
+                ('_beta', '[MiSTer] !coinop-collection-alpha'),
                 ('_alpha', '[MiSTer]'),
             ]
             for file in create_drop_in_database_file_pair(sanitized_db_id, suffix, db_id, db_url, filter_value)
