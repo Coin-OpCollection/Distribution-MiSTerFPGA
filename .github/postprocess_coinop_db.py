@@ -23,6 +23,9 @@ TRACK_RELEASE = os.getenv('TRACK_RELEASE', 'true').lower() != 'false'
 COINOP_ALPHA_TAG = 'coinopcollectionalpha'
 COINOP_BETA_TAG = 'coinopcollectionbeta'
 COINOP_DEFAULT_FILTER = '[MiSTer] !coinop-collection-beta !coinop-collection-alpha'
+STATUS_ALPHA = 'alpha'
+STATUS_BETA = 'beta'
+STATUS_STABLE = 'stable'
 
 
 def main() -> int:
@@ -64,8 +67,11 @@ def process_database(db_json_name: str) -> None:
 
     alpha_tag = ensure_tag_dictionary_entry(db, COINOP_ALPHA_TAG)
     beta_tag = ensure_tag_dictionary_entry(db, COINOP_BETA_TAG)
-    alpha_count = 0
-    beta_count = 0
+    rbf_references: dict[str, set[str]] = {}
+    mra_alpha_count = 0
+    mra_beta_count = 0
+    rbf_alpha_count = 0
+    rbf_beta_count = 0
 
     for db_path, description in db.get('files', {}).items():
         if not db_path.lower().endswith('.mra'):
@@ -77,17 +83,35 @@ def process_database(db_json_name: str) -> None:
             continue
 
         statuses = read_mra_statuses(mra_path)
-        if 'alpha' in statuses and append_unique_tag(description, alpha_tag):
-            alpha_count += 1
-        if 'beta' in statuses and append_unique_tag(description, beta_tag):
-            beta_count += 1
+        referenced_rbf = read_mra_rbf(mra_path)
+        if referenced_rbf is not None:
+            rbf_references.setdefault(referenced_rbf, set()).add(status_for_rbf_reference(statuses))
+
+        if STATUS_ALPHA in statuses and append_unique_tag(description, alpha_tag):
+            mra_alpha_count += 1
+        if STATUS_BETA in statuses and append_unique_tag(description, beta_tag):
+            mra_beta_count += 1
+
+    for db_path, description in db.get('files', {}).items():
+        if not db_path.lower().endswith('.rbf'):
+            continue
+
+        status = status_for_rbf(db_path, rbf_references)
+        if status == STATUS_ALPHA and append_unique_tag(description, alpha_tag):
+            rbf_alpha_count += 1
+        if status == STATUS_BETA and append_unique_tag(description, beta_tag):
+            rbf_beta_count += 1
 
     db.setdefault('default_options', {})['filter'] = COINOP_DEFAULT_FILTER
 
     with open(db_json_name, 'w', encoding='utf-8') as f:
         json.dump(db, f, sort_keys=True)
 
-    log(f'Applied Coin-Op status tags: {alpha_count} alpha, {beta_count} beta')
+    log(
+        f'Applied Coin-Op status tags: '
+        f'{mra_alpha_count} alpha MRAs, {mra_beta_count} beta MRAs, '
+        f'{rbf_alpha_count} alpha RBFs, {rbf_beta_count} beta RBFs'
+    )
 
 
 def ensure_tag_dictionary_entry(db: dict[str, Any], tag: str) -> int:
@@ -109,10 +133,59 @@ def read_mra_statuses(mra_path: str) -> set[str]:
 
     statuses = set()
     if '<t_status>alpha</t_status>' in normalized:
-        statuses.add('alpha')
+        statuses.add(STATUS_ALPHA)
     if '<t_status>beta</t_status>' in normalized:
-        statuses.add('beta')
+        statuses.add(STATUS_BETA)
     return statuses
+
+
+def read_mra_rbf(mra_path: str) -> Optional[str]:
+    with open(mra_path, encoding='utf-8', errors='ignore') as f:
+        normalized = re.sub(r'\s+', '', f.read()).lower()
+
+    match = re.search(r'<rbf>([^<]+)</rbf>', normalized)
+    if match is None:
+        return None
+    return normalize_rbf_reference(match.group(1))
+
+
+def status_for_rbf_reference(statuses: set[str]) -> str:
+    if STATUS_BETA in statuses:
+        return STATUS_BETA
+    if STATUS_ALPHA in statuses:
+        return STATUS_ALPHA
+    return STATUS_STABLE
+
+
+def status_for_rbf(db_path: str, rbf_references: dict[str, set[str]]) -> Optional[str]:
+    statuses = set()
+    for key in rbf_reference_keys(db_path):
+        statuses.update(rbf_references.get(key, set()))
+
+    if STATUS_STABLE in statuses or not statuses:
+        return None
+    if STATUS_BETA in statuses:
+        return STATUS_BETA
+    if STATUS_ALPHA in statuses:
+        return STATUS_ALPHA
+    return None
+
+
+def rbf_reference_keys(db_path: str) -> set[str]:
+    path = Path(db_path)
+    stem = path.stem.lower()
+    return {normalize_rbf_reference(stem), normalize_rbf_reference(strip_date_suffix(stem))}
+
+
+def normalize_rbf_reference(rbf: str) -> str:
+    return Path(rbf).stem.lower()
+
+
+def strip_date_suffix(stem: str) -> str:
+    date_suffix = stem[-9:]
+    if len(date_suffix) == 9 and date_suffix[0] == '_' and date_suffix[1:].isdigit():
+        return stem[:-9]
+    return stem
 
 
 def append_unique_tag(description: dict[str, Any], tag: int) -> bool:
