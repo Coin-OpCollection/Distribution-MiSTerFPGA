@@ -377,7 +377,7 @@ This repository hosts distribution files for FPGA implementations developed by t
 
 ---
 
-# Install
+# Setup
 
 With [Update All](https://github.com/theypsilon/Update_All_MiSTer): Coin-Op Collection is enabled by default.
 
