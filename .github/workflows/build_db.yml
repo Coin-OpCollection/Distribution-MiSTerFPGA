@@ -6,6 +6,9 @@ on:
       - develop
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build_db:
     runs-on: ubuntu-latest
@@ -14,7 +17,14 @@ jobs:
     - run: sudo apt-get install sharutils
     - uses: actions/checkout@v2
 
-    - name: Build Custom Database for MiSTer Downloader
-      run: set -o pipefail && curl --fail --location https://raw.githubusercontent.com/theypsilon/Downloader_DB-Template_MiSTer/main/.github/build_db.py | python3 -
+    - name: Build Custom Database JSON for MiSTer Downloader
+      run: |
+        set -euo pipefail
+        curl --fail --location https://raw.githubusercontent.com/theypsilon/DB-Template_MiSTer/main/.github/build_db.py | python3 - --dry-run
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Post-process and publish database
+      run: python3 .github/postprocess_coinop_db.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
