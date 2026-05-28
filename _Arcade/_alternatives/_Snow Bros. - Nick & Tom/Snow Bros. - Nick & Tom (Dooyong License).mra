@@ -28,7 +28,7 @@
         <dip name="Continue Play" bits="15" ids="No,Yes"/>
     </switches>
 
-    <buttons names="Attack,Jump,-,Start,Coin,Pause" default="A,B,X,Y,Start,Select"/>
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
 
     <rom index="1">
         <part>05</part>
@@ -41,11 +41,11 @@
             <part name="sbk_2-a.bin" crc="80cc80e5" map="10"/>
         </interleave>
 
-        <!-- gfx1 - starts at 0x40000 -->
-        <part name="sbros-1.41" crc="16f06b3a"/>
-
-        <!-- soundcpu - starts at 0xC0000 -->
+        <!-- soundcpu - starts at 0x40000 -->
         <part name="sbros-4.29" crc="e6eab4e4"/>
+
+        <!-- gfx1 - starts at 0x48000 -->
+        <part name="sbros-1.41" crc="16f06b3a"/>
         <!-- Total 0xC8000 bytes - 800 kBytes -->
     </rom>
 </misterromdescription>
