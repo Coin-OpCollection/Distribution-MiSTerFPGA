@@ -377,6 +377,12 @@ This repository hosts distribution files for FPGA implementations developed by t
 
 ---
 
+# Setup
+
+With [Update All](https://github.com/theypsilon/Update_All_MiSTer): Coin-Op Collection is enabled by default.
+
+---
+
 # Disclaimer
 
 **Note: This repository contains no ROM or game files. No links or pre-assembled ROMs will be provided by our release group. Ensure you have legal authority to play these titles in your jurisdiction.**
