@@ -1,0 +1,75 @@
+<misterromdescription>
+    <name>Cobra-Command (World/US)</name>
+    <setname>cobracomb</setname>
+    <rbf>cobracom_mister</rbf>
+    <mameversion>0283</mameversion>
+    <year>1988</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>DECO DE-0298 Hardware</platform>
+    <category>Shooter</category>
+    <catver>Shooter / Flying Horizontal</catver>
+
+    <switches default="00,00">
+        <!-- DSW0 -->
+        <dip name="Coin 2" bits="0,1" ids="1 Coin/1 Credit,1 Coin/2 Credits,2 Coin/1 Credit,3 Coin/1 Credit"/>
+        <dip name="Coin 1" bits="2,3" ids="1 Coin/1 Credit,1 Coin/2 Credits,2 Coin/1 Credit,3 Coin/1 Credit"/>
+        <dip name="Attract Mode Sound" bits="5" ids="On,Off"/>
+        <dip name="Flip Screen" bits="6" ids="Normal,Reverse"/>
+        <dip name="Cabinet Type" bits="7" ids="Table,Upright"/>
+        <!-- DSW1 -->
+        <dip name="No. of Lives" bits="8,9" ids="3,4,5,99"/>
+        <dip name="Difficulty" bits="10,11" ids="Normal,Easy,Hard,Hardest"/>
+        <dip name="Allow Continue" bits="12" ids="Yes,No"/>
+        <dip name="Extend" bits="13" ids="50k/150k,100k/200k"/>
+    </switches>
+
+    <buttons names="Fire,Missile,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="cobracomb.zip|cobracom.zip" md5="None" address="0x30000000">
+        <!-- maincpu fixed - starts at 0x00000 -->
+        <part name="el11.5j" crc="c6a102e3"/>
+
+        <!-- mainbank - starts at 0x08000 -->
+        <part name="el12.7j" crc="72b2dab4"/>
+        <part name="el13.9j" crc="04505acb"/>
+
+        <!-- audiocpu - starts at 0x28000 -->
+        <part name="el10.1f" crc="62ca5e89"/>
+
+        <!-- char - starts at 0x30000 -->
+        <part name="el14.14j" crc="47246177"/>
+
+        <!-- sprites - starts at 0x38000 -->
+        <interleave output="32">
+            <part name="el00.2a" crc="d96b6797" map="0001"/>
+            <part name="el01.3a" crc="3fef9c02" map="0010"/>
+            <part name="el02.5a" crc="bfae6c34" map="0100"/>
+            <part name="el03.6a" crc="d56790f8" map="1000"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x78000 -->
+        <interleave output="32">
+            <part name="el05.15a" crc="1c4f6033" map="0001"/>
+            <part name="el06.16a" crc="d24ba794" map="0010"/>
+            <part name="el04.13a" crc="d80a49ce" map="0100"/>
+            <part name="el07.18a" crc="6d771fc3" map="1000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0xB8000 -->
+        <interleave output="32">
+            <part name="el08.7d" crc="cb0dcf4c" length="0x8000" map="0001"/>
+            <part name="el09.9d" crc="1fae5be7" length="0x8000" map="0010"/>
+            <part name="el08.7d" crc="cb0dcf4c" length="0x8000" offset="0x8000" map="0100"/>
+            <part name="el09.9d" crc="1fae5be7" length="0x8000" offset="0x8000" map="1000"/>
+        </interleave>
+        <!-- Total 0xD8000 bytes (884 KB) -->
+    </rom>
+</misterromdescription>
