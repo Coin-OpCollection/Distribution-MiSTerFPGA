@@ -9,6 +9,7 @@ import sys
 import tempfile
 import traceback
 import zipfile
+from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
@@ -28,6 +29,11 @@ COINOP_DEFAULT_FILTER = '[MiSTer] !coinop-collection-beta !coinop-collection-alp
 STATUS_ALPHA = 'alpha'
 STATUS_BETA = 'beta'
 STATUS_STABLE = 'stable'
+FOLDERS_WITHOUT_DERIVED_STATUS_TAGS = {
+    '_Arcade',
+    '_Arcade/cores',
+    '_Arcade/_alternatives',
+}
 
 
 def main() -> int:
@@ -106,6 +112,9 @@ def process_database(db_json_name: str) -> None:
         if status == STATUS_BETA and append_unique_tag(description, beta_tag):
             rbf_beta_count += 1
 
+    db = with_folder_status_tags(db)
+    folder_status_tag_count = count_folder_status_tags(db)
+
     db['db_url'] = DB_URL
     db.setdefault('default_options', {})['filter'] = COINOP_DEFAULT_FILTER
 
@@ -115,7 +124,8 @@ def process_database(db_json_name: str) -> None:
     log(
         f'Applied Coin-Op status tags: '
         f'{mra_alpha_count} alpha MRAs, {mra_beta_count} beta MRAs, '
-        f'{rbf_alpha_count} alpha RBFs, {rbf_beta_count} beta RBFs'
+        f'{rbf_alpha_count} alpha RBFs, {rbf_beta_count} beta RBFs, '
+        f'{folder_status_tag_count} folder tags'
     )
 
 
@@ -191,6 +201,79 @@ def strip_date_suffix(stem: str) -> str:
     if len(date_suffix) == 9 and date_suffix[0] == '_' and date_suffix[1:].isdigit():
         return stem[:-9]
     return stem
+
+
+def with_folder_status_tags(db: dict[str, Any]) -> dict[str, Any]:
+    next_db = deepcopy(db)
+    status_tags = coinop_status_tags(next_db)
+    file_status_tags = [
+        (normalize_db_path(db_path), description_status_tags(description, status_tags))
+        for db_path, description in next_db.get('files', {}).items()
+    ]
+
+    for folder_path, description in next_db.get('folders', {}).items():
+        normalized_folder_path = normalize_db_path(folder_path)
+        remove_derived_status_tags(description, status_tags)
+        if normalized_folder_path in FOLDERS_WITHOUT_DERIVED_STATUS_TAGS:
+            continue
+
+        contained_status_tags = [
+            tags
+            for file_path, tags in file_status_tags
+            if is_contained_by_folder(file_path, normalized_folder_path)
+        ]
+        if not contained_status_tags or any(len(tags) == 0 for tags in contained_status_tags):
+            continue
+
+        for tag in sorted(set().union(*contained_status_tags)):
+            append_unique_tag(description, tag)
+
+    return next_db
+
+
+def count_folder_status_tags(db: dict[str, Any]) -> int:
+    status_tags = coinop_status_tags(db)
+    return sum(
+        len(description_status_tags(description, status_tags))
+        for description in db.get('folders', {}).values()
+    )
+
+
+def coinop_status_tags(db: dict[str, Any]) -> set[int]:
+    tag_dictionary = db.get('tag_dictionary', {})
+    return {
+        tag_dictionary[tag]
+        for tag in [COINOP_ALPHA_TAG, COINOP_BETA_TAG]
+        if tag in tag_dictionary
+    }
+
+
+def description_status_tags(description: dict[str, Any], status_tags: set[int]) -> set[int]:
+    tags = description.get('tags', [])
+    if not isinstance(tags, list):
+        return set()
+    return {tag for tag in tags if tag in status_tags}
+
+
+def normalize_db_path(db_path: str) -> str:
+    if db_path.startswith('|'):
+        db_path = db_path[1:]
+    return db_path.strip('/')
+
+
+def is_contained_by_folder(file_path: str, folder_path: str) -> bool:
+    if folder_path == '':
+        return file_path != ''
+    return file_path.startswith(f'{folder_path}/')
+
+
+def remove_derived_status_tags(description: dict[str, Any], status_tags: set[int]) -> None:
+    tags = description.get('tags')
+    if not isinstance(tags, list):
+        return
+
+    remaining_tags = [tag for tag in tags if tag not in status_tags]
+    description['tags'] = remaining_tags
 
 
 def append_unique_tag(description: dict[str, Any], tag: int) -> bool:
