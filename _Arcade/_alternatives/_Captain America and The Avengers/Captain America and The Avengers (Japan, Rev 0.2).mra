@@ -1,0 +1,108 @@
+<misterromdescription>
+    <name>Captain America and The Avengers (Japan Rev 0.2)</name>
+    <setname>captavenj</setname>
+    <rbf>captaven</rbf>
+    <mameversion>0281</mameversion>
+    <year>1991</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>4</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>DECO-32 Hardware (Custom 101)</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="FF,72,FF">
+        <!-- DSW1 -->
+        <dip name="Coin A" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin B" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Coin" bits="7" ids="2/1,1/1"/>
+        <!-- DSW2 -->
+        <dip name="No. Of Lives" bits="8,9" ids="1,2,3,4"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Normal,Easy,Hard,Hardest"/>
+        <dip name="Coin Switches" bits="12" ids="4,2"/>
+        <dip name="Mode Select" bits="13" ids="4 Player,2 Player"/>
+        <dip name="Continue Mode" bits="14" ids="Off,On"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+        <!-- DSW3 -->
+        <dip name="Reset" bits="20" ids="On,Off"/>
+        <dip name="Free Play" bits="21" ids="On,Off"/>
+        <dip name="Stage Select" bits="22" ids="On,Off"/>
+        <dip name="Debug Mode" bits="23" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>06</part>
+    </rom>
+
+    <rom index="0" zip="captavenj.zip|captaven.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="32">
+            <part name="hj_00-2.1e" crc="10b1faaf" map="0001"/>
+            <part name="hj_01-2.1h" crc="62c59f27" map="0010"/>
+            <part name="hj_02-2.1k" crc="ce946cad" map="0100"/>
+            <part name="hj_03-2.1m" crc="140cf9ce" map="1000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="man-12.3e"  crc="d6261e98" map="0001"/>
+            <part name="man-13.3h"  crc="40f0764d" map="0010"/>
+            <part name="man-14.3k"  crc="7cb9a4bd" map="0100"/>
+            <part name="man-15.3m"  crc="c7854fe8" map="1000"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="hj_08.17k" crc="361fbd16"/>
+
+        <!-- oki1 - starts at 0x110000 -->
+        <part name="man-11.16k" crc="0dc60a4c"/>
+
+        <!-- oki2 - starts at 0x190000 -->
+        <part name="man-10.14k" crc="0132c578"/>
+
+        <!-- tiles1 - starts at 0x210000 -->
+        <interleave output="32">
+            <part name="man-00.8a" crc="7855a607" map="1200" offset="0x00000" length="0x40000"/>
+            <part name="man-00.8a" crc="7855a607" map="0012" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="16">
+            <part name="man-00.8a" crc="7855a607" map="12" offset="0x00000" length="0x80000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x310000 -->
+        <part name="man-05.16a" crc="d44d1995" offset="0x000000" length="0x40000"/>
+        <part name="man-04.14a" crc="541492a1" offset="0x000000" length="0x40000"/>
+        <part name="man-03.12a" crc="2d9c52b2" offset="0x000000" length="0x40000"/>
+        <part name="man-02.11a" crc="07674c05" offset="0x000000" length="0x40000"/>
+        <part name="man-01.10a" crc="ae714ada" offset="0x000000" length="0x40000"/>
+        <part name="man-05.16a" crc="d44d1995" offset="0x040000" length="0x40000"/>
+        <part name="man-04.14a" crc="541492a1" offset="0x040000" length="0x40000"/>
+        <part name="man-03.12a" crc="2d9c52b2" offset="0x040000" length="0x40000"/>
+        <part name="man-02.11a" crc="07674c05" offset="0x040000" length="0x40000"/>
+        <part name="man-01.10a" crc="ae714ada" offset="0x040000" length="0x40000"/>
+        <part name="man-05.16a" crc="d44d1995" offset="0x080000" length="0x40000"/>
+        <part name="man-04.14a" crc="541492a1" offset="0x080000" length="0x40000"/>
+        <part name="man-03.12a" crc="2d9c52b2" offset="0x080000" length="0x40000"/>
+        <part name="man-02.11a" crc="07674c05" offset="0x080000" length="0x40000"/>
+        <part name="man-01.10a" crc="ae714ada" offset="0x080000" length="0x40000"/>
+        <part name="man-05.16a" crc="d44d1995" offset="0x0C0000" length="0x40000"/>
+        <part name="man-04.14a" crc="541492a1" offset="0x0C0000" length="0x40000"/>
+        <part name="man-03.12a" crc="2d9c52b2" offset="0x0C0000" length="0x40000"/>
+        <part name="man-02.11a" crc="07674c05" offset="0x0C0000" length="0x40000"/>
+        <part name="man-01.10a" crc="ae714ada" offset="0x0C0000" length="0x40000"/>
+
+        <!-- sprites - starts at 0x810000 -->
+        <interleave output="32">
+            <part name="man-07.18a" crc="b1db200c" map="0021"/>
+            <part name="man-06.17a" crc="a9a64297" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="man-09.21c" crc="1921245d" map="0021"/>
+            <part name="man-08.17c" crc="28e98e66" map="2100"/>
+        </interleave>
+        <!-- Total 0xC10000 bytes -->
+    </rom>
+</misterromdescription>
