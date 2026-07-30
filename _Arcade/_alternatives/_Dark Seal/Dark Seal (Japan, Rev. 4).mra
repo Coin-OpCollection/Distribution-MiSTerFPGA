@@ -1,0 +1,82 @@
+<misterromdescription>
+    <name>Dark Seal (Japan, Rev. 4)</name>
+    <setname>darksealj</setname>
+    <rbf>darkseal_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1990</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>DECO DE-0332-2 Hardware</platform>
+    <category>Hack &amp; Slash</category>
+    <catver>Maze / Fighter</catver>
+
+    <switches default="FF,7F">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Flip Screen" bits="6" ids="On,Off"/>
+        <!-- DSW2 -->
+        <dip name="No. of Lives" bits="8,9" ids="1,2,4,3"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Easy,Normal,Hard,Hardest"/>
+        <dip name="Life Indicator" bits="12,13" ids="2,2.5,4,3"/>
+        <dip name="Continue Mode" bits="14" ids="No,Yes"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Magic,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="darksealj.zip|darkseal.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="fz_04-4.j12" crc="817faa2c" map="10"/>
+            <part name="fz_01-4.h14" crc="373caeee" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="fz_00-2.h12" crc="1ab99aa7" map="10"/>
+            <part name="fz_05-2.j14" crc="3374ef8c" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x080000 -->
+        <part name="fz_06-1.j15" crc="c4828a6d"/>
+
+        <!-- oki1 - starts at 0x090000 -->
+        <part name="fz_08.l17" crc="c9bf68e1"/>
+
+        <!-- oki2 - starts at 0x0B0000 -->
+        <part name="fz_07.k14" crc="588dd3cb"/>
+
+        <!-- chars - starts at 0x0D0000 -->
+        <interleave output="32">
+            <part name="fz_03.j2" crc="264b90ed" map="1000" offset="0x00000" length="0x08000"/>
+            <part name="fz_02.j1" crc="3c9c3012" map="0100" offset="0x00000" length="0x08000"/>
+            <part name="fz_03.j2" crc="264b90ed" map="0010" offset="0x08000" length="0x08000"/>
+            <part name="fz_02.j1" crc="3c9c3012" map="0001" offset="0x08000" length="0x08000"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x0F0000 -->
+        <interleave output="32">
+            <part name="mac-03.h3" crc="9996f3dc" map="1200" offset="0x00000" length="0x40000"/>
+            <part name="mac-03.h3" crc="9996f3dc" map="0012" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x170000 -->
+        <interleave output="32">
+            <part name="mac-02.e20" crc="49504e89" map="1200" offset="0x00000" length="0x40000"/>
+            <part name="mac-02.e20" crc="49504e89" map="0012" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x1F0000 -->
+        <interleave output="32">
+            <part name="mac-00.b1" crc="52acf1d6" map="2100"/>
+            <part name="mac-01.b3" crc="b28f7584" map="0021"/>
+        </interleave>
+        <!-- Total 0x2F0000 bytes -->
+    </rom>
+</misterromdescription>

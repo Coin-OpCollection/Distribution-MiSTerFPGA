@@ -1,0 +1,90 @@
+<misterromdescription>
+    <name>Boogie Wings (Europe v1.5, 92.12.07)</name>
+    <setname>boogwing</setname>
+    <rbf>boogwing_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1992</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Europe</region>
+    <platform>DECO DE-0379-1 Hardware</platform>
+    <category>Shoot &apos;Em Up</category>
+    <catver>Shooter / Misc. Horizontal</catver>
+
+    <switches default="FF,FF">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Coin" bits="7" ids="2 Start/1 Continue,Normal Coin Credit"/>
+        <!-- DSW2 -->
+        <dip name="No. of Lives" bits="8,9" ids="4,3,2,1"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Coin Switch" bits="12" ids="Individual,Common"/>
+        <dip name="Stage Reset" bits="13" ids="Beginning of Stage,Point of Termination"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Shot,Bomb,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="boogwing.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="kn_00-2.2b" crc="e38892b9" map="10"/>
+            <part name="kn_02-2.2e" crc="8426efef" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="kn_01-2.4b" crc="3ad4b54c" map="10"/>
+            <part name="kn_03-2.4e" crc="10b61f4a" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="km06.18p" crc="3e8bc4e1"/>
+
+        <!-- oki1 - starts at 0x110000 -->
+        <part name="mbd-10.17p" crc="f159f76a"/>
+
+        <!-- oki2 - starts at 0x190000 -->
+        <part name="mbd-09.16p" crc="f44f2f87"/>
+
+        <!-- tiles1 - starts at 0x210000 -->
+        <interleave output="16">
+            <part name="km05.9e" crc="d10aef95" map="10"/>
+            <part name="km04.8e" crc="329323a8" map="01"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x230000 -->
+        <interleave output="32">
+            <part name="mbd-01.9b" crc="d7de4f4b" map="0012"/>
+            <part name="mbd-00.8b" crc="adb20ba9" map="1200"/>
+        </interleave>
+
+        <!-- tiles2_hi - starts at 0x430000 -->
+            <part name="mbd-02.10e" crc="b25aa721"/>
+
+        <!-- tiles3 - starts at 0x4B0000 -->
+        <interleave output="32">
+            <part name="mbd-03.13b" crc="cf798f2c" map="0012"/>
+            <part name="mbd-04.14b" crc="d9764d0b" map="1200"/>
+        </interleave>
+
+        <!-- sprites1 - starts at 0x6B0000 -->
+        <interleave output="32">
+            <part name="mbd-06.17b" crc="7750847a" map="0021"/>
+            <part name="mbd-05.16b" crc="1768c66a" map="2100"/>
+        </interleave>
+
+        <!-- sprites2 - starts at 0xAB0000 -->
+        <interleave output="32">
+            <part name="mbd-08.19b" crc="f13b1e56" map="0021"/>
+            <part name="mbd-07.18b" crc="241faac1" map="2100"/>
+        </interleave>
+        <!-- Total 0xEB0000 bytes -->
+    </rom>
+</misterromdescription>

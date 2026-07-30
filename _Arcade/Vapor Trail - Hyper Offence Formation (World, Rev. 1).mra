@@ -1,0 +1,75 @@
+<misterromdescription>
+    <name>Vapor Trail - Hyper Offence Formation (World, Rev. 1)</name>
+    <setname>vaportra</setname>
+    <rbf>vaportra_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1989</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>World</region>
+    <platform>DECO DE-0329-X Hardware</platform>
+    <category>Shoot &apos;Em Up</category>
+    <catver>Shooter / Flying Vertical</catver>
+
+    <switches default="6B,FF">
+        <!-- DSW1 -->
+        <dip name="No. of Lives" bits="0,1" ids="2,5,4,3"/>
+        <dip name="Game Difficulty" bits="2,3" ids="Hardest,Easy,Normal,Hard"/>
+        <dip name="Extend" bits="4,5" ids="None,300k,200/600k,150/300/600k"/>
+        <dip name="Continue Mode" bits="6" ids="No,Yes"/>
+        <dip name="Attract Mode Sound" bits="7" ids="On,Off"/>
+        <!-- DSW2 -->
+        <dip name="Coin Right" bits="8,10" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="11,13" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="14" ids="On,Off"/>
+        <dip name="Service Mode" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Shot,Bomb,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="vaportra.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="fl_00-1.bin" crc="c08cc048" map="01"/>
+            <part name="fl_02-1.bin" crc="9ae36095" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="fl_01.bin" crc="9474b085" map="01"/>
+            <part name="fl_03.bin" crc="80bd2844" map="10"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x080000 -->
+        <part name="fj04" crc="e9aedf9b"/>
+
+        <!-- oki1 - starts at 0x090000 -->
+        <part name="fj06" crc="6e98a235"/>
+
+        <!-- oki2 - starts at 0x0B0000 -->
+        <part name="fj05" crc="39cda2b5"/>
+
+        <!-- tiles1 - starts at 0x0D0000 -->
+        <interleave output="16">
+            <part name="vtmaa00.bin" crc="0330e13b" map="01" offset="0x00000" length="0x40000"/>
+            <part name="vtmaa00.bin" crc="0330e13b" map="10" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x150000 -->
+        <interleave output="16">
+            <part name="vtmaa01.bin" crc="c217a31b" map="10"/>
+            <part name="vtmaa02.bin" crc="091ff98e" map="01"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x250000 -->
+        <interleave output="16">
+            <part name="vtmaa03.bin" crc="1a30bf81" map="01"/>
+            <part name="vtmaa04.bin" crc="b713e9cc" map="10"/>
+        </interleave>
+        <!-- Total 0x350000 bytes -->
+    </rom>
+</misterromdescription>

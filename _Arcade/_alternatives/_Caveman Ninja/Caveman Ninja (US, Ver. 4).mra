@@ -1,0 +1,96 @@
+<misterromdescription>
+    <name>Caveman Ninja (US ver 4)</name>
+    <setname>cninjau</setname>
+    <rbf>cninja_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1991</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>USA</region>
+    <platform>DECO DE-0347 Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Shooter Scrolling</catver>
+
+    <switches default="FF,7F">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Coin Mode" bits="7" ids="2C Start/1C Continue,Standard"/>
+        <!-- DSW2 -->
+        <dip name="No. of Lives" bits="8,9" ids="2,1,4,3"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Restore Life Meter" bits="12" ids="On,Off"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="cninja.zip|cninjau.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="gm-02-3.1k" crc="d931c3b1" map="10"/>
+            <part name="gm-05-2.3k" crc="7417d3fb" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="gm-01-2.1j" crc="72041f7e" map="10"/>
+            <part name="gm-04-2.3j" crc="2104d005" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="gn-00.1h" crc="0b110b16" map="10"/>
+            <part name="gn-03.1k" crc="1e28e697" map="01"/>
+        </interleave>
+        <part repeat="0x40000"> 00 </part>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="gl-07.13k" crc="ca8bef96"/>
+
+        <!-- oki1 - starts at 0x110000 -->
+        <part name="gl-06.13j" crc="d92e519d"/>
+
+        <!-- oki2 - starts at 0x130000 -->
+        <part name="mag-07.13f" crc="08eb5264"/>
+
+        <!-- chars - starts at 0x1B0000 -->
+        <interleave output="32">
+            <part name="gl-08.6y" crc="33a2b400" map="0001" offset="0x00000" length="0x08000"/>
+            <part name="gl-09.6z" crc="5a2d4752" map="0010" offset="0x00000" length="0x08000"/>
+            <part name="gl-08.6y" crc="33a2b400" map="0100" offset="0x08000" length="0x08000"/>
+            <part name="gl-09.6z" crc="5a2d4752" map="1000" offset="0x08000" length="0x08000"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x1D0000 -->
+        <interleave output="32">
+            <part name="mag-02.4z" crc="de89c69a" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mag-02.4z" crc="de89c69a" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x250000 -->
+        <interleave output="32">
+            <part name="mag-00.1y" crc="a8f05d33" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mag-00.1y" crc="a8f05d33" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mag-01.1z" crc="5b399eed" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mag-01.1z" crc="5b399eed" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x350000 -->
+        <interleave output="32">
+            <part name="mag-05.12y" crc="56a53254" map="0021"/>
+            <part name="mag-03.9y" crc="2220eb9f" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mag-06.12z" crc="82d44749" map="0021"/>
+            <part name="mag-04.9z" crc="144b94cc" map="2100"/>
+        </interleave>
+        <part repeat="0x300000"> 00 </part>
+        <!-- Total 0x850000 bytes -->
+    </rom>
+</misterromdescription>

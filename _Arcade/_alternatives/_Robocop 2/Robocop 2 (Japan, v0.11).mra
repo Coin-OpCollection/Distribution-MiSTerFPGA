@@ -1,0 +1,116 @@
+<misterromdescription>
+    <name>Robocop 2 (Japan v0.11)</name>
+    <setname>robocop2j</setname>
+    <rbf>robocop2_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1991</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>DECO DE-0349 Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="BF,7F,FF">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <!-- DSW2 -->
+        <dip name="No. of Lives" bits="8,9" ids="2,1,4,3"/>
+        <dip name="Stage Time" bits="10,11" ids="100 Seconds,200 Seconds,400 Seconds,300 Seconds"/>
+        <dip name="Life Value" bits="12,13" ids="17,24,40,33"/>
+        <dip name="Continue Mode" bits="14" ids="Off,On"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+        <!-- DSW3 -->
+        <dip name="Player Bullets" bits="16,17" ids="Least,Less,More,Normal"/>
+        <dip name="Enemy Speed" bits="18,19" ids="Fastest,Fast,Slow,Normal"/>
+        <dip name="Enemy Life Value" bits="20,21" ids="Most,More,Less,Normal"/>
+        <dip name="Enemy Weapon Speed" bits="22" ids="Fast,Normal"/>
+        <dip name="Game End Message" bits="23" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Shoot Left,Shoot Right,Jump,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="robocop2j.zip|robocop2.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="go-03-1.k1" crc="52506608" map="10"/>
+            <part name="go-07-1.k3" crc="739cda17" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="go-02-1.j1" crc="48c0ace9" map="10"/>
+            <part name="go-06-1.j3" crc="41abec87" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="go-01-1.h1" crc="ab5356c0" map="10"/>
+            <part name="go-05-1.h3" crc="ce21bda5" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="go-00.f1" crc="a93369ea" map="10"/>
+            <part name="go-04.f3" crc="ee2f6ad9" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="gp-09.k13" crc="4a4e0f8d"/>
+
+        <!-- oki1 - starts at 0x110000 -->
+        <part name="gp-08.j13" crc="365183b1"/>
+
+        <!-- oki2 - starts at 0x130000 -->
+        <part name="mah-11.f13" crc="642bc692"/>
+
+        <!-- chars - starts at 0x1B0000 -->
+        <interleave output="32">
+            <part name="gp10-1.y6" crc="d25d719c" map="0001" offset="0x00000" length="0x08000"/>
+            <part name="gp11-1.z6" crc="030ded47" map="0010" offset="0x00000" length="0x08000"/>
+            <part name="gp10-1.y6" crc="d25d719c" map="0100" offset="0x08000" length="0x08000"/>
+            <part name="gp11-1.z6" crc="030ded47" map="1000" offset="0x08000" length="0x08000"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x1D0000 -->
+        <interleave output="32">
+            <part name="mah-04.z4" crc="9b6ca18c" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mah-04.z4" crc="9b6ca18c" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mah-03.y4" crc="37894ddc" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mah-03.y4" crc="37894ddc" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x2D0000 -->
+        <interleave output="32">
+            <part name="mah-01.z1" crc="26e0dfff" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mah-01.z1" crc="26e0dfff" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mah-00.y1" crc="7bd69e41" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mah-00.y1" crc="7bd69e41" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mah-02.a1" crc="328a247d" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mah-02.a1" crc="328a247d" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x450000 -->
+        <interleave output="32">
+            <part name="mah-08.y12" crc="88d310a5" map="0021"/>
+            <part name="mah-05.y9" crc="6773e613" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mah-09.z12" crc="a58c43a7" map="0021"/>
+            <part name="mah-06.z9" crc="27a8808a" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mah-10.a12" crc="14b770da" map="0021"/>
+            <part name="mah-07.a9" crc="526f4190" map="2100"/>
+        </interleave>
+        <!-- Total 0x750000 bytes -->
+    </rom>
+</misterromdescription>

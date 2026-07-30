@@ -1,0 +1,81 @@
+<misterromdescription>
+    <name>Crude Buster (Japan, FR Revision 1)</name>
+    <setname>cbusterj</setname>
+    <rbf>cbuster_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1990</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>DECO DE-0333-3 Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Platform / Fighter Scrolling</catver>
+
+    <switches default="FF,7F">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <!-- DSW2 -->
+        <dip name="No. of Lives" bits="8,9" ids="2,1,4,3"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Continue Mode" bits="14" ids="No,Yes"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,Special,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="cbuster.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="fr01-1.7l" crc="af3c014f" map="10"/>
+            <part name="fr00-1.4l" crc="f666ad52" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="fr03.9l" crc="02c06118" map="10"/>
+            <part name="fr02.6l" crc="b6c34332" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x080000 -->
+        <part name="fu11-.19h" crc="65f20f10"/>
+
+        <!-- oki1 - starts at 0x090000 -->
+        <part name="fu12-.16k" crc="2d1d65f2"/>
+
+        <!-- oki2 - starts at 0x0B0000 -->
+        <part name="fu13-.21e" crc="b8525622"/>
+
+        <!-- tiles1 - starts at 0x0D0000 -->
+        <interleave output="16">
+            <part name="mab-00.4c" crc="660eaabd" map="12"/>
+        </interleave>
+        <interleave output="16">
+            <part name="fr05-1.6c" crc="b1f0d910" map="10"/>
+            <part name="fr06-1.7c" crc="2f914a45" map="01"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x170000 -->
+        <interleave output="16">
+            <part name="mab-01.19a" crc="1080d619" map="12"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x1F0000 -->
+        <interleave output="32">
+            <part name="mab-02.10a" crc="58b7231d" map="0021"/>
+            <part name="mab-03.11a" crc="76053b9d" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="fr07.4a" crc="52c85318" map="0001"/>
+            <part name="fr08.5a" crc="ea25fbac" map="0010"/>
+            <part name="fr09.7a" crc="f8363424" map="0100"/>
+            <part name="fr10.8a" crc="241d5760" map="1000"/>
+        </interleave>
+        <!-- Total 0x330000 bytes -->
+    </rom>
+</misterromdescription>

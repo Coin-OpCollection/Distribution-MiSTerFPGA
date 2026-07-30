@@ -1,0 +1,110 @@
+<misterromdescription>
+    <name>The Cliffhanger - Edward Randy (World, Ver. 1)</name>
+    <setname>edrandy1</setname>
+    <rbf>edrandy_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1990</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>DECO DE-0347-1 Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Fighter / 2D</catver>
+
+    <switches default="BF,7F">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="Off,On"/>
+        <dip name="Credit Start" bits="7" ids="2,1"/>
+        <!-- DSW2 -->
+        <dip name="Player's Power" bits="8,9" ids="Low,Very Low,High,Medium"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Hard,Hardest,Easy,Normal"/>
+        <dip name="Continue Mode" bits="14" ids="Off,On"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="edrandy.zip|edrandy1.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="1.k1" crc="f184cdaa" map="10"/>
+            <part name="5.k3" crc="7e3a4b81" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="2.j1" crc="212cd593" map="10"/>
+            <part name="6.j3" crc="4a96fb07" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ge-02.h1" crc="c2969fbb" map="10"/>
+            <part name="ge-06.h3" crc="5c2e6418" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ge-03.f1" crc="5e7b19a8" map="10"/>
+            <part name="ge-07.f3" crc="5eb819a1" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ge-09.k13" crc="9f94c60b"/>
+
+        <!-- oki1 - starts at 0x110000 -->
+        <part name="ge-08.j13" crc="dfe28c7b"/>
+
+        <!-- oki2 - starts at 0x130000 -->
+        <part name="mad-13" crc="6ab28eba"/>
+
+        <!-- chars - starts at 0x1B0000 -->
+        <interleave output="32">
+            <part name="ge-10.y6" crc="2528d795" map="0001" offset="0x00000" length="0x08000"/>
+            <part name="ge-11.z6" crc="e34a931e" map="0010" offset="0x00000" length="0x08000"/>
+            <part name="ge-10.y6" crc="2528d795" map="0100" offset="0x08000" length="0x08000"/>
+            <part name="ge-11.z6" crc="e34a931e" map="1000" offset="0x08000" length="0x08000"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x1D0000 -->
+        <interleave output="32">
+            <part name="mad-02" crc="6c76face" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mad-02" crc="6c76face" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x250000 -->
+        <interleave output="32">
+            <part name="mad-00" crc="3735b22d" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mad-00" crc="3735b22d" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mad-01" crc="7bb13e1c" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="mad-01" crc="7bb13e1c" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x350000 -->
+        <interleave output="32">
+            <part name="mad-05" crc="3f2ccf95" map="0021"/>
+            <part name="mad-03" crc="c0bff892" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mad-06" crc="60871f77" map="0021"/>
+            <part name="mad-04" crc="464f3eb9" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mad-08" crc="1b420ec8" map="0021"/>
+            <part name="mad-07" crc="ac03466e" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mad-11" crc="03c1f982" map="0021"/>
+            <part name="mad-10" crc="42da8ef0" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="mad-12" crc="a0bd62b6" map="0021"/>
+            <part name="mad-09" crc="930f4900" map="2100"/>
+        </interleave>
+        <!-- Total 0x850000 bytes -->
+    </rom>
+</misterromdescription>
