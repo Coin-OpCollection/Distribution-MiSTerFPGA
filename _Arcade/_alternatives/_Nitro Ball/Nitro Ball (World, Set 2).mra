@@ -1,0 +1,87 @@
+<misterromdescription>
+    <name>Nitro Ball (World, set 2)</name>
+    <setname>nitrobala</setname>
+    <rbf>nitrobal_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1992</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>3</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical</rotation>
+    <region>World</region>
+    <platform>DECO DE-0358-3 Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Shooter / Walking</catver>
+
+    <switches default="FF,5F">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Coin" bits="7" ids="2C Start/1C Continue,Normal"/>
+        <!-- DSW2 -->
+        <dip name="No. of Lives" bits="8,9" ids="2,1,4,3"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Split Coin Chutes" bits="12" ids="On,Off"/>
+        <dip name="Players" bits="13" ids="3,2"/>
+        <dip name="Shot Button to Start" bits="14" ids="On,Off"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Shot,Bomb,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="nitrobala.zip|nitrobal.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="3d" crc="48f77c19" map="10"/>
+            <part name="3b" crc="fb1284e9" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="5d" crc="ac47367a" map="10"/>
+            <part name="5b" crc="a8e9d7dd" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="6d" crc="59e620cc" map="10"/>
+            <part name="6b" crc="1fd8995b" map="01"/>
+        </interleave>
+        <part repeat="0x100000"> 00 </part>
+
+        <!-- audiocpu - starts at 0x200000 -->
+        <part name="jl08.r20" crc="93d93fe1"/>
+
+        <!-- chars - starts at 0x210000 -->
+        <interleave output="16">
+            <part name="jl06.d10" crc="91cf668e" map="01"/>
+            <part name="jl07.d12" crc="e61d0e42" map="10"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x230000 -->
+        <part name="mav00.b10" crc="34785d97"/>
+        <part name="mav01.b12" crc="8b531b16"/>
+
+        <!-- tiles2 - starts at 0x330000 -->
+        <part name="mav02.b16" crc="20723bf7"/>
+        <part name="mav03.e16" crc="ef6195f0"/>
+
+        <!-- sprites1 - starts at 0x530000 -->
+        <part name="mav04.b19" crc="8ba48385"/>
+        <part name="mav06.b20" crc="ae6201a5"/>
+        <part name="mav05.e19" crc="d92d769c"/>
+        <part name="mav07.e20" crc="5fc10ccd"/>
+
+        <!-- sprites2 - starts at 0x830000 -->
+        <part name="mav08.b23" crc="64966576"/>
+        <part name="mav09.e23" crc="1ce7b51a"/>
+
+        <!-- oki1 - starts at 0x8B0000 -->
+        <part name="mav10.r17" crc="8ad734b0"/>
+
+        <!-- oki2 - starts at 0x930000 -->
+        <part name="mav11.r19" crc="ef513908"/>
+        <!-- Total 0x9B0000 bytes -->
+    </rom>
+</misterromdescription>
