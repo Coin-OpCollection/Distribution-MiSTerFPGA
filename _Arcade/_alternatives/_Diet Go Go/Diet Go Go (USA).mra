@@ -1,0 +1,61 @@
+<misterromdescription>
+    <name>Diet Go Go (USA)</name>
+    <setname>dietgou</setname>
+    <rbf>dietgo</rbf>
+    <mameversion>0281</mameversion>
+    <year>1992</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>USA</region>
+    <platform>DECO DE-0370-2 Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Run Jump</catver>
+
+    <switches default="FF,F3">
+        <!-- DSW 1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credit,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credits"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credit,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credits"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Coin" bits="7" ids="2/1,1/1"/>
+        <!-- DSW 2 -->
+        <dip name="No. Of Lives" bits="8,9" ids="2,1,4,3"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Normal,Easy,Hardest,Hard"/>
+        <dip name="Free Play" bits="12" ids="On,Off"/>
+        <dip name="Alternate Graphics" bits="13" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>04</part>
+    </rom>
+
+    <rom index="0" zip="dietgou.zip|dietgo.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="jx_00-.4h" crc="1a9de04f" map="01"/>
+            <part name="jx_01-.5h" crc="79c097c8" map="10"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x080000 -->
+        <part name="jx_02.14m" crc="4e3492a5"/>
+
+        <!-- oki - starts at 0x090000 -->
+        <part name="may-03.11l" crc="b6e42bae"/>
+
+        <!-- tiles - starts at 0x110000 -->
+        <interleave output="32">
+            <part name="may-00.10a" crc="234d1f8d" map="0012" offset="0x00000" length="0x80000"/>
+            <part name="may-00.10a" crc="234d1f8d" map="1200" offset="0x80000" length="0x80000"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x210000 -->
+        <interleave output="32">
+            <part name="may-01.14a" crc="2da57d04" map="2100"/>
+            <part name="may-02.16a" crc="3a66a713" map="0021"/>
+        </interleave>
+        <!-- Total 0x410000 bytes -->
+    </rom>
+</misterromdescription>
