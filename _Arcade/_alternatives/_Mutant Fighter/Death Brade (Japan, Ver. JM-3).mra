@@ -1,0 +1,107 @@
+<misterromdescription>
+    <name>Death Brade (Japan ver JM-3)</name>
+    <setname>deathbrd</setname>
+    <rbf>mutantf_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1991</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>DECO DE-0346-X Hardware</platform>
+    <category>Fighting</category>
+    <catver>Fighter / Versus</catver>
+
+    <switches default="FF,7F">
+        <!-- DSW1 -->
+        <dip name="Coin 1" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin 2" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Coin" bits="7" ids="2,1"/>
+        <!-- DSW2 -->
+        <dip name="Timer Decrement" bits="8,9" ids="Very Fast,Fast,Normal,Slow"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Per Stage Life" bits="12,13" ids="Least,Little,Less,Normal"/>
+        <dip name="Continue Mode" bits="14" ids="Off,On"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="deathbrd.zip|mutantf.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="hf-03-2.2c" crc="fb86fff3" map="10"/>
+            <part name="hf-00-2.2a" crc="099aa422" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="hd-04-1.4c" crc="fd2ea8d7" map="10"/>
+            <part name="hd-01-1.4a" crc="48a247ac" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x080000 -->
+        <part name="hd-12.21j" crc="13d55f11"/>
+
+        <!-- chars - starts at 0x090000 -->
+        <interleave output="32">
+            <part name="hd-07-1.9d" crc="d2a3d449" map="0001" offset="0x00000" length="0x08000"/>
+            <part name="hd-06-1.8d" crc="8b7a558b" map="0010" offset="0x00000" length="0x08000"/>
+            <part name="hd-07-1.9d" crc="d2a3d449" map="0100" offset="0x08000" length="0x08000"/>
+            <part name="hd-06-1.8d" crc="8b7a558b" map="1000" offset="0x08000" length="0x08000"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x130000 -->
+        <interleave output="32">
+            <part name="maf-00.8a" crc="e56f528d" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="maf-00.8a" crc="e56f528d" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="maf-00.8a" crc="e56f528d" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="maf-00.8a" crc="e56f528d" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- tiles2 - starts at 0x1B0000 -->
+        <interleave output="32">
+            <part name="maf-01.9a" crc="c3d5173d" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="maf-01.9a" crc="c3d5173d" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="maf-02.11a" crc="0b37d849" map="0012" offset="0x00000" length="0x40000"/>
+            <part name="maf-02.11a" crc="0b37d849" map="1200" offset="0x40000" length="0x40000"/>
+        </interleave>
+
+        <!-- sprites1 - starts at 0x2B0000 -->
+        <interleave output="32">
+            <part name="maf-06.18d" crc="f5c7a9b5" map="0021"/>
+            <part name="maf-03.18a" crc="f4366d2c" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="maf-07.20d" crc="fd6008a3" map="0021"/>
+            <part name="maf-04.20a" crc="0c8f654e" map="2100"/>
+        </interleave>
+        <interleave output="32">
+            <part name="maf-08.21d" crc="e41cf1e7" map="0021"/>
+            <part name="maf-05.21a" crc="b0cfeb80" map="2100"/>
+        </interleave>
+
+        <!-- sprites2 - starts at 0x7B0000 -->
+        <interleave output="32">
+            <part name="hf-08.15a" crc="93b7279f" map="0001"/>
+            <part name="hf-09.17a" crc="05e2c074" map="0010"/>
+            <part name="hf-10.15c" crc="9b06f418" map="0100"/>
+            <part name="hf-11.17c" crc="3859a531" map="1000"/>
+        </interleave>
+
+        <!-- oki1 - starts at 0x7F0000 -->
+        <part name="maf-10.20l" crc="7c57f48b"/>
+
+        <!-- oki2 - starts at 0x830000 -->
+        <part name="maf-09.18l" crc="28e7ed81"/>
+        <!-- Total 0x8B0000 bytes -->
+    </rom>
+</misterromdescription>
