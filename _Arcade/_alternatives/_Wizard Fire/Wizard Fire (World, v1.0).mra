@@ -1,0 +1,86 @@
+<misterromdescription>
+    <name>Wizard Fire (Over Sea v1.0)</name>
+    <setname>wizdfirea</setname>
+    <rbf>wizdfire_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1992</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>DECO DE-0358 Hardware</platform>
+    <category>Hack &amp; Slash</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="FF,7F">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Coin" bits="7" ids="2C Start/1C Continue,Normal"/>
+        <!-- DSW2 -->
+        <dip name="No. of Lives" bits="8,9" ids="2,5,4,3"/>
+        <dip name="Game Difficulty" bits="10,11" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Magic Gauge Speed" bits="12,13" ids="Very Slow,Slow,Fast,Normal"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Magic,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="wizdfirea.zip|wizdfire.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="mm-01.3d" crc="ebaecff7" map="10"/>
+            <part name="mm-00.3a" crc="56e05ec0" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="je-03.5d" crc="5217d404" map="10"/>
+            <part name="je-02.5a" crc="36a1ce28" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="mas13" crc="7e5256ce" map="10"/>
+            <part name="mas12" crc="005bd499" map="01"/>
+        </interleave>
+        <part repeat="0x80000"> 00 </part>
+
+        <!-- audiocpu - starts at 0x200000 -->
+        <part name="je-06.20r" crc="79042546"/>
+
+        <!-- chars - starts at 0x210000 -->
+        <interleave output="16">
+            <part name="je-04.10d" crc="73cba800" map="01"/>
+            <part name="je-05.12d" crc="22e2c49d" map="10"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x230000 -->
+        <part name="mas00" crc="3d011034"/>
+        <part name="mas01" crc="6d0c9d0b"/>
+
+        <!-- tiles2 - starts at 0x430000 -->
+        <part name="mas02" crc="af00e620"/>
+        <part name="mas03" crc="2fe61ea2"/>
+
+        <!-- sprites1 - starts at 0x530000 -->
+        <part name="mas04" crc="1e56953b"/>
+        <part name="mas06" crc="3b8bbd45"/>
+        <part name="mas05" crc="3826b8f8"/>
+        <part name="mas07" crc="31303769"/>
+
+        <!-- sprites2 - starts at 0x930000 -->
+        <part name="mas08" crc="e224fb7a"/>
+        <part name="mas09" crc="5f6deb41"/>
+
+        <!-- oki1 - starts at 0xA30000 -->
+        <part name="mas10" crc="f4b4c8a1" offset="0x80000" length="0x80000"/>
+        <part name="mas10" crc="f4b4c8a1" offset="0x00000" length="0x80000"/>
+
+        <!-- oki2 - starts at 0xB30000 -->
+        <part name="mas11" crc="c2f0a4f2"/>
+        <!-- Total 0xBB0000 bytes -->
+    </rom>
+</misterromdescription>
