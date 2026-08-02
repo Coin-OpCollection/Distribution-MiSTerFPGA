@@ -1,0 +1,78 @@
+<misterromdescription>
+    <name>Rohga: Armor Force (Asia/Europe v3.0 set 1)</name>
+    <setname>rohga1</setname>
+    <rbf>rohga_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1991</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>DECO DE-0353-3 Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Platform / Shooter Scrolling</catver>
+
+    <switches default="FF,77">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Cost" bits="7" ids="2C Start/1C Continue,Normal"/>
+        <!-- DSW2 -->
+        <dip name="Player's Vitality" bits="12,13" ids="High,Lowest,Low,Normal"/>
+        <dip name="Continue Mode" bits="14" ids="Off,On"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,Special Attack,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="rohga.zip|rohga1.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="jd00.bin" crc="e046c77a" map="10"/>
+            <part name="jd03.bin" crc="2c5120b8" map="01"/>
+        </interleave>
+        <part repeat="0x80000"> 00 </part>
+        <interleave output="16">
+            <part name="mam00.8a" crc="0fa440a6" map="10"/>
+            <part name="mam07.8d" crc="f8bc7f20" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x200000 -->
+        <part name="ha04.18p" crc="eb6608eb"/>
+
+        <!-- oki1 - starts at 0x210000 -->
+        <part name="mam13.15p" crc="525b9461"/>
+
+        <!-- oki2 - starts at 0x290000 -->
+        <part name="mam12.14p" crc="6f00b791"/>
+
+        <!-- chars - starts at 0x310000 -->
+        <interleave output="16">
+            <part name="ha01.13a" crc="fb8f8519" map="01"/>
+            <part name="ha02.14a" crc="aa47c17f" map="10"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x330000 -->
+        <part name="mam01.10a" crc="dbf4fbcc"/>
+        <part name="mam02.11a" crc="b1fac481"/>
+
+        <!-- tiles2 - starts at 0x430000 -->
+        <part name="mam08.17d" crc="ca97a83f"/>
+        <part name="mam09.18d" crc="3f57d56f"/>
+
+        <!-- sprites - starts at 0x630000 -->
+        <part name="mam05.19a" crc="307a2cd1"/>
+        <part name="mam06.20a" crc="a1119a2d"/>
+        <part name="mam10.19d" crc="99f48f9f"/>
+        <part name="mam11.20d" crc="c3f12859"/>
+        <part name="mam03.17a" crc="fc4dfd48"/>
+        <part name="mam04.18a" crc="7d3b38bf"/>
+        <!-- Total 0xC30000 bytes -->
+    </rom>
+</misterromdescription>
