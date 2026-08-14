@@ -1,0 +1,99 @@
+<misterromdescription>
+    <name>Thunder Zone (World, Rev 1)</name>
+    <setname>thndzone</setname>
+    <rbf>thndzone_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1991</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <players>4</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>DECO DE-0344-3 Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Shooter / Run and Gun</catver>
+
+    <switches default="FF,7F">
+        <!-- DSW1 -->
+        <dip name="Coin Right" bits="0,2" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Coin Left" bits="3,5" ids="3 Coins/1 Credit,2 Coins/1 Credit,1 Coin/6 Credits,1 Coin/5 Credits,1 Coin/4 Credits,1 Coin/3 Credits,1 Coin/2 Credits,1 Coin/1 Credit"/>
+        <dip name="Screen Rotation" bits="6" ids="On,Off"/>
+        <dip name="Continue Coin" bits="7" ids="2C Start/1C Continue,Normal"/>
+        <!-- DSW2 -->
+        <dip name="Game Difficulty" bits="10,11" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Mode Select" bits="13" ids="4 Players,2 Players"/>
+        <dip name="Attract Mode Sound" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Shoot,Nuke,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="thndzone.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="gz03-1.a17" crc="3595fad0" map="01"/>
+            <part name="gz01-1.a15" crc="20250da6" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="gt02.a16" crc="cde31e35" map="01"/>
+            <part name="gt00.a14" crc="b7277175" map="10"/>
+        </interleave>
+
+        <!-- sub - starts at 0x080000 -->
+        <interleave output="16">
+            <part name="gz08-1.a9" crc="8f61ab1e" map="01"/>
+            <part name="gz10-1.a12" crc="811d86d7" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="gt09-1.a11" crc="0a8fa7e1" map="01"/>
+            <part name="gt11-1.a14" crc="80cb23de" map="10"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="gt04.f18" crc="81c29ebf"/>
+
+        <!-- chars - starts at 0x110000 -->
+        <interleave output="16">
+            <part name="gt06.h12" crc="4efdf03d" map="10"/>
+            <part name="gt05.h11" crc="0aae996a" map="01"/>
+        </interleave>
+
+        <!-- tiles1 - starts at 0x130000 -->
+        <part name="maj-02.h14" crc="383bbc37"/>
+
+        <!-- tiles2 - starts at 0x230000 -->
+        <part name="maj-01.c18" crc="9840a204"/>
+        <part name="maj-00.c17" crc="87ea8d16"/>
+
+        <!-- sprites1 - starts at 0x430000 -->
+        <part name="maj-04.r1" crc="36e49b19"/>
+        <part name="maj-05.r2" crc="80fc71cc"/>
+        <part name="maj-06.r3" crc="2e7a684b"/>
+        <part name="maj-07.r5" crc="3acc1f78"/>
+        <part name="maj-08.s6" crc="1958a36d"/>
+        <part name="maj-09.s8" crc="c21087a1"/>
+        <part name="maj-10.s9" crc="a02fa641"/>
+        <part name="maj-11.s11" crc="dabe9305"/>
+
+        <!-- sprites2 - starts at 0x830000 -->
+        <interleave output="16">
+            <part name="gt13.n2" crc="f4709905" map="10"/>
+            <part name="gt12.n1" crc="9a86a015" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="gt15.n5" crc="f14edd3d" map="10"/>
+            <part name="gt14.n3" crc="750fc523" map="01"/>
+        </interleave>
+
+        <!-- oki1 - starts at 0x8B0000 -->
+        <part name="gt07.h15" crc="750b7e5d"/>
+        <part repeat="0x20000"> 00 </part>
+
+        <!-- oki2 - starts at 0x8F0000 -->
+        <part name="maj-03.h16" crc="31dcfac3"/>
+        <!-- Total 0x970000 bytes -->
+    </rom>
+</misterromdescription>
