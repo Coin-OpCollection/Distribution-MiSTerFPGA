@@ -1,0 +1,70 @@
+<misterromdescription>
+    <name>G.I. Joe (World, EAB)</name>
+    <setname>gijoe</setname>
+    <rbf>gijoe_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1992</year>
+    <manufacturer>Konami</manufacturer>
+    <players>4</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Konami GX-069 Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Shooter / Walking</catver>
+
+    <switches default="7F,FF,FF">
+        <!-- DSW1  -->
+        <dip name="Sound" bits="7" ids="Stereo,Mono"/>
+        <!-- DSW2  -->
+        <dip name="Coin Mechanism" bits="15" ids="Independent,Common"/>
+        <!-- DSW3  -->
+        <dip name="No. of Players" bits="23" ids="4,2"/>
+    </switches>
+
+    <buttons names="Shoot,Super Weapon,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <nvram index="2" size="128"/>
+
+    <rom index="0" zip="gijoe.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="069eab03.14e" crc="dd2d533f" map="01"/>
+            <part name="069eab02.18e" crc="6bb11c87" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="069a12.13e" crc="75a7585c" map="01"/>
+            <part name="069a11.16e" crc="3153e788" map="10"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="069a01.7c" crc="74172b99"/>
+
+        <!-- k054539 - starts at 0x110000 -->
+        <part name="069a04.1e" crc="11d6dcd6"/>
+        <part repeat="0x80000">00</part>
+
+        <!-- k056832 - starts at 0x390000 -->
+        <interleave output="32">
+            <part name="069a10.18j" crc="4c6743ee" map="0021"/>
+            <part name="069a09.16j" crc="e6e36b05" map="2100"/>
+        </interleave>
+
+        <!-- k053246 - starts at 0x590000 -->
+        <interleave output="64">
+            <part name="069a08.6h" crc="325477d4" map="00000021"/>
+            <part name="069a05.1h" crc="c4ab07ed" map="00002100"/>
+            <part name="069a07.4h" crc="ccaa3971" map="00210000"/>
+            <part name="069a06.2h" crc="63eba8e1" map="21000000"/>
+        </interleave>
+        <part repeat="0x100000">00</part>
+
+        <!-- eeprom - starts at 0xA90000 -->
+        <part name="er5911.7d" crc="a0d50a79"/>
+        <!-- Total 0xA90080 bytes -->
+    </rom>
+</misterromdescription>
