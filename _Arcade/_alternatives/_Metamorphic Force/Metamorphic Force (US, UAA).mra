@@ -1,0 +1,77 @@
+<misterromdescription>
+    <name>Metamorphic Force (US, UAA)</name>
+    <setname>metamrphu</setname>
+    <rbf>metamrph_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1993</year>
+    <manufacturer>Konami</manufacturer>
+    <players>4</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>USA</region>
+    <platform>Konami GX-224 Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Platform / Fighter Scrolling</catver>
+    <t_status>alpha</t_status>
+
+    <switches default="EF,FF,FF">
+        <dip name="Sound" bits="4" ids="Stereo,Mono"/>
+        <dip name="Coin Mechanism" bits="5" ids="Independent,Common"/>
+        <dip name="No. of Players" bits="6" ids="4,2"/>
+        <dip name="Continuous Energy Increment" bits="7" ids="Yes,No"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <nvram index="2" size="128"/>
+
+    <rom index="0" zip="metamrphu.zip|metamrph.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="224uaa02.15f" crc="289c926b" map="01"/>
+            <part name="224uaa01.15h" crc="e1d9b516" map="10"/>
+        </interleave>
+        <part repeat="0x80000">00</part>
+        <interleave output="16">
+            <part name="224a04" crc="ada53ba4" map="01"/>
+            <part name="224a03" crc="a5bedb01" map="10"/>
+        </interleave>
+
+        <!-- soundcpu - starts at 0x200000 -->
+        <part name="224a05" crc="4b4c985c"/>
+
+        <!-- k054539 - starts at 0x240000 -->
+        <part name="224a06" crc="972f6abe"/>
+        <part name="224a07" crc="61b2f97a"/>
+
+        <!-- k053250 - starts at 0x540000 -->
+        <part name="224a14" crc="3c79b404"/>
+
+        <!-- k056832 - starts at 0x580000 -->
+        <interleave output="32">
+            <part name="224a09" crc="1931afce" map="0021"/>
+            <part name="224a08" crc="dc94d53a" map="2100"/>
+        </interleave>
+        <part repeat="0x80000">00</part>
+
+        <!-- k055673 - starts at 0x800000 -->
+        <interleave output="64">
+            <part name="224a10" crc="161287f0" map="00000021"/>
+            <part name="224a11" crc="df5960e1" map="00002100"/>
+            <part name="224a12" crc="ca72a4b3" map="00210000"/>
+            <part name="224a13" crc="86b58feb" map="21000000"/>
+        </interleave>
+
+        <!-- eeprom - starts at 0x1000000 -->
+        <part name="metamrphu.nv" crc="1af2f855"/>
+        <!-- Total 0x1000080 bytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

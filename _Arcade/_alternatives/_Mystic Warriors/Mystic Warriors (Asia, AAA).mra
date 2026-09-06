@@ -1,0 +1,85 @@
+<misterromdescription>
+    <name>Mystic Warriors (Asia, AAA)</name>
+    <setname>mystwarraa</setname>
+    <rbf>mystwarr_mister</rbf>
+    <mameversion>0281</mameversion>
+    <year>1993</year>
+    <manufacturer>Konami</manufacturer>
+    <players>4</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Asia</region>
+    <platform>Konami GX-128 Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Platform / Fighter Scrolling</catver>
+    <t_status>beta</t_status>
+
+    <switches default="7F,FF,FF">
+        <!-- DSW1  -->
+        <dip name="Sound" bits="7" ids="Stereo,Mono"/>
+        <!-- DSW2  -->
+        <dip name="Coin Mechanism" bits="15" ids="Independent,Common"/>
+        <!-- DSW3  -->
+        <dip name="No. of Players" bits="23" ids="4,2"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <nvram index="2" size="128"/>
+
+    <rom index="0" zip="mystwarraa.zip|mystwarr.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="128aaa01.20f" crc="633ead86" map="01"/>
+            <part name="128aaa02.20g" crc="69ab81a2" map="10"/>
+        </interleave>
+        <part repeat="0x80000">00</part>
+        <interleave output="16">
+            <part name="128a03.19f" crc="e98094f3" map="01"/>
+            <part name="128a04.19g" crc="88c6a3e4" map="10"/>
+        </interleave>
+
+        <!-- soundcpu - starts at 0x200000 -->
+        <part name="128a05.6b" crc="0e5194e0"/>
+
+        <!-- k054539 - starts at 0x220000 -->
+        <part name="128a06.2d" crc="88ed598c"/>
+        <part name="128a07.1d" crc="db79a66e"/>
+
+        <!-- k056832 - starts at 0x620000 -->
+        <interleave output="32">
+            <part name="128a08.1h" crc="63d6cfa0" map="0021"/>
+            <part name="128a09.1k" crc="573a7725" map="2100"/>
+        </interleave>
+
+        <!-- k056832 plane4 - starts at 0x820000 -->
+        <part name="128a10.3h" crc="558e545a"/>
+
+        <!-- k055673 - starts at 0x8A0000 -->
+        <interleave output="64">
+            <part name="128a16.22k" crc="459b6407" map="00000021"/>
+            <part name="128a15.20k" crc="6bbfedf4" map="00002100"/>
+            <part name="128a14.19k" crc="f7bd89dd" map="00210000"/>
+            <part name="128a13.17k" crc="e89b66a2" map="21000000"/>
+        </interleave>
+
+        <!-- k055673 plane4 - starts at 0xCA0000 -->
+        <interleave output="16">
+            <part name="128a12.12k" crc="63de93e2" map="01"/>
+            <part name="128a11.10k" crc="4eac941a" map="10"/>
+        </interleave>
+        <part repeat="0x260000">00</part>
+
+        <!-- eeprom - starts at 0x1000000 -->
+        <part name="mystwarra.nv" crc="38951263"/>
+        <!-- Total 0x1000080 bytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>
