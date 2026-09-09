@@ -1,0 +1,73 @@
+<misterromdescription>
+    <name>Thunder Dragon (8th Jan. 1992)</name>
+    <setname>tdragon</setname>
+    <rbf>tdragon</rbf>
+    <mameversion>0281</mameversion>
+    <year>1991</year>
+    <manufacturer>NMK / Tecmo</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>World</region>
+    <platform>NMK16 Hardware</platform>
+    <category>Shoot'em Up</category>
+    <catver>Shoot'em Up / Vertical</catver>
+    <t_status>beta</t_status>
+
+    <switches default="FE,FE">
+        <!-- DSW1 -->
+        <dip name="Flip Screen" bits="0" ids="On,Off"/>
+        <dip name="Difficulty" bits="2,3" ids="Hardest,Easy,Hard,Normal"/>
+        <dip name="Lives" bits="6,7" ids="1,2,4,3"/>
+        <!-- DSW2 -->
+        <dip name="Demo Sounds" bits="9" ids="Off,On"/>
+        <dip name="Coin B" bits="10,12" ids="Free Play,1 Coin/4 Credits,3 Coins/1 Credit,1 Coin/2 Credits,4 Coins/1 Credit,1 Coin/3 Credits,2 Coins/1 Credit,1 Coin/1 Credit"/>
+        <dip name="Coin A" bits="13,15" ids="Free Play,1 Coin/4 Credits,3 Coins/1 Credit,1 Coin/2 Credits,4 Coins/1 Credit,1 Coin/3 Credits,2 Coins/1 Credit,1 Coin/1 Credit"/>
+    </switches>
+
+    <buttons names="Shot,Bomb,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="tdragon.zip|nmk004.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="91070_68k.8" crc="121c3ae7" map="10"/>
+            <part name="91070_68k.7" crc="6e154d8e" map="01"/>
+        </interleave>
+
+        <!-- nmk004 - starts at 0x040000 -->
+        <part name="91070.1" crc="bf493d74"/>
+
+        <!-- fgtile - starts at 0x050000 -->
+        <part name="91070.6" crc="fe365920"/>
+
+        <!-- bgtile - starts at 0x070000 -->
+        <part name="91070.5" crc="d0bde826"/>
+
+        <!-- sprites - starts at 0x170000 -->
+        <part name="91070.4" crc="3eedc2fe"/>
+
+        <!-- oki1 - starts at 0x270000 -->
+        <part name="91070.3" crc="ae6875a8"/>
+
+        <!-- oki2 - starts at 0x2F0000 -->
+        <part name="91070.2" crc="ecfea43e"/>
+
+        <!-- nmk_irq htiming - starts at 0x370000 -->
+        <part name="91070.9" crc="cfdbb86c"/>
+
+        <!-- nmk_irq vtiming - starts at 0x370100 -->
+        <part name="91070.10" crc="e6ead349"/>
+
+        <!-- nmk004 - starts at 0x370200 -->
+        <part name="nmk004.bin" crc="8ae61a09"/>
+        <!-- Total 0x372200 bytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>
