@@ -1,0 +1,87 @@
+<misterromdescription>
+    <name>Wardner (World)</name>
+    <setname>wardner</setname>
+    <rbf>wardner_mister</rbf>
+    <mameversion>0289</mameversion>
+    <year>1987</year>
+    <manufacturer>Toaplan / Taito Corporation Japan</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Toaplan GXL Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Shooter Scrolling</catver>
+
+    <switches default="01,00">
+        <!-- DSWA -->
+        <dip name="Cabinet Type" bits="0" ids="Table,Upright"/>
+        <dip name="Screen Inversion" bits="1" ids="Normal,Invert"/>
+        <dip name="Service Mode" bits="2" ids="Normal,Screen Test"/>
+        <dip name="Advertise Sound" bits="3" ids="On,Off"/>
+        <dip name="Coin A" bits="4,5" ids="1/1,2/1,3/1,4/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/2,1/3,1/4,1/6"/>
+        <!-- DSWB -->
+        <dip name="Game Difficulty" bits="8,9" ids="B,A,C,D"/>
+        <dip name="Extend" bits="10,11" ids="30k/80k/50k+,50k/100k/50k+,30k Only,50k Only"/>
+        <dip name="Lives" bits="12,13" ids="3,4,5,1"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="wardner.zip" md5="None">
+        <!-- maincpu part 0 - starts at 0x0 -->
+        <part name="b25-31.6m" crc="c5dd56fd"/>
+
+        <!-- maincpu part 1 - starts at 0x8000 -->
+        <part name="b25-18.7m" crc="9aab8ee2"/>
+
+        <!-- maincpu part 2 - starts at 0x18000 -->
+        <part name="b25-19.8m" crc="95b68813"/>
+
+        <!-- maincpu part 3 - starts at 0x28000 -->
+        <part name="b25-32.10m" crc="347f411b"/>
+
+        <!-- audiocpu - starts at 0x30000 -->
+        <part name="b25-16.4k" crc="e5202ff8"/>
+
+        <!-- dsp - starts at 0x38000 -->
+        <part name="d70012u_gxc-02_mcu_71001" crc="eee0ff59"/>
+
+        <!-- chars - starts at 0x38C00 -->
+        <interleave output="24">
+            <part name="b25-28.10f" crc="1392b60d" map="001"/>
+            <part name="b25-27.8f"  crc="0ed848da" map="010"/>
+            <part name="b25-26.7f"  crc="79792c86" map="100"/>
+        </interleave>
+
+        <!-- fg_tiles - starts at 0x44C00 -->
+        <interleave output="32">
+            <part name="b25-12.18f" crc="15d08848" map="0001"/>
+            <part name="b25-15.23f" crc="cdd2d408" map="0010"/>
+            <part name="b25-14.21f" crc="5a2aef4f" map="0100"/>
+            <part name="b25-13.19f" crc="be21db2b" map="1000"/>
+        </interleave>
+
+        <!-- bg_tiles - starts at 0x64C00 -->
+        <interleave output="32">
+            <part name="b25-08.12f" crc="883ccaa3" map="0001"/>
+            <part name="b25-11.16f" crc="d6ebd510" map="0010"/>
+            <part name="b25-10.15f" crc="b9a61e81" map="0100"/>
+            <part name="b25-09.14f" crc="585411b7" map="1000"/>
+        </interleave>
+
+        <!-- sprites - starts at 0x84C00 -->
+        <interleave output="32">
+            <part name="b25-01.14c" crc="42ec01fb" map="1000"/>
+            <part name="b25-02.16c" crc="6c0130b7" map="0100"/>
+            <part name="b25-03.17c" crc="b923db99" map="0010"/>
+            <part name="b25-04.19c" crc="8059573c" map="0001"/>
+        </interleave>
+        <!-- Total 0xC4C00 bytes - 787 kBytes -->
+    </rom>
+</misterromdescription>
