@@ -1,0 +1,54 @@
+<misterromdescription>
+    <name>KiKi KaiKai (Japan)</name>
+    <setname>kikikai</setname>
+    <rbf>kikikai_mister</rbf>
+    <mameversion>0289</mameversion>
+    <year>1986</year>
+    <manufacturer>Taito Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>Japan</region>
+    <platform>Taito A85 Hardware</platform>
+    <category>Shoot &apos;Em Up</category>
+    <catver>Shooter/Walking</catver>
+
+    <switches default="fe,3f">
+        <dip name="Game Style" bits="0" ids="Upright,Table"/>
+        <dip name="Display Flip" bits="1" ids="Inverted, Normal"/>
+        <dip name="Test Mode" bits="2" ids="Test,Normal"/>
+        <dip name="Coin 1" bits="4,5" ids="4 Coins/1 Play,3 Coins/1 Play, 1 Coins/2 Play, 1 Coins/1 Play, 2 Coins/3 Play, 2 Coins/1 Play, 1 Coins/2 Play, 1 Coins/1 Play"/>
+        <dip name="Coin 2" bits="6,7" ids="1 Coins/6 Play,1 Coins/4 Play, 1 Coins/3 Play, 1 Coins/2 Play, 2 Coins/3 Play, 2 Coins/1 Play, 1 Coins/2 Play, 1 Coins/1 Play"/>
+        <dip name="Difficulty" bits="8,9" ids="Rank D,Rank C,Rank A,Rank B"/>
+        <dip name="Extend" bits="10,11" ids="50k/100k(E),100k/300k(E),None/200k(E),None/150k(E)"/>
+        <dip name="Players" bits="12,13" ids="2,5,4,3"/>
+        <dip name="Coin Mode" bits="14" ids="Type 1,Type 2"/>
+        <dip name="Number Match" bits="15" ids="Enabled,Disabled"/>
+    </switches>
+
+    <buttons names="Ofuda,Oharai,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="0" zip="kikikai.zip" md5="None">
+        <!-- maincpu - starts at 0x0 -->
+        <part name="a85-17.h16" crc="c141d5ab"/>
+        <part name="a85-16.h18" crc="4094d750"/>
+
+        <!-- mcu - starts at 0x20000 -->
+        <part name="a85-01_jph1020p.h8" crc="01771197"/>
+
+        <!-- audiocpu - starts at 0x21000 -->
+        <part name="a85-11.f6" crc="cc3539db"/>
+
+        <!-- gfx1 - starts at 0x29000 -->
+        <part name="a85-15.a1" crc="aebc8c32"/>
+        <part name="a85-14.a3" crc="a9df0453"/>
+        <part name="a85-13.a4" crc="3eeaf878"/>
+        <part name="a85-12.a6" crc="91e58067"/>
+
+        <!-- proms - starts at 0x69000 -->
+        <part name="a85-08.g15" crc="d15f61a8"/>
+        <part name="a85-10.g12" crc="8fc3fa86"/>
+        <part name="a85-09.g14" crc="b931c94d"/>
+        <!-- Total 0x69300 bytes - 420 kBytes -->
+    </rom>
+</misterromdescription>
