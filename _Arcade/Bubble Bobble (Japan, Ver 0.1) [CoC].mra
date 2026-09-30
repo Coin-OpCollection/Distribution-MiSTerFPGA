@@ -1,0 +1,75 @@
+<misterromdescription>
+    <name>Bubble Bobble (Japan, Ver 0.1)</name>
+    <setname>bublbobl</setname>
+    <rbf>bublbobl_mister</rbf>
+    <mameversion>0289</mameversion>
+    <year>1986</year>
+    <manufacturer>Taito Corporation</manufacturer>
+    <players>2</players>
+    <joystick>2-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Taito A78 Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform/Run Jump</catver>
+    <t_status>beta</t_status>
+
+    <switches default="ff,ff">
+        <dip name="Language" bits="0" ids="English,Japanese"/>
+        <dip name="Display Flip" bits="1" ids="Inverted, Normal"/>
+        <dip name="Test Mode" bits="2" ids="On,Off"/>
+        <dip name="Demo Sounds" bits="3" ids="Off,On"/>
+        <dip name="Coin 1" bits="4,5" ids="2 Coins/3 Play,2 Coins/1 Play, 1 Coins/2 Play, 1 Coins/1 Play"/>
+        <dip name="Coin 2" bits="6,7" ids="2 Coins/3 Play,2 Coins/1 Play, 1 Coins/2 Play, 1 Coins/1 Play"/>
+        <dip name="Difficulty" bits="8,9" ids="Very Hard,Hard,Easy,Normal"/>
+        <dip name="Extend" bits="10,11" ids="50k/250k/500k,40k/200k/500k,20k/80k/300k,30k/100k/400k"/>
+        <dip name="Players" bits="12,13" ids="2,1,5,3"/>
+        <dip name="Score Output" bits="14" ids="On,Off"/>
+        <dip name="ROM Type" bits="15" ids="IC52 + IC53,IC52"/>
+    </switches>
+
+    <buttons names="Bubble,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="bublbobl.zip" md5="None">
+        <!-- maincpu fixed - starts at 0x0 -->
+        <part name="a78-06-1.51" crc="567934b6"/>
+
+        <!-- maincpu banked - starts at 0x8000 -->
+        <part name="a78-05-1.52" crc="9f8ee242"/>
+
+        <!-- subcpu - starts at 0x18000 -->
+        <part name="a78-08.37" crc="ae11a07b"/>
+
+        <!-- audiocpu - starts at 0x20000 -->
+        <part name="a78-07.46" crc="4f9a26e8"/>
+
+        <!-- mcu - starts at 0x28000 -->
+        <part name="a78-01.17" crc="b1bfb53d"/>
+
+        <!-- gfx1 - starts at 0x29000 -->
+        <part name="a78-09.12" crc="20358c22"/>
+        <part name="a78-10.13" crc="930168a9"/>
+        <part name="a78-11.14" crc="9773e512"/>
+        <part name="a78-12.15" crc="d045549b"/>
+        <part name="a78-13.16" crc="d0af35c5"/>
+        <part name="a78-14.17" crc="7b5369a8"/>
+        <part name="a78-15.30" crc="6b61a413"/>
+        <part name="a78-16.31" crc="b5492d97"/>
+        <part name="a78-17.32" crc="d69762d5"/>
+        <part name="a78-18.33" crc="9f243b68"/>
+        <part name="a78-19.34" crc="66e9438c"/>
+        <part name="a78-20.35" crc="9ef863ad"/>
+
+        <!-- proms - starts at 0x89000 -->
+        <part name="a71-25.41" crc="2d0f8545"/>
+        <!-- Total 0x89100 bytes - 548 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>
