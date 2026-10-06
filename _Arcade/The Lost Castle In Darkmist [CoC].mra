@@ -1,0 +1,87 @@
+<misterromdescription>
+    <name>The Lost Castle In Darkmist</name>
+    <setname>darkmist</setname>
+    <rbf>darkmist_mister</rbf>
+    <mameversion>0289</mameversion>
+    <year>1986</year>
+    <manufacturer>Seibu Kaihatsu / Taito Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>World</region>
+    <platform>Seibu Kaihatsu SEI-8608 Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Fighter Scrolling</catver>
+    <t_status>beta</t_status>
+
+    <switches default="ff,7f">
+        <dip name="Coin A" bits="0,2" ids="5 Coins/1 Credit,1 Coin/5 Credits,3 Coins/1 Credit,1 Coin/2 Credits,4 Coins/1 Credit,1 Coin/3 Credits,2 Coins/1 Credit,1 Coin/1 Credit"/>
+        <dip name="Coin B" bits="3,4" ids="2 Coins/3 Credits,1 Coin/2 Credits,2 Coins/1 Credit,1 Coin/1 Credit"/>
+        <dip name="Test Mode" bits="5" ids="On,Off"/>
+        <dip name="Free Play" bits="7" ids="On,Off"/>
+        <dip name="Cabinet" bits="8" ids="Cocktail,Upright"/>
+        <dip name="Difficulty" bits="9,10" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Lives" bits="11,12" ids="4,3,2,1"/>
+        <dip name="Extend" bits="13,14" ids="40k/80k,30k/60k,20k/40k,10k/20k"/>
+        <dip name="Demo Sounds" bits="15" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Sword,Magic,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="darkmist.zip|t5182.zip" md5="None">
+        <!-- maincpu - starts at 0x0 -->
+        <part name="dm_15.rom" crc="21e6503c"/>
+        <part name="dm_16.rom" crc="094579d9"/>
+
+        <!-- t5182:external - starts at 0x10000 -->
+        <part name="dm_17.rom" crc="7723dcae"/>
+
+        <!-- t5182:cpu - starts at 0x18000 -->
+        <part name="t5182.rom" crc="d354c8fc"/>
+
+        <!-- tx_gfx - starts at 0x1A000 -->
+        <part name="dm_13.rom" crc="38bb38d9"/>
+        <part name="dm_14.rom" crc="ac5a31f3"/>
+
+        <!-- bg_gfx - starts at 0x1E000 -->
+        <part name="dm_01.rom" crc="652aee6b"/>
+        <part name="dm_02.rom" crc="e2dd15aa"/>
+
+        <!-- fg_gfx - starts at 0x3E000 -->
+        <part name="dm_05.rom" crc="ca79a738"/>
+        <part name="dm_06.rom" crc="9629ed2c"/>
+
+        <!-- spr_gfx - starts at 0x5E000 -->
+        <part name="dm_09.rom" crc="52154b50"/>
+        <part name="dm_11.rom" crc="3118e2f9"/>
+        <part name="dm_10.rom" crc="34fd52b5"/>
+        <part name="dm_12.rom" crc="cc4b9839"/>
+
+        <!-- bg_map - starts at 0x8E000 -->
+        <part name="dm_03.rom" crc="60b40c2a"/>
+        <part name="dm_04.rom" crc="d47b8cd9"/>
+
+        <!-- fg_map - starts at 0x9E000 -->
+        <part name="dm_07.rom" crc="889b1277"/>
+        <part name="dm_08.rom" crc="f76f6f46"/>
+
+        <!-- clut - starts at 0xA6000 -->
+        <part name="63s281n.m7" crc="897ef49f"/>
+        <part name="63s281n.d7" crc="a9975a96"/>
+        <part name="63s281n.f11" crc="8096b206"/>
+        <part name="63s281n.j15" crc="2ea780a4"/>
+
+        <!-- proms - starts at 0xA6400 -->
+        <part name="63s281n.l1" crc="208d17ca"/>
+        <part name="82s129.d11" crc="866eab0e"/>
+        <!-- Total 0xA6600 bytes - 665 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>
