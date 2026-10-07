@@ -1,0 +1,63 @@
+<misterromdescription>
+    <name>The Legend of Kage (Rev 2)</name>
+    <setname>lkage</setname>
+    <rbf>lkage_mister</rbf>
+    <mameversion>0289</mameversion>
+    <year>1984</year>
+    <manufacturer>Taito Corporation</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Taito A54 Hardware</platform>
+    <category>Fighter</category>
+    <catver>Fighter / 2D</catver>
+
+    <switches default="7f,00,ff">
+        <dip name="Extend" bits="0,1" ids="300k/1300k/1000k,300k/1000k/700k,200k/900k/700k,200k/700k/500k"/>
+        <dip name="Free Play" bits="2" ids="On,Off"/>
+        <dip name="Lives" bits="3,4" ids="255,5,4,3"/>
+        <dip name="Display Flip" bits="6" ids="Inverted,Normal"/>
+        <dip name="Game Style" bits="7" ids="Upright,Table"/>
+        <dip name="Coin A" bits="8,11" ids="1 Coin/1 Credit,1 Coin/2 Credits,1 Coin/3 Credits,1 Coin/4 Credits,1 Coin/5 Credits,1 Coin/6 Credits,1 Coin/7 Credits,1 Coin/8 Credits,2 Coins/1 Credit,3 Coins/1 Credit,4 Coins/1 Credit,5 Coins/1 Credit,6 Coins/1 Credit,7 Coins/1 Credit,8 Coins/1 Credit,9 Coins/1 Credit"/>
+        <dip name="Coin B" bits="12,15" ids="1 Coin/1 Credit,1 Coin/2 Credits,1 Coin/3 Credits,1 Coin/4 Credits,1 Coin/5 Credits,1 Coin/6 Credits,1 Coin/7 Credits,1 Coin/8 Credits,2 Coins/1 Credit,3 Coins/1 Credit,4 Coins/1 Credit,5 Coins/1 Credit,6 Coins/1 Credit,7 Coins/1 Credit,8 Coins/1 Credit,9 Coins/1 Credit"/>
+        <dip name="Demo Sounds" bits="16" ids="Off,On"/>
+        <dip name="Initial Season" bits="17" ids="Winter,Spring"/>
+        <dip name="Difficulty" bits="19" ids="Normal,Easy"/>
+        <dip name="Coinage Display" bits="20" ids="No,Yes"/>
+        <dip name="Year Display" bits="21" ids="1985,MCMLXXXIV"/>
+        <dip name="Invulnerability" bits="22" ids="On,Off"/>
+        <dip name="Coin Slots" bits="23" ids="1,2"/>
+    </switches>
+
+    <buttons names="Kodachi,Shuriken,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="lkage.zip" md5="None">
+        <!-- maincpu - starts at 0x0 -->
+        <part name="a54-01-2.37" crc="60fd9734"/>
+        <part name="a54-02-2.38" crc="878a25ce"/>
+
+        <!-- data - starts at 0x10000 -->
+        <part name="a54-03.51" crc="493e76d8"/>
+
+        <!-- audiocpu - starts at 0x14000 -->
+        <part name="a54-04.54" crc="541faf9a"/>
+
+        <!-- mcu - starts at 0x1C000 -->
+        <part name="a54-09.53" crc="0e8b8846"/>
+
+        <!-- gfx1 - starts at 0x1C800 -->
+        <part name="a54-05-1.84" crc="0033c06a"/>
+        <part name="a54-06-1.85" crc="9f04d9ad"/>
+        <part name="a54-07-1.86" crc="b20561a4"/>
+        <part name="a54-08-1.87" crc="3ff3b230"/>
+
+        <!-- proms - starts at 0x2C800 -->
+        <part name="a54-10.2" crc="17dfbd14"/>
+        <!-- Total 0x2CA00 bytes - 178 kBytes -->
+    </rom>
+</misterromdescription>
