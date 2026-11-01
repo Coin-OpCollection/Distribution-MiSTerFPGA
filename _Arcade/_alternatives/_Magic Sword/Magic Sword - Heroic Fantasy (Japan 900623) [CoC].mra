@@ -1,0 +1,94 @@
+<misterromdescription>
+    <name>Magic Sword: Heroic Fantasy (Japan 900623)</name>
+    <setname>mswordj</setname>
+    <rbf>msword_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Fighter Scrolling</catver>
+
+    <switches default="ff,fc,ff">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="Continue Coin,Normal"/>
+        <!-- DSWB -->
+        <dip name="Diff. Level 1" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Diff. Level 2" bits="11,13" ids="8 (Difficult),7,6,5,1 (Easy),2,3,4 (Normal)"/>
+        <dip name="Stage Select" bits="14" ids="Select,Not Select"/>
+        <!-- DSWC -->
+        <dip name="Vitality Blocks" bits="16,17" ids="5,20,15,10"/>
+        <dip name="Free Play" bits="18" ids="Free Play,Without Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Stop,Not Stop"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="With Sound,Without Sound"/>
+        <dip name="Continue" bits="22" ids="With Continue,Without Continue"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="mswordj.zip|msword.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="msj_36.12f" crc="04f0ef50" map="10"/>
+            <part name="msj_42.12h" crc="9fcbb9cd" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="msj_37.13f" crc="6c060d70" map="10"/>
+            <part name="msj_43.13h" crc="aec77787" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ms_34.10f" crc="0e59a62d" map="10"/>
+            <part name="ms_40.10h" crc="babade3a" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ms_35.11f" crc="03da99d1" map="10"/>
+            <part name="ms_41.11h" crc="fadf99ea" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ms_23.13b" crc="57b29519"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="ms_30.12c" crc="fb64e90d"/>
+        <part name="ms_31.13c" crc="74f892b9"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ms_09.4b" crc="4adee6f6" map="00000001"/>
+            <part name="ms_01.4a" crc="f7ab1b88" map="00000010"/>
+            <part name="ms_13.9b" crc="e01adc4b" map="00000100"/>
+            <part name="ms_05.9a" crc="f62c2369" map="00001000"/>
+            <part name="ms_24.5e" crc="be64a3a1" map="00010000"/>
+            <part name="ms_17.5c" crc="0bc1665f" map="00100000"/>
+            <part name="ms_38.8h" crc="904a2ed5" map="01000000"/>
+            <part name="ms_32.8f" crc="3d89c530" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="ms_10.5b"  crc="f02c0718" map="00000001"/>
+            <part name="ms_02.5a"  crc="d071a405" map="00000010"/>
+            <part name="ms_14.10b" crc="dfb2e4df" map="00000100"/>
+            <part name="ms_06.10a" crc="d3ce2a91" map="00001000"/>
+            <part name="ms_25.7e"  crc="0f199d56" map="00010000"/>
+            <part name="ms_18.7c"  crc="1ba76df2" map="00100000"/>
+            <part name="ms_39.9h"  crc="01efce86" map="01000000"/>
+            <part name="ms_33.9f"  crc="ce25defc" map="10000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

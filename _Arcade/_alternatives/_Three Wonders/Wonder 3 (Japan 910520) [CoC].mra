@@ -1,0 +1,116 @@
+<misterromdescription>
+    <name>Wonder 3 (Japan 910520)</name>
+    <setname>wonder3</setname>
+    <rbf>3wonders_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1991</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Compilation</category>
+    <catver>Platform / Shooter Scrolling</catver>
+
+    <switches default="bf,9a,99">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="On,Off"/>
+        <dip name="Screen Stop" bits="7" ids="Pause,Normal"/>
+        <!-- Free Play: A 1-7 all on (Coin 1 and Coin 2 4C/1Cr, Continue Coin on) -->
+        <!-- DSWB -->
+        <dip name="Wanderers Lives" bits="8,9" ids="5,3,2,1"/>
+        <dip name="Wanderers Diff." bits="10,11" ids="Difficult,Hard,Normal,Easy"/>
+        <dip name="Chariot Lives" bits="12,13" ids="5,3,2,1"/>
+        <dip name="Chariot Diff." bits="14,15" ids="Difficult,Hard,Normal,Easy"/>
+        <!-- DSWC -->
+        <dip name="Don&apos;t Pull Lives" bits="16,17" ids="5,3,2,1"/>
+        <dip name="Don&apos;t Pull Diff." bits="18,19" ids="Difficult,Hard,Normal,Easy"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Game Continue" bits="22" ids="On,Off"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="A,B,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="wonder3.zip|3wonders.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="rtj_36.12f" crc="e3741247" map="10"/>
+            <part name="rtj_42.12h" crc="b4baa117" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="rtj_37.13f" crc="a1f677b0" map="10"/>
+            <part name="rtj_43.13h" crc="85337a47" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="rt_34.10f" crc="054137c8" map="10"/>
+            <part name="rt_40.10h" crc="7264cb1b" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="rtj_35.11f" crc="e72f9ea3" map="10"/>
+            <part name="rtj_41.11h" crc="a11ee998" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="rt_23.13b" crc="abfca165"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="rt_30.12c" crc="26b211ab"/>
+        <part name="rt_31.13c" crc="dbe64ad0"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="rt_09.4b" crc="2c40e480" map="00000001"/>
+            <part name="rt_01.4a" crc="3e11f8cd" map="00000010"/>
+            <part name="rt_13.9b" crc="51009117" map="00000100"/>
+            <part name="rt_05.9a" crc="283fd470" map="00001000"/>
+            <part name="rt_24.5e" crc="ee4484ce" map="00010000"/>
+            <part name="rt_17.5c" crc="e5dcddeb" map="00100000"/>
+            <part name="rt_38.8h" crc="b2940c2d" map="01000000"/>
+            <part name="rt_32.8f" crc="08e2b758" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="rt_10.5b"  crc="e3f3ff94" map="00000001"/>
+            <part name="rt_02.5a"  crc="fcffd73c" map="00000010"/>
+            <part name="rt_14.10b" crc="5c546d9a" map="00000100"/>
+            <part name="rt_06.10a" crc="d9650bc4" map="00001000"/>
+            <part name="rt_25.7e"  crc="11b28831" map="00010000"/>
+            <part name="rt_18.7c"  crc="ce1afb7c" map="00100000"/>
+            <part name="rt_39.9h"  crc="ea7ac9ee" map="01000000"/>
+            <part name="rt_33.9f"  crc="d6a99384" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="rt_11.7b"  crc="04f3c298" map="00000001"/>
+            <part name="rt_03.7a"  crc="98087e08" map="00000010"/>
+            <part name="rt_15.11b" crc="b6aba565" map="00000100"/>
+            <part name="rt_07.11a" crc="c62defa1" map="00001000"/>
+            <part name="rt_26.8e"  crc="532f542e" map="00010000"/>
+            <part name="rt_19.8c"  crc="1f0f72bd" map="00100000"/>
+            <part name="rt_28.10e" crc="6064e499" map="01000000"/>
+            <part name="rt_21.10c" crc="20012ddc" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="rt_12.8b"  crc="e54664cc" map="00000001"/>
+            <part name="rt_04.8a"  crc="4d7b9a1a" map="00000010"/>
+            <part name="rt_16.12b" crc="37c96cfc" map="00000100"/>
+            <part name="rt_08.12a" crc="75f4975b" map="00001000"/>
+            <part name="rt_27.9e"  crc="ec6edc0f" map="00010000"/>
+            <part name="rt_20.9c"  crc="4fe52659" map="00100000"/>
+            <part name="rt_29.11e" crc="8fa77f9f" map="01000000"/>
+            <part name="rt_22.11c" crc="228a0d4a" map="10000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

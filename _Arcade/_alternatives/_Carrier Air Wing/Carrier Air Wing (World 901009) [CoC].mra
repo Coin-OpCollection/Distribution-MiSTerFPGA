@@ -1,0 +1,73 @@
+<misterromdescription>
+    <name>Carrier Air Wing (World 901009)</name>
+    <setname>cawingr1</setname>
+    <rbf>cawing_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Shooter</category>
+    <catver>Shooter / Flying Horizontal</catver>
+
+    <switches default="ff,fc,bf">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue" bits="6" ids="2C/Start 1C/Cont,Normal"/>
+        <!-- DSWB -->
+        <dip name="Difficulty 1" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Difficulty 2" bits="11,12" ids="Very Difficult,Difficult,Easy,Normal"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="Free Play,Not Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Pause,Normal"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue Mode" bits="22" ids="On,Off"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Shot,Super Weapon,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="cawingr1.zip|cawing.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="cae_30.11f" crc="23305cd5" map="10"/>
+            <part name="cae_35.11h" crc="69419113" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="cae_31.12f" crc="9008dfb3" map="10"/>
+            <part name="cae_36.12h" crc="4dbf6f8e" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ca-32m.8h" crc="0c4837d4" map="21"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="cae_09.12b" crc="96fe7485"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="cae_18.11c" crc="4a613a2c"/>
+        <part name="cae_19.12c" crc="74584493"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ca-5m.7a" crc="66d4cc37" map="00000021"/>
+            <part name="ca-7m.9a" crc="b6f896f2" map="00002100"/>
+            <part name="ca-1m.3a" crc="4d0620fd" map="00210000"/>
+            <part name="ca-3m.5a" crc="0b0341c3" map="21000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

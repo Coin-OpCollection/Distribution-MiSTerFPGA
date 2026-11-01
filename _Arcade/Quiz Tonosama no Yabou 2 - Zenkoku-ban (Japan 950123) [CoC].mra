@@ -1,0 +1,85 @@
+<misterromdescription>
+    <name>Quiz Tonosama no Yabou 2: Zenkoku-ban (Japan 950123)</name>
+    <setname>qtono2j</setname>
+    <rbf>qtono2j_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1995</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>none</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Quiz</category>
+    <catver>Quiz / Japanese</catver>
+
+    <switches default="ff,fc,df">
+        <!-- DSWA -->
+        <dip name="Coin Setting" bits="0,2" ids="1C/1Cr,1C/2Cr,1C/3Cr,1C/4Cr,1C/6Cr,2C/1Cr,3C/1Cr,4C/1Cr" values="7,6,5,4,3,2,1,0"/>
+        <dip name="Continue Coin" bits="6" ids="On,Off"/>
+        <!-- DSWB -->
+        <dip name="Game Difficulty" bits="8,10" ids="Level 1,Level 2,Level 3,Level 4,Level 5,Level 6,Level 7,Level 8" values="7,6,5,4,3,2,1,0"/>
+        <dip name="Mistakes Allowed" bits="13,15" ids="1,2,3,4,5" values="3,4,7,5,6"/>
+        <!-- DSWC -->
+        <dip name="Infinite Lives (Cheat)" bits="17" ids="On,Off"/>
+        <dip name="Free Play" bits="18" ids="On,Off"/>
+        <dip name="Freeze" bits="19" ids="On,Off"/>
+        <dip name="Monitor Flip" bits="20" ids="On,Off"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue" bits="22" ids="No,Yes"/>
+        <dip name="Game Mode" bits="23" ids="Test,Game"/>
+    </switches>
+
+    <buttons names="Button 1,Button 2,Button 3,Button 4,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="qtono2j.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="tn2j_30.11e" crc="9226eb5e" map="10"/>
+            <part name="tn2j_37.11f" crc="d1d30da1" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="tn2j_31.12e" crc="015e6a8a" map="10"/>
+            <part name="tn2j_38.12f" crc="1f139bcc" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="tn2j_28.9e" crc="86d27f71" map="10"/>
+            <part name="tn2j_35.9f" crc="7a1ab87d" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="tn2j_29.10e" crc="9c384e99" map="10"/>
+            <part name="tn2j_36.10f" crc="4c4b2a0a" map="01"/>
+        </interleave>
+        <part repeat="0x80000"> FF </part>
+
+        <!-- audiocpu - starts at 0x180000 -->
+        <part name="tn2j_09.12a" crc="e464b969"/>
+
+        <!-- oki - starts at 0x190000 -->
+        <part name="tn2j_18.11c" crc="a40bf9a7"/>
+        <part name="tn2j_19.12c" crc="5b3b931e"/>
+
+        <!-- gfx - starts at 0x1d0000 -->
+        <interleave output="64">
+            <part name="tn2-02m.4a" crc="f2016a34" map="00000021"/>
+            <part name="tn2-04m.6a" crc="094e0fb1" map="00002100"/>
+            <part name="tn2-01m.3a" crc="cb950cf9" map="00210000"/>
+            <part name="tn2-03m.5a" crc="18a5bf59" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="tn2-11m.4c" crc="d0edd30b" map="00000021"/>
+            <part name="tn2-13m.6c" crc="426621c3" map="00002100"/>
+            <part name="tn2-10m.3c" crc="a34ece70" map="00210000"/>
+            <part name="tn2-12m.5c" crc="e04ff2f4" map="21000000"/>
+        </interleave>
+        <!-- Total 0x5d0000 bytes - 5952 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

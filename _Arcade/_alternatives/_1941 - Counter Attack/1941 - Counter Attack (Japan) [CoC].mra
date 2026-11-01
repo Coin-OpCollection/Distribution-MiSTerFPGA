@@ -1,0 +1,94 @@
+<misterromdescription>
+    <name>1941: Counter Attack (Japan)</name>
+    <setname>1941j</setname>
+    <rbf>1941_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Shooter</category>
+    <catver>Shooter / Flying Vertical</catver>
+
+    <switches default="ff,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="1C/1Cr,1C/2Cr,1C/3Cr,1C/4Cr,1C/6Cr,2C/1Cr,3C/1Cr,4C/1Cr" values="7,6,5,4,3,2,1,0"/>
+        <dip name="Coin 2" bits="3,5" ids="1C/1Cr,1C/2Cr,1C/3Cr,1C/4Cr,1C/6Cr,2C/1Cr,3C/1Cr,4C/1Cr" values="7,6,5,4,3,2,1,0"/>
+        <dip name="2C/Start, 1C/Cont" bits="6" ids="On,Off"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="0 (Easiest),1,2,3 (Normal),4,5,6,7 (Hardest)" values="7,6,5,4,3,2,1,0"/>
+        <dip name="Level Up Timer" bits="11,12" ids="More Slowly,Slowly,Quickly,More Quickly" values="3,2,1,0"/>
+        <dip name="Bullet's Speed" bits="13,14" ids="Very Slow,Slow,Fast,Very Fast" values="3,2,1,0"/>
+        <dip name="Initial Vitality" bits="15" ids="4 Bars,3 Bars"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="On,Off"/>
+        <dip name="Freeze" bits="19" ids="On,Off"/>
+        <dip name="Flip" bits="20" ids="On,Off"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue" bits="22" ids="Yes,No"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Shot A,Shot B,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="1941j.zip|1941.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="41_36.12f" crc="7fbd42ab" map="10"/>
+            <part name="41_42.12h" crc="c7781f89" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="41_37.13f" crc="c6464b0b" map="10"/>
+            <part name="41_43.13h" crc="440fc0b5" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="41_34.10f" crc="b5f341ec" map="10"/>
+            <part name="41_40.10h" crc="3979837d" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="41_35.11f" crc="95cc979a" map="10"/>
+            <part name="41_41.11h" crc="57496819" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="41_23.13b" crc="0f9d8527"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="41_30.12c" crc="d1f15aeb"/>
+        <part name="41_31.13c" crc="15aec3a6"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="41_09.4b" crc="be1b6bc2" map="00000001"/>
+            <part name="41_01.4a" crc="d8946fc1" map="00000010"/>
+            <part name="41_13.9b" crc="2e06d0ec" map="00000100"/>
+            <part name="41_05.9a" crc="d8ba28e0" map="00001000"/>
+            <part name="41_24.5e" crc="5aa43cee" map="00010000"/>
+            <part name="41_17.5c" crc="bbeff902" map="00100000"/>
+            <part name="41_38.8h" crc="8889c0aa" map="01000000"/>
+            <part name="41_32.8f" crc="f0168249" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="41_10.5b"  crc="b7eb6a6d" map="00000001"/>
+            <part name="41_02.5a"  crc="802e8153" map="00000010"/>
+            <part name="41_14.10b" crc="5a33f676" map="00000100"/>
+            <part name="41_06.10a" crc="4e53650b" map="00001000"/>
+            <part name="41_25.7e"  crc="94add360" map="00010000"/>
+            <part name="41_18.7c"  crc="a5e1c1f3" map="00100000"/>
+            <part name="41_39.9h"  crc="5b5c3949" map="01000000"/>
+            <part name="41_33.9f"  crc="7a31b0e2" map="10000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

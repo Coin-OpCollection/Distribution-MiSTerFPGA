@@ -1,0 +1,68 @@
+<misterromdescription>
+    <name>Daimakaimura (Japan, Resale)</name>
+    <setname>daimakair</setname>
+    <rbf>ghouls_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1988</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>4-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Run Jump</catver>
+
+    <switches default="ff,fd,ff">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="H (Very Difficult),G,F,E,A (Very Easy),B (Recommended),C,D (Normal)"/>
+        <dip name="Extend" bits="12,13" ids="40K/70K/Every 80K,20K/50K/Every 70K,10K/30K/Every 30K,30K/60K/Every 70K"/>
+        <dip name="Freeze" bits="15" ids="On,Off"/>
+        <!-- DSWC -->
+        <dip name="Starting Level" bits="16,19" ids="Invalid,Invalid,Invalid,Invalid,Level 6 (6),Level 6 (5),Level 5-2,Level 5-1,Level 4-2,Level 4-1,Level 3-2,Level 3-1,Level 2-2,Level 2-1,Level 1-2,Level 1-1"/>
+        <dip name="Screen" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="No,Yes"/>
+        <dip name="Continue" bits="22" ids="No,Yes"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="daimakair.zip|ghouls.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <part name="damj_23.8f" crc="c3b248ec"/>
+        <part name="damj_22.7f" crc="595ff2f3"/>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="dam_09.12a" crc="0656ff53" length="0x10000"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part repeat="0x40000"> FF </part>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="dam_01.3a" crc="0ba9c0b0" map="00000021"/>
+            <part name="dam_02.4a" crc="5d760ab9" map="00002100"/>
+            <part name="dam_03.5a" crc="4ba90b59" map="00210000"/>
+            <part name="dam_04.6a" crc="4bdee9de" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="dam_05.7a"  crc="7dc61b94" map="00000021"/>
+            <part name="dam_06.8a"  crc="fde89758" map="00002100"/>
+            <part name="dam_07.9a"  crc="ec351d78" map="00210000"/>
+            <part name="dam_08.10a" crc="ee2acc1e" map="21000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

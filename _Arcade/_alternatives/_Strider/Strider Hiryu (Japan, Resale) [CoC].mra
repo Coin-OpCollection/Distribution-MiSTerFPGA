@@ -1,0 +1,76 @@
+<misterromdescription>
+    <name>Strider Hiryu (Japan, Resale)</name>
+    <setname>striderjr</setname>
+    <rbf>strider_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1989</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Run Jump</catver>
+
+    <switches default="ff,bd,ff">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Cabinet" bits="6,7" ids="Cocktail,Upright 2 Players,Upright 1 Player" values="0,2,3"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="H (Very Difficult),G,F,E,A (Very Easy),B (Recommended),C,D"/>
+        <dip name="Extend" bits="12,13" ids="30K/60K Only,20K/60K Only,30K/50K/Every 70K,20K/40K/Every 60K"/>
+        <dip name="Diff. on Life Loss" bits="14,15" ids="-1,Default,-3" values="0,2,3"/>
+        <!-- DSWC -->
+        <dip name="Number of Players" bits="16,17" ids="2,5,4,3"/>
+        <dip name="Screen Stop" bits="18" ids="Yes,No"/>
+        <dip name="Free Play" bits="19" ids="Yes,No"/>
+        <dip name="Screen" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="No,Yes"/>
+        <dip name="Continue" bits="22" ids="No,Yes"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Shot,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="striderjr.zip|strider.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="sthj_23.8f" crc="046e7b12" map="21"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sthj_22.7f" crc="9b3cfc08" map="21"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="sth_09.12a" crc="08d63519"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="sth_18.11c" crc="4386bc80"/>
+        <part name="sth_19.12c" crc="444536d7"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="sth_01.3a" crc="4eee9aea" map="00000021"/>
+            <part name="sth_02.4a" crc="2d7f21e4" map="00002100"/>
+            <part name="sth_03.5a" crc="7705aa46" map="00210000"/>
+            <part name="sth_04.6a" crc="5b18b722" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sth_05.7a"  crc="005f000b" map="00000021"/>
+            <part name="sth_06.8a"  crc="b9441519" map="00002100"/>
+            <part name="sth_07.9a"  crc="b7d04e8b" map="00210000"/>
+            <part name="sth_08.10a" crc="6b4713b4" map="21000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

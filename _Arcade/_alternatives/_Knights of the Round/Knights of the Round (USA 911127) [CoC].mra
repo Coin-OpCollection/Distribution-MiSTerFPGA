@@ -1,0 +1,72 @@
+<misterromdescription>
+    <name>Knights of the Round (USA 911127)</name>
+    <setname>knightsu</setname>
+    <rbf>knights_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1991</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>3</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>USA</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="ff,bc,bf">
+        <!-- DSWA -->
+        <dip name="Coin Settings" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="On,Off"/>
+        <!-- DSWB -->
+        <dip name="Diff. Level 1" bits="8,10" ids="8 (Hard),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Diff. Level 2" bits="11,13" ids="1 (Easy),2,3,8 (Hard),7,6,5,4 (Normal)"/>
+        <dip name="Coin Chute" bits="14" ids="1-Chute,3-Chute"/>
+        <dip name="Player Mode" bits="15" ids="2P Mode,3P Mode"/>
+        <!-- DSWC -->
+        <dip name="Lives" bits="16,17" ids="1,4,3,2"/>
+        <dip name="Free Play" bits="18" ids="On,Off"/>
+        <dip name="Screen Pause" bits="19" ids="Yes,No"/>
+        <dip name="Screen Flip" bits="20" ids="Yes,No"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue" bits="22" ids="Yes,No"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="knightsu.zip|knights.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <part name="kr_23u.8f" crc="252bc2ba"/>
+        <part name="kr_22.7f" crc="d0b671a9"/>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="kr_09.11a" crc="5e44d9ee"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="kr_18.11c" crc="da69d15f"/>
+        <part name="kr_19.12c" crc="bfc654e9"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="kr-5m.3a" crc="9e36c1a4" map="00000021"/>
+            <part name="kr-7m.5a" crc="c5832cae" map="00002100"/>
+            <part name="kr-1m.4a" crc="f095be2d" map="00210000"/>
+            <part name="kr-3m.6a" crc="179dfd96" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="kr-6m.7a"  crc="1f4298d2" map="00000021"/>
+            <part name="kr-8m.9a"  crc="37fa8751" map="00002100"/>
+            <part name="kr-2m.8a"  crc="0200bc3d" map="00210000"/>
+            <part name="kr-4m.10a" crc="0bb2b4e7" map="21000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

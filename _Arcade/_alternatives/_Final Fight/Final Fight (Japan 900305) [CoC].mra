@@ -1,0 +1,94 @@
+<misterromdescription>
+    <name>Final Fight (Japan 900305)</name>
+    <setname>ffightj2</setname>
+    <rbf>ffight_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1989</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="ff,f4,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="2C/Start, 1C/Cont" bits="6" ids="Yes,No"/>
+        <!-- DSWB -->
+        <dip name="Diff. Level 1" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Diff. Level 2" bits="11,12" ids="4 (Difficult),3,2 (Normal),1 (Easy)"/>
+        <dip name="Extend" bits="13,14" ids="No Extend,100K and Every 200K,200K,100K"/>
+        <!-- DSWC -->
+        <dip name="Number of Players" bits="16,17" ids="1,4,3,2"/>
+        <dip name="Free Play" bits="18" ids="Yes,No"/>
+        <dip name="Screen Stop" bits="19" ids="Yes,No"/>
+        <dip name="Screen Flip" bits="20" ids="Yes,No"/>
+        <dip name="Demo Sound" bits="21" ids="Yes,No"/>
+        <dip name="Continue" bits="22" ids="Yes,No"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>09</part>
+    </rom>
+
+    <rom index="0" zip="ffightj2.zip|ffight.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="ffj_36a.12f" crc="088ed1c9" map="10"/>
+            <part name="ffj_42a.12h" crc="c4c491e6" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ffj_37a.13f" crc="708557ff" map="10"/>
+            <part name="ffj_43a.13h" crc="c004004a" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ff_34.10f" crc="0c8dc3fc" map="10"/>
+            <part name="ff_40.10h" crc="8075bab9" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ff_35.11f" crc="4a934121" map="10"/>
+            <part name="ff_41.11h" crc="2af68154" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ff_23.13c" crc="b8367eb5"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="ff_30.12e" crc="375c66e7"/>
+        <part name="ff_31.13e" crc="1ef137f9"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ff_09.4b" crc="5b116d0d" map="00000001"/>
+            <part name="ff_01.4a" crc="815b1797" map="00000010"/>
+            <part name="ff_13.9b" crc="8721a7da" map="00000100"/>
+            <part name="ff_05.9a" crc="d0fcd4b5" map="00001000"/>
+            <part name="ff_24.5e" crc="a1ab607a" map="00010000"/>
+            <part name="ff_17.5c" crc="2dc18cf4" map="00100000"/>
+            <part name="ff_38.8h" crc="6535a57f" map="01000000"/>
+            <part name="ff_32.8f" crc="c8bc4a57" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="ff_10.5b"  crc="624a924a" map="00000001"/>
+            <part name="ff_02.5a"  crc="5d91f694" map="00000010"/>
+            <part name="ff_14.10b" crc="0a2e9101" map="00000100"/>
+            <part name="ff_06.10a" crc="1c18f042" map="00001000"/>
+            <part name="ff_25.7e"  crc="6e8181ea" map="00010000"/>
+            <part name="ff_18.7c"  crc="b19ede59" map="00100000"/>
+            <part name="ff_39.9h"  crc="9416b477" map="01000000"/>
+            <part name="ff_33.9f"  crc="7369fa07" map="10000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

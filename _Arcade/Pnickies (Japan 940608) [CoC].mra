@@ -1,0 +1,77 @@
+<misterromdescription>
+    <name>Pnickies (Japan 940608)</name>
+    <setname>pnickj</setname>
+    <rbf>pnickj_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1994</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Puzzle</category>
+    <catver>Puzzle / Drop</catver>
+
+    <switches default="ff,fc,df">
+        <!-- DSWA -->
+        <dip name="Coin" bits="0,2" ids="1C/1Cr,1C/2Cr,1C/3Cr,1C/4Cr,1C/6Cr,2C/1Cr,3C/1Cr,4C/1Cr" values="7,6,5,4,3,2,1,0"/>
+        <!-- DSWB -->
+        <dip name="Difficulty" bits="8,10" ids="Easiest,Very Easy,Easy,Normal,Hard,Very Hard,Hardest,Master Level" values="7,6,5,4,3,2,1,0"/>
+        <dip name="VS. Play Mode" bits="14,15" ids="1 Game Match,3 Games Match,5 Games Match,7 Games Match" values="3,2,1,0"/>
+        <!-- DSWC -->
+        <dip name="Stop Mode" bits="19" ids="On,Off"/>
+        <dip name="Monitor Flip" bits="20" ids="On,Off"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Test Mode" bits="23" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Rotate Left,Rotate Right,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="pnickj.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="pnij_36.12f" crc="2d4ffb2b" map="10"/>
+            <part name="pnij_42.12h" crc="c085dfaf" map="01"/>
+        </interleave>
+        <part repeat="0x140000"> FF </part>
+
+        <!-- audiocpu - starts at 0x180000 -->
+        <part name="pnij_17.13b" crc="e86f787a"/>
+
+        <!-- oki - starts at 0x190000 -->
+        <part name="pnij_24.12c" crc="5092257d"/>
+        <part name="pnij_25.13c" crc="22109aaa"/>
+
+        <!-- gfx - starts at 0x1d0000 -->
+        <interleave output="64">
+            <part name="pnij_09.4b" crc="48177b0a" map="00000001"/>
+            <part name="pnij_01.4a" crc="01a0f311" map="00000010"/>
+            <part name="pnij_13.9b" crc="406451b0" map="00000100"/>
+            <part name="pnij_05.9a" crc="8c515dc0" map="00001000"/>
+            <part name="pnij_26.5e" crc="e2af981e" map="00010000"/>
+            <part name="pnij_18.5c" crc="f17a0e56" map="00100000"/>
+            <part name="pnij_38.8h" crc="eb75bd8c" map="01000000"/>
+            <part name="pnij_32.8f" crc="84560bef" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="pnij_10.5b"  crc="c2acc171" map="00000001"/>
+            <part name="pnij_02.5a"  crc="0e21fc33" map="00000010"/>
+            <part name="pnij_14.10b" crc="7fe59b19" map="00000100"/>
+            <part name="pnij_06.10a" crc="79f4bfe3" map="00001000"/>
+            <part name="pnij_27.7e"  crc="83d5cb0e" map="00010000"/>
+            <part name="pnij_19.7c"  crc="af08b230" map="00100000"/>
+            <part name="pnij_39.9h"  crc="70fbe579" map="01000000"/>
+            <part name="pnij_33.9f"  crc="3ed2c680" map="10000000"/>
+        </interleave>
+        <!-- Total 0x3d0000 bytes - 3904 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

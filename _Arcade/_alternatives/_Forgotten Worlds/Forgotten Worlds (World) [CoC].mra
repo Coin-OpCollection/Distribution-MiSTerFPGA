@@ -1,0 +1,96 @@
+<misterromdescription>
+    <name>Forgotten Worlds (World)</name>
+    <setname>forgottna</setname>
+    <rbf>forgottn_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1988</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Shooter</category>
+    <catver>Shooter / Flying Horizontal</catver>
+
+    <switches default="ff,fc,ff">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Demo Sound" bits="6" ids="No,Yes"/>
+        <dip name="Picture Flip" bits="7" ids="Req&apos;d,Not Req&apos;d"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="Level 8 (Difficult),Level 7,Level 6,Level 5,Level 4 (Normal),Level 3,Level 2,Level 1 (Easy)"/>
+        <dip name="Credits Per Player" bits="13" ids="2,1"/>
+        <dip name="Test Mode" bits="14" ids="On,Off"/>
+        <dip name="Picture Stop" bits="15" ids="On,Off"/>
+        <!-- DSWC: not set, every switch off -->
+    </switches>
+
+    <buttons names="Shot,Rotate Left,Rotate Right,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="forgottna.zip|forgottn.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="lw11.12f" crc="73e920b7" map="10"/>
+            <part name="lw15.12h" crc="50d7012d" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="lw10.13f" crc="bea45994" map="10"/>
+            <part name="lw14.13h" crc="539b2339" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="lw-07.10g" crc="fd252a26" map="21"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="lw_00.13c" crc="59df2a63"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="lw-03u.12e" crc="807d051f"/>
+        <part name="lw-04u.13e" crc="e6cd098e"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="lw_2.2b"  crc="4bd75fee" map="00000001"/>
+            <part name="lw_1.2a"  crc="65f41485" map="00000010"/>
+            <part name="lw-08.9b" crc="25a8e43c" map="00002100" offset="0x00000" length="0x40000"/>
+            <part name="lw-05.6d" crc="e4552fd7" map="00210000" offset="0x00000" length="0x40000"/>
+            <part name="lw_30.8h" crc="b385954e" map="01000000"/>
+            <part name="lw_29.8f" crc="7bda1ac6" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="lw_4.3b"  crc="50cf757f" map="00000001"/>
+            <part name="lw_3.3a"  crc="c03ef278" map="00000010"/>
+            <part name="lw-08.9b" crc="25a8e43c" map="00002100" offset="0x40000" length="0x40000"/>
+            <part name="lw-05.6d" crc="e4552fd7" map="00210000" offset="0x40000" length="0x40000"/>
+            <part name="lw_32.9h" crc="30967a15" map="01000000"/>
+            <part name="lw_31.9f" crc="c49d37fb" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="lw-02.6b"  crc="43e6c5c8" map="00000021" offset="0x00000" length="0x40000"/>
+            <part name="lw_14.10b" crc="82862cce" map="00000100"/>
+            <part name="lw_13.10a" crc="b81c0e96" map="00001000"/>
+            <part name="lw-06.9d"  crc="5b9edffc" map="00210000" offset="0x00000" length="0x40000"/>
+            <part name="lw_26.10e" crc="57bcd032" map="01000000"/>
+            <part name="lw_25.10c" crc="bac91554" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="lw-02.6b"  crc="43e6c5c8" map="00000021" offset="0x40000" length="0x40000"/>
+            <part name="lw_16.11b" crc="40b26554" map="00000100"/>
+            <part name="lw_15.11a" crc="1b7d2e07" map="00001000"/>
+            <part name="lw-06.9d"  crc="5b9edffc" map="00210000" offset="0x40000" length="0x40000"/>
+            <part name="lw_28.11e" crc="a805ad30" map="01000000"/>
+            <part name="lw_27.11c" crc="103c1bd2" map="10000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

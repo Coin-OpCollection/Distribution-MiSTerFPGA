@@ -1,0 +1,101 @@
+<misterromdescription>
+    <name>Senjou no Ookami II (Japan 900302)</name>
+    <setname>mercsj</setname>
+    <rbf>mercs_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>3</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Shooter / Walking</catver>
+
+    <switches default="ff,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="Continue,Normal"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Coin Selector" bits="11" ids="1 Coin,3 Coins"/>
+        <dip name="Play Mode" bits="12" ids="2 Players,3 Players"/>
+        <!-- DSWC -->
+        <dip name="Screen Pause" bits="19" ids="Yes,No"/>
+        <dip name="Screen Flip" bits="20" ids="Yes,No"/>
+        <dip name="Demo Sound" bits="21" ids="Yes,No"/>
+        <dip name="Continue" bits="22" ids="Yes,No"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Mega Crash,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="mercsj.zip|mercs.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="so2_36.12f" crc="e17f9bf7" map="10"/>
+            <part name="so2_42.12h" crc="2c3884c6" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="so2_37.13f" crc="51204d36" map="10"/>
+            <part name="so2_43.13h" crc="9cfba8b4" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="so2_34.10f" crc="b8dae95f" map="10"/>
+            <part name="so2_40.10h" crc="de37771c" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="so2_35.11f" crc="7d24394d" map="10"/>
+            <part name="so2_41.11h" crc="914f85e0" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="so2_23.13b" crc="d09d7c7a"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="so2_30.12c" crc="bbea1643"/>
+        <part name="so2_31.13c" crc="ac58aa71"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="so2_09.4b" crc="690c261d" map="00000001"/>
+            <part name="so2_01.4a" crc="31fd2715" map="00000010"/>
+            <part name="so2_13.9b" crc="b5e48282" map="00000100"/>
+            <part name="so2_05.9a" crc="54bed82c" map="00001000"/>
+            <part name="so2_24.5e" crc="78b6f0cb" map="00010000"/>
+            <part name="so2_17.5c" crc="e78bb308" map="00100000"/>
+            <part name="so2_38.8h" crc="0010a9a2" map="01000000"/>
+            <part name="so2_32.8f" crc="75dffc9a" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="so2_10.5b"  crc="2f871714" map="00000001"/>
+            <part name="so2_02.5a"  crc="b4b2a0b7" map="00000010"/>
+            <part name="so2_14.10b" crc="737a744b" map="00000100"/>
+            <part name="so2_06.10a" crc="9d756f51" map="00001000"/>
+            <part name="so2_25.7e"  crc="6d0e05d6" map="00010000"/>
+            <part name="so2_18.7c"  crc="96f61f4e" map="00100000"/>
+            <part name="so2_39.9h"  crc="d52ba336" map="01000000"/>
+            <part name="so2_33.9f"  crc="39b90d25" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="so2_11.7b"  crc="3f254efe" map="00000001"/>
+            <part name="so2_03.7a"  crc="f5a8905e" map="00000010"/>
+            <part name="so2_15.11b" crc="f3aa5a4a" map="00000100"/>
+            <part name="so2_07.11a" crc="b43cd1a8" map="00001000"/>
+            <part name="so2_26.8e"  crc="8ca751a3" map="00010000"/>
+            <part name="so2_19.8c"  crc="e9f569fd" map="00100000"/>
+            <part name="so2_28.10e" crc="fce9a377" map="01000000"/>
+            <part name="so2_21.10c" crc="b7df8a06" map="10000000"/>
+        </interleave>
+        <!-- Total 0x450000 bytes - 4416 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

@@ -1,0 +1,75 @@
+<misterromdescription>
+    <name>Final Fight (World, Set 2)</name>
+    <setname>ffighta</setname>
+    <rbf>ffight_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1989</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="ff,f4,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="2C/Start, 1C/Cont" bits="6" ids="Yes,No"/>
+        <!-- DSWB -->
+        <dip name="Diff. Level 1" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Diff. Level 2" bits="11,12" ids="4 (Difficult),3,2 (Normal),1 (Easy)"/>
+        <dip name="Extend" bits="13,14" ids="No Extend,100K and Every 200K,200K,100K"/>
+        <!-- DSWC -->
+        <dip name="Number of Players" bits="16,17" ids="1,4,3,2"/>
+        <dip name="Free Play" bits="18" ids="Yes,No"/>
+        <dip name="Screen Stop" bits="19" ids="Yes,No"/>
+        <dip name="Screen Flip" bits="20" ids="Yes,No"/>
+        <dip name="Demo Sound" bits="21" ids="Yes,No"/>
+        <dip name="Continue" bits="22" ids="Yes,No"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="ffighta.zip|ffight.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="ffe_30.11f" crc="2347bf51" map="10"/>
+            <part name="ffe_35.11h" crc="5f694ecc" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ffe_31.12f" crc="6dc6b792" map="10"/>
+            <part name="ffe_36.12h" crc="b36a0b99" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ff-32m.8h" crc="c747696e" map="21"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ffe_23.12b" crc="b8367eb5"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="ff_18.11c" crc="375c66e7"/>
+        <part name="ff_19.12c" crc="1ef137f9"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ff-5m.7a" crc="9c284108" map="00000021"/>
+            <part name="ff-7m.9a" crc="a7584dfb" map="00002100"/>
+            <part name="ff-1m.3a" crc="0b605e44" map="00210000"/>
+            <part name="ff-3m.5a" crc="52291cd2" map="21000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

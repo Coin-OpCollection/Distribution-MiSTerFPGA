@@ -1,0 +1,103 @@
+<misterromdescription>
+    <name>Willow (Japan)</name>
+    <setname>willowj</setname>
+    <rbf>willow_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1989</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Run Jump</catver>
+
+    <switches default="ff,ff,fa">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="2C/Start 1C/Cont,4C/1Cr,3C/1Cr,2C/1Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="2C/Start 1C/Cont,4C/1Cr,3C/1Cr,2C/1Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Cabinet" bits="6,7" ids="Table D,Table C,Upright 2 Joysticks,Upright 1 Joystick"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="8 (Very Difficult),7,6,5,1 (Very Easy),2,3,4 (Normal)"/>
+        <dip name="Diff. Speed" bits="11,12" ids="Very Fast,Fast,Slow,Normal"/>
+        <dip name="Power Ups" bits="15" ids="Yes,No"/>
+        <!-- DSWC -->
+        <dip name="Number of Players" bits="16,17" ids="4,3,1,2"/>
+        <dip name="Number of Health" bits="18,19" ids="2,5,4,3"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="Without Sound,With Sound"/>
+        <dip name="Continue" bits="22" ids="Without Continue,With Continue"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Shoot,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>03</part>
+    </rom>
+
+    <rom index="0" zip="willowj.zip|willow.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="wl_36.12f" crc="2b0d7cbc" map="10"/>
+            <part name="wl_42.12h" crc="1ac39615" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="wl_37.13f" crc="30a717fa" map="10"/>
+            <part name="wl_43.13h" crc="d0dddc9e" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="wl_34.10f" crc="23a84f7a" map="10"/>
+            <part name="wl_40.10h" crc="c7a0ed21" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="wl_35.11f" crc="5eff7951" map="10"/>
+            <part name="wl_41.11h" crc="8d6477a3" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="wl_23.13c" crc="f6b3d060"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="wl_30.12e" crc="bde23d4d"/>
+        <part name="wl_31.13e" crc="683898f5"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="wl_09.4b" crc="05aa71b4" map="00000001"/>
+            <part name="wl_01.4a" crc="08c2df12" map="00000010"/>
+            <part name="wl_13.9b" crc="1f7c87cd" map="00000100"/>
+            <part name="wl_05.9a" crc="f5254bf2" map="00001000"/>
+            <part name="wl_24.5e" crc="d9d73ba1" map="00010000"/>
+            <part name="wl_17.5c" crc="a652f30c" map="00100000"/>
+            <part name="wl_38.8h" crc="f6f9111b" map="01000000"/>
+            <part name="wl_32.8f" crc="10f64027" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="wl_10.5b"  crc="dbba0a3f" map="00000001"/>
+            <part name="wl_02.5a"  crc="86fba7a5" map="00000010"/>
+            <part name="wl_14.10b" crc="7d5798b2" map="00000100"/>
+            <part name="wl_06.10a" crc="1f052948" map="00001000"/>
+            <part name="wl_25.7e"  crc="857d17d2" map="00010000"/>
+            <part name="wl_18.7c"  crc="316c7fbc" map="00100000"/>
+            <part name="wl_39.9h"  crc="e6fce9b0" map="01000000"/>
+            <part name="wl_33.9f"  crc="a15d5517" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="wl_11.7b"  crc="6f0adee5" map="00000001"/>
+            <part name="wl_03.7a"  crc="9cf3027d" map="00000010"/>
+            <part name="wl_15.11b" crc="f09c8ecf" map="00000100"/>
+            <part name="wl_07.11a" crc="e35407aa" map="00001000"/>
+            <part name="wl_26.8e"  crc="84992350" map="00010000"/>
+            <part name="wl_19.8c"  crc="b87b5a36" map="00100000"/>
+            <part name="wl_28.10e" crc="fd3f89f0" map="01000000"/>
+            <part name="wl_21.10c" crc="7da49d69" map="10000000"/>
+        </interleave>
+        <!-- Total 0x450000 bytes - 4416 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

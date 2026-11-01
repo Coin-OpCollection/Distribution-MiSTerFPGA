@@ -1,0 +1,93 @@
+<misterromdescription>
+    <name>Nemo (Japan 901120, 88622B-3)</name>
+    <setname>nemoj</setname>
+    <rbf>nemo_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Run Jump</catver>
+
+    <switches default="ff,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin A" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin B" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="On,Off"/>
+        <!-- DSWB -->
+        <dip name="Difficulty" bits="8,10" ids="8 (Hardest),7,6,5,4,3,2,1 (Easiest)"/>
+        <dip name="Life Bar" bits="11,12" ids="Minimum,Maximum,Medium" values="0,1,3"/>
+        <!-- DSWC -->
+        <dip name="Lives" bits="16,17" ids="4,3,1,2"/>
+        <dip name="Free Play" bits="18" ids="On,Off"/>
+        <dip name="Freeze" bits="19" ids="On,Off"/>
+        <dip name="Flip Screen" bits="20" ids="On,Off"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Allow Continue" bits="22" ids="Yes,No"/>
+        <dip name="Game Mode" bits="23" ids="Test,Game"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="nemoj.zip|nemo.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="nmj_36a.12f" crc="daeceabb" map="10"/>
+            <part name="nmj_42a.12h" crc="55024740" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="nmj_37a.13f" crc="619068b6" map="10"/>
+            <part name="nmj_43a.13h" crc="a948a53b" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="nmj_34.10f" crc="5737feed" map="10"/>
+            <part name="nmj_40.10h" crc="8a4099f3" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="nmj_35.11f" crc="bd11a7f8" map="10"/>
+            <part name="nmj_41.11h" crc="6309603d" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="nmj_23.13b" crc="8d3c5a42"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="nmj_30.12c" crc="bab333d4"/>
+        <part name="nmj_31.13c" crc="2650a0a8"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="nmj_09.4b" crc="9d60d286" map="00000001"/>
+            <part name="nmj_01.4a" crc="8a83f7c4" map="00000010"/>
+            <part name="nmj_13.9b" crc="a4909fe0" map="00000100"/>
+            <part name="nmj_05.9a" crc="16db1e61" map="00001000"/>
+            <part name="nmj_24.5e" crc="3312c648" map="00010000"/>
+            <part name="nmj_17.5c" crc="ccfc50e2" map="00100000"/>
+            <part name="nmj_38.8h" crc="ae98a997" map="01000000"/>
+            <part name="nmj_32.8f" crc="b3704dde" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="nmj_10.5b"  crc="33c1388c" map="00000001"/>
+            <part name="nmj_02.5a"  crc="84c69469" map="00000010"/>
+            <part name="nmj_14.10b" crc="66612270" map="00000100"/>
+            <part name="nmj_06.10a" crc="8b9bcf95" map="00001000"/>
+            <part name="nmj_25.7e"  crc="acfc84d2" map="00010000"/>
+            <part name="nmj_18.7c"  crc="4347deed" map="00100000"/>
+            <part name="nmj_39.9h"  crc="6a274ecd" map="01000000"/>
+            <part name="nmj_33.9f"  crc="c469dc74" map="10000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

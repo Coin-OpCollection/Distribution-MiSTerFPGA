@@ -1,0 +1,86 @@
+<misterromdescription>
+    <name>The King of Dragons (World 910731)</name>
+    <setname>kodr2</setname>
+    <rbf>kod_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1991</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>3</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="f7,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin Selector" bits="3" ids="1 Coin,3 Coins"/>
+        <dip name="3P Mode" bits="4" ids="2 Players,3 Players"/>
+        <dip name="Continue Coin" bits="6" ids="Continue,Normal"/>
+        <!-- DSWB -->
+        <dip name="Diff. Level" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Lives" bits="11,13" ids="8,7,6,5,4,3,1,2"/>
+        <dip name="Extend" bits="14,15" ids="None,320k and every 450k,160k and every 400k,200k and every 450k"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="Free Play,Not Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Pause,Normal"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue Mode" bits="22" ids="On,Off"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="kodr2.zip|kod.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="kde_30.11e" crc="f8dc4ce3" map="10"/>
+            <part name="kde_37.11f" crc="d1276c1c" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="kde_31.12e" crc="309debd8" map="10"/>
+            <part name="kde_38.12f" crc="76cd5738" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="kd_28.9e" crc="9367bcd9" map="10"/>
+            <part name="kd_35.9f" crc="4ca6a48a" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="kd_29.10e" crc="0360fa72" map="10"/>
+            <part name="kd_36.10f" crc="3c66c32b" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="kd_9.12a" crc="bac6ec26"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="kd_18.11c" crc="4c63181d"/>
+        <part name="kd_19.12c" crc="92941b80"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="kd-5m.4a" crc="e45b8701" map="00000021"/>
+            <part name="kd-7m.6a" crc="a7750322" map="00002100"/>
+            <part name="kd-1m.3a" crc="5f74bf78" map="00210000"/>
+            <part name="kd-3m.5a" crc="5e5303bf" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="kd-6m.4c" crc="113358f3" map="00000021"/>
+            <part name="kd-8m.6c" crc="38853c44" map="00002100"/>
+            <part name="kd-2m.3c" crc="9ef36604" map="00210000"/>
+            <part name="kd-4m.5c" crc="402b9b4f" map="21000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

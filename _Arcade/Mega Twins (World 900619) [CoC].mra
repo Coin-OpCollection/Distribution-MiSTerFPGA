@@ -1,0 +1,72 @@
+<misterromdescription>
+    <name>Mega Twins (World 900619)</name>
+    <setname>mtwins</setname>
+    <rbf>mtwins_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Fighter Scrolling</catver>
+
+    <switches default="ff,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="2C/Start 1C/Cont,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="2C/Start 1C/Cont,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="7 (Very Difficult),6,5,4,3 (Normal),2,1,0 (Very Easy)"/>
+        <dip name="Lives" bits="11,13" ids="1,2,3,4,1 (More Energy)" values="2,3,1,0,7"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="Free Play,Without Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Stop,Not Stop"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="With Sound,Without Sound"/>
+        <dip name="Continue" bits="22" ids="With Continue,Without Continue"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,Magic,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="mtwins.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="che_30.11f" crc="9a2a2db1" map="10"/>
+            <part name="che_35.11h" crc="a7f96b02" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="che_31.12f" crc="bbff8a99" map="10"/>
+            <part name="che_36.12h" crc="0fa00c39" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ck-32m.8h" crc="9b70bd41" map="21"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ch_09.12b" crc="4d4255b7"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="ch_18.11c" crc="f909e8de"/>
+        <part name="ch_19.12c" crc="fc158cf7"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ck-5m.7a" crc="4ec75f15" map="00000021"/>
+            <part name="ck-7m.9a" crc="d85d00d6" map="00002100"/>
+            <part name="ck-1m.3a" crc="f33ca9d4" map="00210000"/>
+            <part name="ck-3m.5a" crc="0ba2047f" map="21000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

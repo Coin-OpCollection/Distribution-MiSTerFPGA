@@ -1,0 +1,114 @@
+<misterromdescription>
+    <name>Strider Hiryu (Japan)</name>
+    <setname>striderj</setname>
+    <rbf>strider_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1989</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Run Jump</catver>
+
+    <switches default="ff,bd,ff">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Cabinet" bits="6,7" ids="Cocktail,Upright 2 Players,Upright 1 Player" values="0,2,3"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="H (Very Difficult),G,F,E,A (Very Easy),B (Recommended),C,D"/>
+        <dip name="Extend" bits="12,13" ids="30K/60K Only,20K/60K Only,30K/50K/Every 70K,20K/40K/Every 60K"/>
+        <dip name="Diff. on Life Loss" bits="14,15" ids="-1,Default,-3" values="0,2,3"/>
+        <!-- DSWC -->
+        <dip name="Number of Players" bits="16,17" ids="2,5,4,3"/>
+        <dip name="Screen Stop" bits="18" ids="Yes,No"/>
+        <dip name="Free Play" bits="19" ids="Yes,No"/>
+        <dip name="Screen" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="No,Yes"/>
+        <dip name="Continue" bits="22" ids="No,Yes"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Shot,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>02</part>
+    </rom>
+
+    <rom index="0" zip="striderj.zip|strider.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="sth_36.12f" crc="53c7b006" map="10"/>
+            <part name="sth_42.12h" crc="4037f65f" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sth_37.13f" crc="80e8877d" map="10"/>
+            <part name="sth_43.13h" crc="6b3fa466" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sth_34.10f" crc="bea770b5" map="10"/>
+            <part name="sth_40.10h" crc="43b922dc" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sth_35.11f" crc="5cc429da" map="10"/>
+            <part name="sth_41.11h" crc="50af457f" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="sth_23.13c" crc="2ed403bc"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="sth_30.12e" crc="4386bc80"/>
+        <part name="sth_31.13e" crc="444536d7"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="sth_09.4b" crc="1ef6bfbd" map="00000001"/>
+            <part name="sth_01.4a" crc="1e21b0c1" map="00000010"/>
+            <part name="sth_13.9b" crc="063263ae" map="00000100"/>
+            <part name="sth_05.9a" crc="ec9f8714" map="00001000"/>
+            <part name="sth_24.5e" crc="6356f4d2" map="00010000"/>
+            <part name="sth_17.5c" crc="b4f73d86" map="00100000"/>
+            <part name="sth_38.8h" crc="ee5abfc2" map="01000000"/>
+            <part name="sth_32.8f" crc="44a206a3" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sth_10.5b"  crc="df3dd3bc" map="00000001"/>
+            <part name="sth_02.5a"  crc="c75f9ea0" map="00000010"/>
+            <part name="sth_14.10b" crc="6c03e19d" map="00000100"/>
+            <part name="sth_06.10a" crc="d84f5478" map="00001000"/>
+            <part name="sth_25.7e"  crc="921e506a" map="00010000"/>
+            <part name="sth_18.7c"  crc="5b318956" map="00100000"/>
+            <part name="sth_39.9h"  crc="9321d6aa" map="01000000"/>
+            <part name="sth_33.9f"  crc="b47ddfc7" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sth_11.7b"  crc="2484f241" map="00000001"/>
+            <part name="sth_03.7a"  crc="aaa07245" map="00000010"/>
+            <part name="sth_15.11b" crc="e415d943" map="00000100"/>
+            <part name="sth_07.11a" crc="97d072d2" map="00001000"/>
+            <part name="sth_26.8e"  crc="0ebfcb02" map="00010000"/>
+            <part name="sth_19.8c"  crc="257ce683" map="00100000"/>
+            <part name="sth_28.10e" crc="98ac8cd1" map="01000000"/>
+            <part name="sth_21.10c" crc="538d9423" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sth_12.8b"  crc="f670a477" map="00000001"/>
+            <part name="sth_04.8a"  crc="853d3e01" map="00000010"/>
+            <part name="sth_16.12b" crc="4092019f" map="00000100"/>
+            <part name="sth_08.12a" crc="2ce9b4c7" map="00001000"/>
+            <part name="sth_27.9e"  crc="f82c88d9" map="00010000"/>
+            <part name="sth_20.9c"  crc="eb584dd4" map="00100000"/>
+            <part name="sth_29.11e" crc="34ae2997" map="01000000"/>
+            <part name="sth_22.11c" crc="78dd9c48" map="10000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

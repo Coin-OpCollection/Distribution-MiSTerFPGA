@@ -1,0 +1,78 @@
+<misterromdescription>
+    <name>Dynasty Wars (USA, B-Board 89624B-?)</name>
+    <setname>dynwar</setname>
+    <rbf>dynwar_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1989</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>USA</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="ff,ff,ff">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="2C/Start 1C/Cont,4C/1Cr,3C/1Cr,2C/1Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="2C/Start 1C/Cont,4C/1Cr,3C/1Cr,2C/1Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Free Play" bits="7" ids="On,Off"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="8 (Very Difficult),7,6,5,1 (Very Easy),2,3,4 (Normal)"/>
+        <!-- DSWC -->
+        <dip name="Freeze" bits="16" ids="On,Off"/>
+        <dip name="Turbo Mode" bits="17" ids="On,Off"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="Without Sound,With Sound"/>
+        <dip name="Continue" bits="22" ids="Without Continue,With Continue"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Left Attack,Right Attack,Tactics,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="dynwar.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="30.11f" crc="f9ec6d68" map="10"/>
+            <part name="35.11h" crc="e41fff2f" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="31.12f" crc="e3de76ff" map="10"/>
+            <part name="36.12h" crc="7a13cfbf" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="tkm-9.8h" crc="93654bcf" map="21"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="tke_17.12b" crc="b3b79d4f"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="tke_18.11c" crc="ac6e307d"/>
+        <part name="tke_19.12c" crc="068741db"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="tkm-5.7a" crc="f64bb6a0" map="00000021"/>
+            <part name="tkm-8.9a" crc="21fe6274" map="00002100"/>
+            <part name="tkm-6.3a" crc="0bf228cb" map="00210000"/>
+            <part name="tkm-7.5a" crc="1255dfb1" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="tkm-1.8a"  crc="44f7661e" map="00000021"/>
+            <part name="tkm-4.10a" crc="a54c515d" map="00002100"/>
+            <part name="tkm-2.4a"  crc="ca5c687c" map="00210000"/>
+            <part name="tkm-3.6a"  crc="f9fe6591" map="21000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

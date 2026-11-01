@@ -1,0 +1,89 @@
+<misterromdescription>
+    <name>Street Fighter II: The World Warrior (USA 920312)</name>
+    <setname>sf2um</setname>
+    <rbf>sf2_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1991</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>USA</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Fighter</category>
+    <catver>Fighter / Versus</catver>
+
+    <switches default="bf,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="Continue Coin,Normal"/>
+        <!-- DSWB -->
+        <dip name="Difficulty" bits="8,10" ids="7 (Difficult),6,5,4,3 (Normal),2,1,0 (Easy)"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="Free Play,Not Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Pause,Normal"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue Mode" bits="22" ids="On,Off"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Jab Punch,Strong Punch,Fierce Punch,Short Kick,Forward Kick,Roundhouse Kick,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,-" count="6"/>
+
+    <rom index="1">
+        <part>11</part>
+    </rom>
+
+    <rom index="0" zip="sf2um.zip|sf2.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="sf-2u_30m.11e" crc="34a1ce02" map="10"/>
+            <part name="sf-2u_37m.11f" crc="8cbff19c" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sf-2u_31m.12e" crc="64ebc8d2" map="10"/>
+            <part name="sf-2u_38m.12f" crc="73847443" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sf-2u_28m.9e" crc="eee2b426" map="10"/>
+            <part name="sf-2u_35m.9f" crc="eca8b452" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sf-2u_29m.10e" crc="bb4af315" map="10"/>
+            <part name="sf-2u_36m.10f" crc="c02a13eb" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="sf2_09.12a" crc="a4823a1b"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="sf2_18.11c" crc="7f162009"/>
+        <part name="sf2_19.12c" crc="beade53f"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="sf2-5m.4a" crc="22c9cc8e" map="00000021"/>
+            <part name="sf2-7m.6a" crc="57213be8" map="00002100"/>
+            <part name="sf2-1m.3a" crc="ba529b4f" map="00210000"/>
+            <part name="sf2-3m.5a" crc="4b1b33a8" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sf2-6m.4c" crc="2c7e2229" map="00000021"/>
+            <part name="sf2-8m.6c" crc="b5548f17" map="00002100"/>
+            <part name="sf2-2m.3c" crc="14b84312" map="00210000"/>
+            <part name="sf2-4m.5c" crc="5e9cd89a" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sf2-13m.4d" crc="994bfa58" map="00000021"/>
+            <part name="sf2-15m.6d" crc="3e66ad9d" map="00002100"/>
+            <part name="sf2-9m.3d"  crc="c1befaa8" map="00210000"/>
+            <part name="sf2-11m.5d" crc="0627c831" map="21000000"/>
+        </interleave>
+        <!-- Total 0x750000 bytes - 7488 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

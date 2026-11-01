@@ -1,0 +1,81 @@
+<misterromdescription>
+    <name>Mega Man: The Power Battle (CPS1, Asia 951006)</name>
+    <setname>megamana</setname>
+    <rbf>megaman_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1995</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Asia</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Fighter</category>
+    <catver>Fighter / Versus Co-op</catver>
+
+    <switches default="ff,fa,ff">
+        <!-- DSWA -->
+        <dip name="Coin Mode" bits="0,4" ids="1C/1Cr,1C/2Cr,1C/3Cr,1C/4Cr,1C/5Cr,1C/6Cr,1C/7Cr,1C/8Cr,1C/9Cr,2C/1Cr,3C/1Cr,4C/1Cr,5C/1Cr,6C/1Cr,7C/1Cr,8C/1Cr,9C/1Cr,2C/Start 1C/Cont,Free Play" values="31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13"/>
+        <dip name="Chute Type" bits="5,6" ids="2 Chutes Single,2 Chutes Multi,1 Chute Single" values="3,2,1"/>
+        <!-- DSWB -->
+        <dip name="Difficulty" bits="8,9" ids="Easy,Normal,Hard,Very Hard" values="3,2,1,0"/>
+        <dip name="Start Time" bits="10,11" ids="Easy,Normal,Hard,Very Hard" values="3,2,1,0"/>
+        <dip name="Voice" bits="14" ids="Off,Normal"/>
+        <!-- DSWC -->
+        <dip name="Monitor" bits="16" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="17" ids="Off,On"/>
+        <dip name="Continue" bits="18" ids="Off,On"/>
+        <dip name="Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,Weapon Change,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="megamana.zip|megaman.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <part name="rcma_23b.8f" crc="61e4a397"/>
+        <part name="rcma_22b.7f" crc="708268c4"/>
+        <part name="rcma_21a.6f" crc="4376ea95"/>
+
+        <!-- audiocpu - starts at 0x180000 -->
+        <part name="rcm_09.12a" crc="9632d6ef" length="0x10000"/>
+
+        <!-- oki - starts at 0x190000 -->
+        <part name="rcm_18.11c" crc="80f1f8aa"/>
+        <part name="rcm_19.12c" crc="f257dbe1"/>
+
+        <!-- gfx - starts at 0x1d0000 -->
+        <interleave output="64">
+            <part name="rcm_01.3a" crc="6ecdf13f" map="00000021"/>
+            <part name="rcm_02.4a" crc="944d4f0f" map="00002100"/>
+            <part name="rcm_03.5a" crc="36f3073c" map="00210000"/>
+            <part name="rcm_04.6a" crc="54e622ff" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="rcm_05.7a"  crc="5dd131fd" map="00000021"/>
+            <part name="rcm_06.8a"  crc="f0faf813" map="00002100"/>
+            <part name="rcm_07.9a"  crc="826de013" map="00210000"/>
+            <part name="rcm_08.10a" crc="fbff64cf" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="rcm_10.3c" crc="4dc8ada9" map="00000021"/>
+            <part name="rcm_11.4c" crc="f2b9ee06" map="00002100"/>
+            <part name="rcm_12.5c" crc="fed5f203" map="00210000"/>
+            <part name="rcm_13.6c" crc="5069d4a9" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="rcm_14.7c"  crc="303be3bd" map="00000021"/>
+            <part name="rcm_15.8c"  crc="4f2d372f" map="00002100"/>
+            <part name="rcm_16.9c"  crc="93d97fde" map="00210000"/>
+            <part name="rcm_17.10c" crc="92371042" map="21000000"/>
+        </interleave>
+        <!-- Total 0x9d0000 bytes - 10048 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

@@ -1,0 +1,75 @@
+<misterromdescription>
+    <name>Magic Sword: Heroic Fantasy (World 900725)</name>
+    <setname>msword</setname>
+    <rbf>msword_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Fighter Scrolling</catver>
+
+    <switches default="ff,fc,ff">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="Continue Coin,Normal"/>
+        <!-- DSWB -->
+        <dip name="Diff. Level 1" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Diff. Level 2" bits="11,13" ids="8 (Difficult),7,6,5,1 (Easy),2,3,4 (Normal)"/>
+        <dip name="Stage Select" bits="14" ids="Select,Not Select"/>
+        <!-- DSWC -->
+        <dip name="Vitality Blocks" bits="16,17" ids="5,20,15,10"/>
+        <dip name="Free Play" bits="18" ids="Free Play,Without Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Stop,Not Stop"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="With Sound,Without Sound"/>
+        <dip name="Continue" bits="22" ids="With Continue,Without Continue"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>00</part>
+    </rom>
+
+    <rom index="0" zip="msword.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="mse_30.11f" crc="03fc8dbc" map="10"/>
+            <part name="mse_35.11h" crc="d5bf66cd" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="mse_31.12f" crc="30332bcf" map="10"/>
+            <part name="mse_36.12h" crc="8f7d6ce9" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ms-32m.8h" crc="2475ddfc" map="21"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ms_09.12b" crc="57b29519"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="ms_18.11c" crc="fb64e90d"/>
+        <part name="ms_19.12c" crc="74f892b9"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ms-5m.7a" crc="c00fe7e2" map="00000021"/>
+            <part name="ms-7m.9a" crc="4ccacac5" map="00002100"/>
+            <part name="ms-1m.3a" crc="0d2bbe00" map="00210000"/>
+            <part name="ms-3m.5a" crc="3a1a5bf4" map="21000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

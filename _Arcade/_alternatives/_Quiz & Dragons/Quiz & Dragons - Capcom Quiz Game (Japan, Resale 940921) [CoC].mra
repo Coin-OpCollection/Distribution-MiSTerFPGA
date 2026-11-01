@@ -1,0 +1,64 @@
+<misterromdescription>
+    <name>Quiz &amp; Dragons: Capcom Quiz Game (Japan, Resale 940921)</name>
+    <setname>qadjr</setname>
+    <rbf>qad_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1994</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>none</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Quiz</category>
+    <catver>Quiz / Japanese</catver>
+
+    <switches default="ff,fd,df">
+        <!-- DSWA -->
+        <dip name="Coin" bits="0,2" ids="1C/1Cr,1C/2Cr,1C/3Cr,1C/4Cr,1C/6Cr,2C/1Cr,3C/1Cr,4C/1Cr" values="7,6,5,4,3,2,1,0"/>
+        <dip name="Continue Coin" bits="6" ids="On,Off"/>
+        <!-- DSWB -->
+        <dip name="Game Level" bits="8,10" ids="0,1,2,3,4" values="7,6,5,4,3"/>
+        <dip name="Players Life" bits="13,14" ids="1,2,3" values="1,2,3"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="On,Off"/>
+        <dip name="Stop" bits="19" ids="On,Off"/>
+        <dip name="Flip" bits="20" ids="On,Off"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue" bits="22" ids="No,Yes"/>
+        <dip name="Test" bits="23" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Button 1,Button 2,Button 3,Button 4,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="qadjr.zip|qad.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <part name="qad_23a.8f" crc="4d3553de"/>
+        <part name="qad_22a.7f" crc="3191ddd0"/>
+        <part repeat="0x80000"> FF </part>
+
+        <!-- audiocpu - starts at 0x180000 -->
+        <part name="qad_09.12a" crc="733161cc"/>
+
+        <!-- oki - starts at 0x190000 -->
+        <part name="qad_18.11c" crc="2bfe6f6a"/>
+        <part name="qad_19.12c" crc="13d3236b"/>
+
+        <!-- gfx - starts at 0x1d0000 -->
+        <interleave output="64">
+            <part name="qad_01.3a" crc="9d853b57" map="00000021"/>
+            <part name="qad_02.4a" crc="b35976c4" map="00002100"/>
+            <part name="qad_03.5a" crc="cea4ca8c" map="00210000"/>
+            <part name="qad_04.6a" crc="41b74d1b" map="21000000"/>
+        </interleave>
+        <!-- Total 0x3d0000 bytes - 3904 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

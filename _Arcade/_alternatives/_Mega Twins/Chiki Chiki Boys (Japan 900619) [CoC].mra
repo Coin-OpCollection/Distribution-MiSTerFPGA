@@ -1,0 +1,91 @@
+<misterromdescription>
+    <name>Chiki Chiki Boys (Japan 900619)</name>
+    <setname>chikij</setname>
+    <rbf>mtwins_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Platform</category>
+    <catver>Platform / Fighter Scrolling</catver>
+
+    <switches default="ff,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="2C/Start 1C/Cont,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="2C/Start 1C/Cont,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="7 (Very Difficult),6,5,4,3 (Normal),2,1,0 (Very Easy)"/>
+        <dip name="Lives" bits="11,13" ids="1,2,3,4,1 (More Energy)" values="2,3,1,0,7"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="Free Play,Without Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Stop,Not Stop"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="With Sound,Without Sound"/>
+        <dip name="Continue" bits="22" ids="With Continue,Without Continue"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Jump,Magic,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="chikij.zip|mtwins.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="chj_36a.12f" crc="ec1328d8" map="10"/>
+            <part name="chj_42a.12h" crc="4ae13503" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="chj_37a.13f" crc="46d2cf7b" map="10"/>
+            <part name="chj_43a.13h" crc="8d387fe8" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ch_34.10f" crc="609ed2f9" map="10"/>
+            <part name="ch_40.10h" crc="be0d8301" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ch_35.11f" crc="b810867f" map="10"/>
+            <part name="ch_41.11h" crc="8ad96155" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ch_23.13b" crc="4d4255b7"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="ch_30.12c" crc="f909e8de"/>
+        <part name="ch_31.13c" crc="fc158cf7"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ch_09.4b" crc="567ab3ca" map="00000001"/>
+            <part name="ch_01.4a" crc="7f3b7b56" map="00000010"/>
+            <part name="ch_13.9b" crc="12a7a8ba" map="00000100"/>
+            <part name="ch_05.9a" crc="6c1afb9a" map="00001000"/>
+            <part name="ch_24.5e" crc="9cb6e6bc" map="00010000"/>
+            <part name="ch_17.5c" crc="fe490846" map="00100000"/>
+            <part name="ch_38.8h" crc="6e5c8cb6" map="01000000"/>
+            <part name="ch_32.8f" crc="317d27b0" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="ch_10.5b"  crc="e8251a9b" map="00000001"/>
+            <part name="ch_02.5a"  crc="7c8c88fb" map="00000010"/>
+            <part name="ch_14.10b" crc="4012ec4b" map="00000100"/>
+            <part name="ch_06.10a" crc="81884b2b" map="00001000"/>
+            <part name="ch_25.7e"  crc="1dfcbac5" map="00010000"/>
+            <part name="ch_18.7c"  crc="516a34d1" map="00100000"/>
+            <part name="ch_39.9h"  crc="872fb2a4" map="01000000"/>
+            <part name="ch_33.9f"  crc="30dc5ded" map="10000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

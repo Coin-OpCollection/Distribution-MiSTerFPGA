@@ -1,0 +1,91 @@
+<misterromdescription>
+    <name>Area 88 (Japan)</name>
+    <setname>area88</setname>
+    <rbf>unsquad_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1989</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Shooter</category>
+    <catver>Shooter / Flying Horizontal</catver>
+
+    <switches default="ff,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin A" bits="0,2" ids="2C/Start 1C/Cont,4C/1Cr,3C/1Cr,2C/1Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin B" bits="3,5" ids="2C/Start 1C/Cont,4C/1Cr,3C/1Cr,2C/1Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="7 (Hardest),6,5,4,3 (Normal),2,1,0 (Easiest)"/>
+        <dip name="Damage" bits="11,12" ids="Small,Normal,Big,Biggest" values="2,3,1,0"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="On,Off"/>
+        <dip name="Freeze" bits="19" ids="On,Off"/>
+        <dip name="Flip Screen" bits="20" ids="On,Off"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue" bits="22" ids="Yes,No"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Shot,Special,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="area88.zip|unsquad.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="ar_36.12f" crc="65030392" map="10"/>
+            <part name="ar_42.12h" crc="c48170de" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ar_37.13f" crc="33e9694b" map="10"/>
+            <part name="ar_43.13h" crc="7cc8fb9e" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ar_34.10f" crc="f6e80386" map="10"/>
+            <part name="ar_40.10h" crc="be36c145" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ar_35.11f" crc="86d98ff3" map="10"/>
+            <part name="ar_41.11h" crc="758893d3" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="ar_23.13c" crc="f3dd1367"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="ar_30.12e" crc="584b43a9"/>
+        <part repeat="0x20000"> FF </part>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="ar_09.4b" crc="db9376f8" map="00000001"/>
+            <part name="ar_01.4a" crc="392151b4" map="00000010"/>
+            <part name="ar_13.9b" crc="81436481" map="00000100"/>
+            <part name="ar_05.9a" crc="e246ed9f" map="00001000"/>
+            <part name="ar_24.5e" crc="9cd6e2a3" map="00010000"/>
+            <part name="ar_17.5c" crc="0b8e0df4" map="00100000"/>
+            <part name="ar_38.8h" crc="8b9e75b9" map="01000000"/>
+            <part name="ar_32.8f" crc="db6acdcf" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="ar_10.5b"  crc="4219b622" map="00000001"/>
+            <part name="ar_02.5a"  crc="bac5dec5" map="00000010"/>
+            <part name="ar_14.10b" crc="e6bae179" map="00000100"/>
+            <part name="ar_06.10a" crc="c8f04223" map="00001000"/>
+            <part name="ar_25.7e"  crc="15ccf981" map="00010000"/>
+            <part name="ar_18.7c"  crc="9336db6a" map="00100000"/>
+            <part name="ar_39.9h"  crc="9b8e1363" map="01000000"/>
+            <part name="ar_33.9f"  crc="3968f4b5" map="10000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

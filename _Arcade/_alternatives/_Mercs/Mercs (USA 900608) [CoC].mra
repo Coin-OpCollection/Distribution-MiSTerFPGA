@@ -1,0 +1,80 @@
+<misterromdescription>
+    <name>Mercs (USA 900608)</name>
+    <setname>mercsu</setname>
+    <rbf>mercs_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>3</players>
+    <joystick>8-way</joystick>
+    <rotation>Vertical (CCW)</rotation>
+    <region>USA</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Run &amp; Gun</category>
+    <catver>Shooter / Walking</catver>
+
+    <switches default="ff,fc,9f">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="Continue,Normal"/>
+        <!-- DSWB -->
+        <dip name="Diff." bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Coin Selector" bits="11" ids="1 Coin,3 Coins"/>
+        <dip name="Play Mode" bits="12" ids="2 Players,3 Players"/>
+        <!-- DSWC -->
+        <dip name="Screen Pause" bits="19" ids="Yes,No"/>
+        <dip name="Screen Flip" bits="20" ids="Yes,No"/>
+        <dip name="Demo Sound" bits="21" ids="Yes,No"/>
+        <dip name="Continue" bits="22" ids="Yes,No"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Attack,Mega Crash,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="mercsu.zip|mercs.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="so2_30a.11f" crc="e4e725d7" map="10"/>
+            <part name="so2_35a.11h" crc="e7843445" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="so2_31a.12f" crc="c0b91dea" map="10"/>
+            <part name="so2_36a.12h" crc="591edf6c" map="01"/>
+        </interleave>
+        <part name="so2-32m.8h" crc="2eb5cf0c"/>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="so2_09.12b" crc="d09d7c7a"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="so2_18.11c" crc="bbea1643"/>
+        <part name="so2_19.12c" crc="ac58aa71"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="so2-6m.8a"  crc="aa6102af" map="00000021"/>
+            <part name="so2-8m.10a" crc="839e6869" map="00002100"/>
+            <part name="so2-2m.4a"  crc="597c2875" map="00210000"/>
+            <part name="so2-4m.6a"  crc="912a9ca0" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="so2_24.7d" crc="3f254efe" map="00000001"/>
+            <part name="so2_14.7c" crc="f5a8905e" map="00000010"/>
+            <part name="so2_26.9d" crc="f3aa5a4a" map="00000100"/>
+            <part name="so2_16.9c" crc="b43cd1a8" map="00001000"/>
+            <part name="so2_20.3d" crc="8ca751a3" map="00010000"/>
+            <part name="so2_10.3c" crc="e9f569fd" map="00100000"/>
+            <part name="so2_22.5d" crc="fce9a377" map="01000000"/>
+            <part name="so2_12.5c" crc="b7df8a06" map="10000000"/>
+        </interleave>
+        <!-- Total 0x450000 bytes - 4416 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

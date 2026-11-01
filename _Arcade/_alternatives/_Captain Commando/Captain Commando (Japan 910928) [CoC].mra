@@ -1,0 +1,78 @@
+<misterromdescription>
+    <name>Captain Commando (Japan 910928)</name>
+    <setname>captcommjr1</setname>
+    <rbf>captcomm_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1991</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>4</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Beat &apos;Em Up</category>
+    <catver>Fighter / 2.5D</catver>
+
+    <switches default="ff,f4,9f">
+        <!-- DSWA -->
+        <dip name="Coins to Start" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Debug (GFX RAM)" bits="3" ids="On,Off"/>
+        <dip name="Continue Coin" bits="6" ids="On,Off"/>
+        <dip name="Shared Credits (3-4P)" bits="7" ids="On,Off"/>
+        <!-- DSWB -->
+        <dip name="Difficulty 1" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Difficulty 2" bits="11,12" ids="4,3,2,1"/>
+        <dip name="Debug Enable" bits="13" ids="On,Off"/>
+        <dip name="Play Mode" bits="14,15" ids="4 Players,4 Players,3 Players,2 Players"/>
+        <!-- DSWC -->
+        <dip name="Lives" bits="16,17" ids="1,4,3,2"/>
+        <dip name="Free Play" bits="18" ids="On,Off"/>
+        <dip name="Screen Freeze" bits="19" ids="On,Off"/>
+        <dip name="Screen Flip" bits="20" ids="On,Off"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue" bits="22" ids="On,Off"/>
+        <dip name="Game Test" bits="23" ids="On,Off"/>
+    </switches>
+
+    <buttons names="Attack,Jump,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>04</part>
+    </rom>
+
+    <rom index="0" zip="captcommjr1.zip|captcomm.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <part name="ccj_23b.8f" crc="e2a2d80e"/>
+        <part name="ccj_22c.7f" crc="9b82a052"/>
+        <interleave output="16">
+            <part name="ccj_24b.9e" crc="84ff99b2" map="10"/>
+            <part name="ccj_28b.9f" crc="fbcec223" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x140000 -->
+        <part name="ccj_09.12a" crc="698e8b58"/>
+
+        <!-- oki - starts at 0x150000 -->
+        <part name="ccj_18.11c" crc="6de2c2db"/>
+        <part name="ccj_19.12c" crc="b99091ae"/>
+
+        <!-- gfx - starts at 0x190000 -->
+        <interleave output="64">
+            <part name="cc_01.3a" crc="7261d8ba" map="00000021"/>
+            <part name="cc_02.4a" crc="6a60f949" map="00002100"/>
+            <part name="cc_03.5a" crc="00637302" map="00210000"/>
+            <part name="cc_04.6a" crc="cc87cf61" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="cc_05.7a"  crc="28718bed" map="00000021"/>
+            <part name="cc_06.8a"  crc="d4acc53a" map="00002100"/>
+            <part name="cc_07.9a"  crc="0c69f151" map="00210000"/>
+            <part name="cc_08.10a" crc="1f9ebb97" map="21000000"/>
+        </interleave>
+        <!-- Total 0x590000 bytes - 5696 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

@@ -1,0 +1,88 @@
+<misterromdescription>
+    <name>Three Wonders (World 910513)</name>
+    <setname>3wondersr1</setname>
+    <rbf>3wonders_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1991</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Compilation</category>
+    <catver>Platform / Shooter Scrolling</catver>
+
+    <switches default="bf,9a,99">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue Coin" bits="6" ids="On,Off"/>
+        <dip name="Screen Stop" bits="7" ids="Pause,Normal"/>
+        <!-- Free Play: A 1-7 all on (Coin 1 and Coin 2 4C/1Cr, Continue Coin on) -->
+        <!-- DSWB -->
+        <dip name="Wanderers Lives" bits="8,9" ids="5,3,2,1"/>
+        <dip name="Wanderers Diff." bits="10,11" ids="Difficult,Hard,Normal,Easy"/>
+        <dip name="Chariot Lives" bits="12,13" ids="5,3,2,1"/>
+        <dip name="Chariot Diff." bits="14,15" ids="Difficult,Hard,Normal,Easy"/>
+        <!-- DSWC -->
+        <dip name="Don&apos;t Pull Lives" bits="16,17" ids="5,3,2,1"/>
+        <dip name="Don&apos;t Pull Diff." bits="18,19" ids="Difficult,Hard,Normal,Easy"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Game Continue" bits="22" ids="On,Off"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="A,B,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>01</part>
+    </rom>
+
+    <rom index="0" zip="3wondersr1.zip|3wonders.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="rte_30.11f" crc="0d541519" map="10"/>
+            <part name="rte_35.11h" crc="73dd0e20" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="rte_31.12f" crc="33e0337d" map="10"/>
+            <part name="rte_36.12h" crc="a8865243" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="rte_28.9f" crc="054137c8" map="10"/>
+            <part name="rte_33.9h" crc="7264cb1b" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="rte_29.10f" crc="9a8df1e4" map="10"/>
+            <part name="rte_34.10h" crc="6348a79d" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="rt_9.12b" crc="7d5a77a7"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="rt_18.11c" crc="f6dc0d3d"/>
+        <part name="rt_19.12c" crc="dbe64ad0"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="rt-5m.7a" crc="86aef804" map="00000021"/>
+            <part name="rt-7m.9a" crc="4f057110" map="00002100"/>
+            <part name="rt-1m.3a" crc="902489d0" map="00210000"/>
+            <part name="rt-3m.5a" crc="e35ce720" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="rt-6m.8a"  crc="13cb0e7c" map="00000021"/>
+            <part name="rt-8m.10a" crc="1f055014" map="00002100"/>
+            <part name="rt-2m.4a"  crc="e9a034f4" map="00210000"/>
+            <part name="rt-4m.6a"  crc="df0eea8b" map="21000000"/>
+        </interleave>
+        <!-- Total 0x550000 bytes - 5440 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>

@@ -1,0 +1,92 @@
+<misterromdescription>
+    <name>U.S. Navy (Japan 901012)</name>
+    <setname>cawingj</setname>
+    <rbf>cawing_mister</rbf>
+    <mameversion>0286</mameversion>
+    <year>1990</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>Japan</region>
+    <platform>Capcom CP System Hardware</platform>
+    <category>Shooter</category>
+    <catver>Shooter / Flying Horizontal</catver>
+
+    <switches default="ff,fc,bf">
+        <!-- DSWA -->
+        <dip name="Coin 1" bits="0,2" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Coin 2" bits="3,5" ids="4C/1Cr,3C/1Cr,2C/1Cr,1C/6Cr,1C/4Cr,1C/3Cr,1C/2Cr,1C/1Cr"/>
+        <dip name="Continue" bits="6" ids="2C/Start 1C/Cont,Normal"/>
+        <!-- DSWB -->
+        <dip name="Difficulty 1" bits="8,10" ids="8 (Difficult),7,6,5,4 (Normal),3,2,1 (Easy)"/>
+        <dip name="Difficulty 2" bits="11,12" ids="Very Difficult,Difficult,Easy,Normal"/>
+        <!-- DSWC -->
+        <dip name="Free Play" bits="18" ids="Free Play,Not Free Play"/>
+        <dip name="Screen Stop" bits="19" ids="Pause,Normal"/>
+        <dip name="Screen Flip" bits="20" ids="Flip,Normal"/>
+        <dip name="Demo Sound" bits="21" ids="On,Off"/>
+        <dip name="Continue Mode" bits="22" ids="On,Off"/>
+        <dip name="Test Mode" bits="23" ids="Test Mode,Game Mode"/>
+    </switches>
+
+    <buttons names="Shot,Super Weapon,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
+
+    <rom index="1">
+        <part>04</part>
+    </rom>
+
+    <rom index="0" zip="cawingj.zip|cawing.zip" md5="None" address="0x30000000">
+        <!-- maincpu - starts at 0x000000 -->
+        <interleave output="16">
+            <part name="caj_36a.12f" crc="91fceacd" map="10"/>
+            <part name="caj_42a.12h" crc="039f8362" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="caj_37a.13f" crc="e5b75caf" map="10"/>
+            <part name="caj_43a.13h" crc="c73fd713" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="caj_34.10f" crc="51ea57f4" map="10"/>
+            <part name="caj_40.10h" crc="2ab71ae1" map="01"/>
+        </interleave>
+        <interleave output="16">
+            <part name="caj_35.11f" crc="01d71973" map="10"/>
+            <part name="caj_41.11h" crc="3a43b538" map="01"/>
+        </interleave>
+
+        <!-- audiocpu - starts at 0x100000 -->
+        <part name="caj_23.13b" crc="96fe7485"/>
+
+        <!-- oki - starts at 0x110000 -->
+        <part name="caj_30.12c" crc="4a613a2c"/>
+        <part name="caj_31.13c" crc="74584493"/>
+
+        <!-- gfx - starts at 0x150000 -->
+        <interleave output="64">
+            <part name="caj_09.4b" crc="41b0f9a6" map="00000001"/>
+            <part name="caj_01.4a" crc="1002d0b8" map="00000010"/>
+            <part name="caj_13.9b" crc="6f3948b2" map="00000100"/>
+            <part name="caj_05.9a" crc="207373d7" map="00001000"/>
+            <part name="caj_24.5e" crc="e356aad7" map="00010000"/>
+            <part name="caj_17.5c" crc="540f2fd8" map="00100000"/>
+            <part name="caj_38.8h" crc="2464d4ab" map="01000000"/>
+            <part name="caj_32.8f" crc="9b5836b3" map="10000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="caj_10.5b"  crc="bf8a5f52" map="00000001"/>
+            <part name="caj_02.5a"  crc="125b018d" map="00000010"/>
+            <part name="caj_14.10b" crc="8458e7d7" map="00000100"/>
+            <part name="caj_06.10a" crc="cf80e164" map="00001000"/>
+            <part name="caj_25.7e"  crc="cdd0204d" map="00010000"/>
+            <part name="caj_18.7c"  crc="29c1d4b1" map="00100000"/>
+            <part name="caj_39.9h"  crc="eea23b67" map="01000000"/>
+            <part name="caj_33.9f"  crc="dde3891f" map="10000000"/>
+        </interleave>
+        <!-- Total 0x350000 bytes - 3392 kBytes -->
+    </rom>
+
+    <rom index="37" zip="coinopkey.zip" md5="None">
+        <part name="coinop.key"/>
+    </rom>
+</misterromdescription>
