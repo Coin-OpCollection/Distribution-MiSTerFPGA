@@ -12,6 +12,7 @@
     <platform>Capcom CP System Hardware</platform>
     <category>Shooter</category>
     <catver>Shooter / Flying Horizontal</catver>
+    <t_status>beta</t_status>
 
     <switches default="ff,fc,9f">
         <!-- DSWA -->

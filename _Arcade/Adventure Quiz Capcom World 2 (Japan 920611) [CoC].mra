@@ -12,6 +12,7 @@
     <platform>Capcom CP System Hardware</platform>
     <category>Quiz</category>
     <catver>Quiz / Japanese</catver>
+    <t_status>beta</t_status>
 
     <switches default="ff,fe,df">
         <!-- DSWA -->

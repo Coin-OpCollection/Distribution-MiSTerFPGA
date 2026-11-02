@@ -12,6 +12,7 @@
     <platform>Capcom CP System Hardware</platform>
     <category>Platform</category>
     <catver>Platform / Run Jump</catver>
+    <t_status>beta</t_status>
 
     <switches default="ff,fd,ff">
         <!-- DSWA -->
