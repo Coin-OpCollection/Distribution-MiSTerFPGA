@@ -12,6 +12,7 @@
     <platform>Capcom CP System Hardware</platform>
     <category>Compilation</category>
     <catver>Platform / Shooter Scrolling</catver>
+    <t_status>beta</t_status>
 
     <switches default="bf,9a,99">
         <!-- DSWA -->

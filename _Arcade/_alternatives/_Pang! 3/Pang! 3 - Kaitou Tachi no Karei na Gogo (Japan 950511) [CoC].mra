@@ -12,6 +12,7 @@
     <platform>Capcom CP System Hardware</platform>
     <category>Shooter</category>
     <catver>Shooter / Balloon Popping</catver>
+    <t_status>beta</t_status>
 
     <buttons names="Shot,-,-,-,-,-,Start,Coin,Pause" default="A,B,X,Y,L,R,Start,Select,R" count="6"/>
 
